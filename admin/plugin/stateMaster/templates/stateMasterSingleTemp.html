@@ -1,0 +1,49 @@
+<div id="stateData" class="modelbox">
+    <div class="clearfix">&nbsp;</div>
+
+<form id="stateDetails" name="stateDetails" action="#">
+    <div class="col-xs-12">
+        <div class="member-profile-img">
+            <img src="">
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="stateCode">State Code<span class="error">*</span> :</label>
+        <input id="stateCode" class="form-control txtchange" name="stateCode"  maxlength="45" type="text" value="<%=stateCode%>">
+      </div>
+        <div class="col-sm-6">
+            
+                <label for="stateName">State Name<span class="error">*</span> :</label>
+                <input id="stateName" class="form-control txtchange" name="stateName"  maxlength="45" type="text" value="<%=stateName%>">
+        </div>
+        <!-- <div class="col-sm-6">
+                <label for="isParent">is Parent?<span class="error"></span> :</label>
+                <ul class="item-container" data-valid="isParent">
+                  <li class="isParent multiSel" data-single="Y" data-value="yes">Yes</li>
+                  <li class="isParent multiSel" data-single="Y" data-value="no">No</li>
+                </ul>
+        </div>    -->
+    </div>
+    <!-- <div class="row">
+        <div class="col-xs-12">
+            <label style="width:100%;"for="parentID">Parent state<br>
+                <select id="parentID" name="parentID" class="form-control dropval">
+                  <option value="">Select Parent state</option>
+                  <% _.each(stateList, function(model) { 
+                    if(model.isParent == "yes") {
+                  %>
+                    <option <% if(model.stateID == parentID){ %> selected <% } %> value="<%=model.stateID%>"><%=model.stateName%></option>
+                  <% } }); %>
+                </select>
+            </label>
+        </div>
+    </div> -->
+    <div class="clearfix">&nbsp;</div>
+        
+        <div class="text-center">
+        <div class="clearfix">&nbsp;</div>
+        <button id="savestateDetails" type="button" class="btn btn-default btn-success">Save</button>
+      </div>
+      </form>
+</div>

@@ -1,0 +1,19 @@
+<tr class="even pointer bg-<%=blogsDetails.attributes.status%>" >
+  <td class="a-center">
+      <div class="bg__control normal">
+        <label class="check__box">
+          <input class="memberlistcheck" type="checkbox" data-blogID="<%= blogsDetails.attributes.blogID %>">
+            <div class="square__box round"></div>
+        </label> 
+      </div>
+  </td><!-- 
+  <td class=""><%=blogsDetails.attributes.blogID%></td> -->
+  <td class=""><a href="#addnewblog/<%= blogsDetails.attributes.blogID %>"><b><u><%=blogsDetails.attributes.blogTitle%></u></b></a></td>
+  <td class=""><%= blogsDetails.attributes.category %></td>
+  <td class=""><%= formatDate(blogsDetails.attributes.createdDate,'no') %></td>
+  <td>
+    <!-- <button type="button" class="btn btn-info btn-xs loadview" data-toggle="modal" data-target="#myModal" data-blogID="<%=blogsDetails.attributes.blogID%>" data-show="singleblogsData">Edit</button> -->
+   <a class="btn btn-info btn-xs" href="#addnewblog/<%= blogsDetails.attributes.blogID %>">Edit</a>
+  </td>
+</tr>
+              

@@ -1,0 +1,78 @@
+<div id="pageMaster" class="modelbox">
+    <div class="clearfix">&nbsp;</div>
+
+<form id="userRoleDetails" name="userRoleDetails" action="#">
+    <div class="col-xs-12">
+        <div class="member-profile-img">
+            <img src="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <label for="clientsname">Clients Name<span class="error"></span> :</label>
+            <input id="clientsname" class="form-control txtchange" name="clientsname" type="text" value="<%=clientsname%>">
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <label for="link">Link<span class="error"></span> :</label>
+            <input id="link" class="form-control txtchange" name="link" type="text" value="<%=link%>">
+        </div> 
+    </div>
+    <div class="row">
+        <label for="status">Status <span class="error">*</span> :</label>
+        <ul class="item-container" data-valid="status">
+            <li class="status multiSel" data-single="Y" data-value="active">Active</li>
+            <li class="status multiSel" data-single="Y" data-value="inactive">InActive</li>
+            <li class="status multiSel" data-single="Y" data-value="delete">Delete</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <label style="width:100%;"for="categoryID">Category<br>
+                <select id="categoryID" name="categoryID" class="form-control dropval">
+                  <option value="">Select Category</option>
+                  <% _.each(categoryList, function(model) { 
+                    if(model.isParent == "yes") { %>
+                    <optgroup class="" label="<%=model.categoryName%>">
+                        <% _.each(categoryList, function(model1) { 
+                            if(model1.parentID == model.categoryID){
+                  %>
+                    <option <% if(model1.categoryID == categoryID){ %> selected <% } %> value="<%=model1.categoryID%>"><%=model1.categoryName%></option>
+                    <% } }); %>
+                    </optgroup>
+
+                  <% } }); %>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+                
+        <label for="category">Client Logo<span class="error">*</span> :</label>
+        <input id="clientImageUP" class="form-control fileAdded" name="clientImageUP" type="file">
+    </div> 
+    </div>
+    
+    <div class="clearfix">&nbsp;</div>
+    <div class="col-xs-12">
+        <div class="col-sm-4 col-xs-12">
+            
+            <%if((clientImage != null)&&(clientImage != "")) { %> 
+                <p><img id="output" width="200" src="<%=  FRONTIMAGES %>/clients/<%=  clientImage %>"/>
+                </p>
+            <% }else{%>
+            <%}%>
+                <p><img id="output" width="200"/>
+            </p>
+        </div>
+        </div>
+    <div class="clearfix">&nbsp;</div>
+        
+        <div class="text-center">
+        <div class="clearfix">&nbsp;</div>
+        <button id="saveuserRoleDetails" type="button" class="btn btn-default btn-success">Save</button>
+      </div>
+      </form>
+</div>
