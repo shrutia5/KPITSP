@@ -73,7 +73,7 @@ class Website extends CI_Controller {
             echo json_encode($status); exit;
         }else
         {
-            $secKey="6LeK_UocAAAAAPLz7igmepUEDqt7QsnTzK9Owpof";
+            $secKey="6Ld0Sg4fAAAAALxuMTPYx10YB5AIs89Nfv0BnuCb";
             $ip=$_SERVER['REMOTE_ADDR'];
             $response=$this->input->post('g-recaptcha-response');
             $url="https://www.google.com/recaptcha/api/siteverify?secret=$secKey&response=$response&remoteip=$ip";

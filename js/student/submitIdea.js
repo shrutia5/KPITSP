@@ -762,4 +762,12 @@ $(document).ready(function () {
         });
     });
 
+	$(".question-mark").on("click", function(){
+    $(".trl-page").toggle();
+    $(".helpful-section").toggle();
+    $(".sub1").toggle();
+    $("#help-hide").toggle();
+    $("#helpful-hide").toggle();
+    });
+
 });

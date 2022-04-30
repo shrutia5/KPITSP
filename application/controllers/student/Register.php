@@ -505,28 +505,28 @@ class Register extends CI_Controller {
             exit;
         }
 
-        //if (!$this->input->post('g-recaptcha-response')) {
-        //    $status['msg'] = "Catpcha Not Verified";
-        //    $status['statusCode'] = validation_errors();
-        //    $status['flag'] = 'F';
-        //    echo json_encode($status);
-        //    exit;
-        //} else {
-        //    $secKey = "6LfF0oceAAAAAHM4e4rEYRY6uBx5NMNBTHsSqueE";
-        //    $ip = $_SERVER['REMOTE_ADDR'];
-        //    $response = $this->input->post('g-recaptcha-response');
-        //    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secKey&response=$response&remoteip=$ip";
-        //    $fire = file_get_contents($url);
-        //    $data = json_decode($fire);
-        // print_r($data->success);exit;
-        //    if (!$data->success) {
-        //        $status['msg'] = "Captcha Not Verified!";
-        //        $status['statusCode'] = validation_errors();
-        //        $status['flag'] = 'F';
-        //        echo json_encode($status);
-        //        exit;
-        //    }
-        //}
+        if (!$this->input->post('g-recaptcha-response')) {
+            $status['msg'] = "Catpcha Not Verified";
+            $status['statusCode'] = validation_errors();
+            $status['flag'] = 'F';
+            echo json_encode($status);
+            exit;
+        } else {
+            $secKey = "6Ld0Sg4fAAAAALxuMTPYx10YB5AIs89Nfv0BnuCb";
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $response = $this->input->post('g-recaptcha-response');
+            $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secKey&response=$response&remoteip=$ip";
+            $fire = file_get_contents($url);
+            $data = json_decode($fire);
+            // print_r($data->success);exit;
+            if (!$data->success) {
+                $status['msg'] = "Captcha Not Verified!";
+                $status['statusCode'] = validation_errors();
+                $status['flag'] = 'F';
+                echo json_encode($status);
+                exit;
+            }
+        }
         // $this->sendVerificationEmail($name,$userData['email_otp'],$userData['sms_otp'],$userData['email'],$userData['contactNo']);
         $this->sendVerificationEmail($name, $userData['email_otp'], $userData['email_otp'], $userData['email'], $userData['phoneNumber']);
         $iscreated = $this->CommonModel->saveMasterDetails('userregistration', $userData);
@@ -548,7 +548,7 @@ class Register extends CI_Controller {
             $status['data'] = array();
             $status['flag'] = 'S';
             $email = $userData['email'];
-            $this->sendVerificationDone($name, $email);
+//            $this->sendVerificationDone($name, $email);
             echo json_encode($status);
             exit;
         }
@@ -603,16 +603,16 @@ class Register extends CI_Controller {
         $msg = $mailContent;
 
         // send sms Verification
-        if ($number != "") {
-            $message = str_replace("{{otp}}", $smsotp, $emailContent[0]->smsContent);
-            $url = "https://smsozone.com/api/mt/SendSMS?user=kpitpap&password=kpitpap@7654321&senderid=KSPRKL&channel=Trans&DCS=0&flashsms=0&number=$number&text=$message&route=2069";
-            $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_HEADER, false);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            //curl_setopt($ch, CURLOPT_POSTFIELDS);
-            $contents = curl_exec($ch);
-            curl_close($ch);
-        }
+//        if ($number != "") {
+//            $message = str_replace("{{otp}}", $smsotp, $emailContent[0]->smsContent);
+//            $url = "https://smsozone.com/api/mt/SendSMS?user=kpitpap&password=kpitpap@7654321&senderid=KSPRKL&channel=Trans&DCS=0&flashsms=0&number=$number&text=$message&route=2069";
+//            $ch = curl_init($url);
+//            curl_setopt($ch, CURLOPT_HEADER, false);
+//            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//            //curl_setopt($ch, CURLOPT_POSTFIELDS);
+//            $contents = curl_exec($ch);
+//            curl_close($ch);
+//        }
 
         return $isEmailSend = $this->emails->sendMailDetails($to, $cc = '', $bcc = '', $subject, $msg);
     }
@@ -699,8 +699,8 @@ class Register extends CI_Controller {
                 $status['statusCode'] = 996;
                 $status['flag'] = 'S';
                 $status['redirect'] = base_url() . "login";
-                // $name = $userDetails[0]->firstname." ".$userDetails[0]->lastname;
-                // $this->sendVerificationDone($name,$email);
+                $name = $userDetails[0]->firstname . " " . $userDetails[0]->lastName;
+                $this->sendVerificationDone($name, $userDetails[0]->email);
                 echo json_encode($status);
                 exit;
             } else {

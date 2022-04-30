@@ -486,7 +486,7 @@
                             <li>
                                <h5 class="h5-helpful">Sample idea form</h5>
                                 <p class="para-helpful">Following are some of the sample idea submission forms of winners from past editions for your reference:</p>
-                                <a class="link-helpful" href="https://sparkle.kpit.com/assets/2875Platinum.pdf">Read Now</a>
+                                <a class="link-helpful" href="<?php echo base_url(); ?>/assets/2875Platinum.pdf">Read Now</a>
                             </li>
                             <li>
                                <h5 class="h5-helpful">Get to know about TRL levels</h5>
@@ -529,25 +529,3 @@
     font-size: 13px;
     display: none;">KPIT Sparkle auto saves your work</div>
 </main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    function onCheck(opt){
-        // alert("hello world");
-        var radio = document.getElementsByName("fav_language");
-        var displayText = document.getElementById("display");
-        console.log(opt.id);
-        displayText.innerHTML = "Answer guide : "+opt.id;
-        // alert(opt)
-    }
-</script>
-<script>
-$(document).ready(function(){
-  $(".question-mark").on("click", function(){
-    $(".trl-page").toggle();
-    $(".helpful-section").toggle();
-    $(".sub1").toggle();
-    $("#help-hide").toggle();
-    $("#helpful-hide").toggle();
-    });
- });
-</script>

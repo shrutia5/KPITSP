@@ -138,7 +138,8 @@
                                             ?>
                                             <option value="<?php echo $value->state_id ?>"><?php echo $value->state_name; ?></option>
                                         <?php }
-                                    } ?>
+                                    }
+                                    ?>
                                 </select>
                                 <div class="validate"></div>
                             </div>
@@ -175,7 +176,8 @@
                                             ?>
                                             <option value="<?php echo $value->degree_id ?>"><?php echo $value->degree_name; ?></option>
                                         <?php }
-                                    } ?>
+                                    }
+                                    ?>
                                 </select>
                                 <div class="validate"></div>
                             </div>
@@ -188,8 +190,9 @@
                                         foreach ($userBranch as $key => $value) {
                                             ?>
                                             <option value="<?php echo $value->branch_id ?>"><?php echo $value->branch_name; ?></option>
-                                        <?php }
-                                    } ?>
+    <?php }
+}
+?>
                                 </select>
                                 <div class="validate"></div>
                             </div>
@@ -203,8 +206,9 @@
                                         foreach ($userStream as $key => $value) {
                                             ?>
                                             <option value="<?php echo $value->stream_id ?>"><?php echo $value->stream_name; ?></option>
-                                        <?php }
-                                    } ?>
+    <?php }
+}
+?>
                                 </select>
                                 <div class="validate"></div>
                             </div>
@@ -225,8 +229,8 @@
                                 // echo "-".$sum;
                                 ?></label>
                                 <input type="text" class="form-control" name="qAnswer" id="qAnswer" placeholder="Write answer"> -->
-                                <!--                                <div class="g-recaptcha" data-sitekey="6LfF0oceAAAAACmG7bQzvw_VyK27Wq1ulIXY0pTo"></div>
-                                                                <div class="validate"></div>-->
+                                <div class="g-recaptcha" data-sitekey="6Ld0Sg4fAAAAACuRnlNd19iPNmcpr2TuyYE_Viud"></div>
+                                <div class="validate"></div>
                             </div>
                         </div>
                         <input type="hidden" name="identityCard" id="identityCard">

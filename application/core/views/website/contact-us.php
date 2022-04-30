@@ -48,7 +48,7 @@
                             <textarea style="width:100%" id="message" name="message" placeholder="Write here...."></textarea>
                         </div>
                         <div class="col-12 form-group">
-                           <div class="g-recaptcha" data-sitekey="6LeK_UocAAAAAEnGzLYLbgZRCFa4tdqo7Gd7A66g"></div>
+                           <div class="g-recaptcha" data-sitekey="6Ld0Sg4fAAAAACuRnlNd19iPNmcpr2TuyYE_Viud"></div>
                         </div>
                         <div class="col-12 form-group">
                             <input type="submit" name="save" id="save" value="SEND"/>

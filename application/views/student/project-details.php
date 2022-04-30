@@ -111,7 +111,7 @@
                         </li>
                         <li class="nav-item nav-item1">
                             <a class="nav-link link1" id="document-tab" data-toggle="tab" href="#document" role="tab"
-                                aria-controls="document" aria-selected="false">Attachment</a>
+                                aria-controls="document" aria-selected="false">Attachments</a>
                         </li>
                     </ul>
                     <div class="tab-content content-pro" id="myTabContent">
@@ -310,6 +310,7 @@
                                         $attachmentAvailable = false;
                                         ?>
                                         <span class="SectionTitle SectionTitle-trl4">TRL Level 4</span>
+                                        <ul class="listque" style="padding-left:0px">
                                         <?php 
                                         if(!empty($trlquestionans)){
                                         $i=1;
@@ -323,14 +324,16 @@
                                                 $trlans = $trlq->ansType;
                                                 
                                                 if($trlans == 'file'){
-                                                    echo $questionName;
+                                                    echo "<li>";
+                                                    echo "<h6 class='question'>".$i.". ".$questionName."</h6>";
+                                                    $i++;
                                                 }
                                                 $anstype=$trlq->ansType;
                                                 //echo $questionName;
-                                                if($anstype =='file' && !empty($trlquestionans->docName)){
-                                                    
-                                                    echo '<ol>'.$trlq->qName.'</ol>';
-                                                }
+                                                if($anstype =='file' && empty($trlquestionans->docName)){
+                                                    echo '<p class="guide">Guide:'.$trlq->ansGuide.'</p>';
+                                                } 
+                                               
                                         ?>
                                         <?php
                                            
@@ -344,12 +347,11 @@
                                                         if(!empty($trlqans->docName)){
                                                             $attachmentAvailable = true;  
                                                             ?>
-                                                        <ol class="ansDetails">
-                                                            <p> <a
-                                                            target="_blank" href="<?php echo base_url()?>/images/studentFiles/<?php echo $projectd->sparkleID; ?>/<?php echo $trlqans->docName; ?>">
-                                                                    <?php echo $trlqans->docName; ?>
-                                                                </a></p>
-                                                        </ol>
+                                                            <p style="padding-left:23px;">
+                                                                <a target="_blank" href="<?php echo base_url()."/images/studentFiles/".$projectd->sparkleID."/".$trlqans->docName; ?>">
+                                                                <?php echo $trlqans->docName; ?>
+                                                                </a>
+                                                            </p>
                                                         <?php
                                                         }
                                                           
@@ -357,9 +359,10 @@
                                                 }
                                             
                                             }
-                                            
+                                            echo "</li>";
                                         }
                                         ?>
+                                        </ul>
                                         <?php 
                                             if(!empty($projectd->leanCanvas)){
                                                 $attachmentAvailable= true;
@@ -398,26 +401,7 @@
                                                 
                                             </div>
                                             <?php } }  ?>
-                                           
-                                      <?php
                                       
-                                      
-                                      if(!$attachmentAvailable){ ?>
-                                            <div class="row default-view no-border" style="background: #2A2A2B;">
-                                                <div class="col-md-12">
-                                                    <div class="default-view no-border d-md-flex align-items-center">
-                                                        <div class="default-content default-msg">
-                                                            <div class="fico">
-                                                                <i class='bx bx-file-blank'></i>
-                                                            </div>
-                                                        <h3 class="mt-4" style="font-size: 24px;"> Attachment not available</h3>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <style>.SectionTitle-trl4{display: none}</style>
-                                        <?php  }
-                                        ?>
                                     </div>
                                 </span>
                             </div>
@@ -431,7 +415,7 @@
                         <div class="para1">
                             <div class="my-teamh team-mobile">
                                 <span>Add New Member </span>
-                                <p>(Maximum 4 members)</p>
+                                <p>(Max 4 member)</p>
                             </div><br>
                             <form id="memberDetail" action="<?php echo base_url();?>student/addMemberDetails"
                                 method="post" onsubmit="return false">
@@ -477,7 +461,7 @@
                             <div class="my-teamh">
                                 <?php if($projectd->userID == $userid && $projectd->projectStatus!="Reject" && $projectd->phaseTwoStatus!="Reject" && $projectd->phaseThreeStatus!="Reject") { ?>
                                 <span class="team-mobile">My Team </span><button class="btn2 team-mobile"><i class='bx bx-plus'></i></i></button>
-                                <p>(Maximum 4 members)</p>
+                                <p>(Max 4 member)</p>
                                 <?php }
                             else echo "<span>Team Members</span>";
                             ?>
@@ -578,7 +562,7 @@
                         <div class="sendinvite">
                             <div class="inner-center">
                                 <i class='bx bx-envelope bs-md msg-envelope'></i>
-                                <p>Invitation Sent Successfully!</p>
+                                <p>Invitation Send Successfully!</p>
                                 <input type="button" class="sent-b" value="Done">
                             </div>
                         </div>
@@ -587,7 +571,7 @@
                                 <i class='bx bx-envelope'></i>
                             </div>
                             <div class="mess-send">
-                            <p>Invitation Sent Successfully!</p>
+                            <p>Invitation Send Successfully!</p>
                             </div>
                             <div class="send-btn">
                                 <input type="button" class="sent-b" value="Done">

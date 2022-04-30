@@ -2,14 +2,14 @@
   <div class="container" data-aos="fade-up">
         <h2 class="section_secondary_title normal text-center">Leading you to the pathway</h2>
         <div class="page-subtitle text-center">Our helpful resources are here to lead you through the way</div>
-        <div class="row mt-md-5">
+<!--        <div class="row mt-md-5">
             <div class="col-md-12">
                 <div class="search-box">
                     <span><i class="icofont-search-2"></i></span>
                     <input type="text" placeholder="How can we help you?">
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 

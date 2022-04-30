@@ -20,9 +20,6 @@ $(document).ready(function(){
     $("#subbtn").click(function(){
         $("#registerUserEduDetails").submit();;
     })
-   
-        
-    console.log(base_url);
     if($("#cardfile").length){
         $("#cardfile").RealTimeUpload({
             text:'drag and drop your file here OR Upload here',

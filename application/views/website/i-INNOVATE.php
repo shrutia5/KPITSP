@@ -107,7 +107,7 @@
                 <div class="count-box text-left">
                     <h2 class="section_secondary_title mb-1">Let Your Ideas Fly High</h2>
                     <h3 class="secondary_sub_title text-white">Submit your ideas to WIN BIG! </h3>
-                    <a href="#" class="knowMore" data-aos="zoom-out" data-aos-delay="300">REGISTER NOW <i class="icofont-long-arrow-right"></i></a>
+                    <a href="<?php echo base_url(); ?>/register" class="knowMore" data-aos="zoom-out" data-aos-delay="300">REGISTER NOW <i class="icofont-long-arrow-right"></i></a>
                 </div>
             </div>
         </div>

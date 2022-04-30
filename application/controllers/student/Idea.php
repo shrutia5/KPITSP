@@ -354,7 +354,7 @@ class Idea extends CI_Controller {
             if (!empty($iscreated)) {
                 $status['data'] = ""; //$projectID;
                 $status['flag'] = 'S';
-                $this->CommonModel->logUserActivity("Project details updated", "PROJECT_MODIFIED", $projectDetails["projectID"]);
+                $this->CommonModel->logUserActivity("Project details updated", "PROJECT_MODIFIED", $projectDetails[0]->projectID);
                 echo json_encode($status);
                 exit;
             } else {
@@ -679,7 +679,7 @@ class Idea extends CI_Controller {
                 foreach ($projectDetails as $key => $val) {
                     if ($key == $questionID) {
                         $status['flag'] = 'S';
-                        $status['message'] = "<div class='attfile_" . $keyarry[1] . "'><a href='" . $linkPath . "/" . $val . "'>" . $val . "</a><span data-field='" . $questionID . "' data-questionID='" . $questionID . "' class='removeAttFiles'><i class='bx bx-trash-alt'></i></span></div>";
+                        $status['message'] = "<div class='attfile_" . $keyarry[1] . "'><a href='" . $linkPath . "/" . $val . "' target='_blank'>" . $val . "</a><span data-field='" . $questionID . "' data-questionID='" . $questionID . "' class='removeAttFiles'><i class='bx bx-trash-alt'></i></span></div>";
                     }
                 }
             } else {
@@ -687,7 +687,7 @@ class Idea extends CI_Controller {
                 $fileDetails = $this->CommonModel->getMasterDetails('trl_users_question_answers', '', $where);
                 if (isset($fileDetails) && !empty($fileDetails)) {
                     $status['flag'] = 'S';
-                    $status['message'] = "<div class='tlfile_" . $keyarry[1] . "'><a href='" . $linkPath . "/" . $fileDetails[0]->docName . "'>" . $fileDetails[0]->docName . "</a><span data-trlQAnsID='" . $fileDetails[0]->trlQAnsID . "' data-questionID='" . $keyarry[1] . "' class='removeTlFiles'><i class='bx bx-trash-alt'></i></span></div>";
+                    $status['message'] = "<div class='tlfile_" . $keyarry[1] . "'><a href='" . $linkPath . "/" . $fileDetails[0]->docName . "' target='_blank'>" . $fileDetails[0]->docName . "</a><span data-trlQAnsID='" . $fileDetails[0]->trlQAnsID . "' data-questionID='" . $keyarry[1] . "' class='removeTlFiles'><i class='bx bx-trash-alt'></i></span></div>";
                 }
             }
         }
