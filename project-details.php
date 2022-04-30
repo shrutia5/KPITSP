@@ -18,24 +18,24 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="http://localhost/kpit/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://localhost/kpit/assets/icofont/icofont.min.css" rel="stylesheet">
-    <link href="http://localhost/kpit/assets/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="http://localhost/kpit/assets/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="http://localhost/kpit/assets/remixicon/remixicon.css" rel="stylesheet">
-    <link href="http://localhost/kpit/assets/venobox/venobox.css" rel="stylesheet">
-    <link href="http://localhost/kpit/assets/aos/aos.css" rel="stylesheet">
-    <link href="http://localhost/kpit/assets/alertifyjs/css/alertify.min.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/assets/icofont/icofont.min.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/assets/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/assets/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/assets/remixicon/remixicon.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/assets/venobox/venobox.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/assets/aos/aos.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/assets/alertifyjs/css/alertify.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
-        href="http://localhost/kpit/assets/realTimeUpload/css/RealTimeUpload.css" />
+        href="http://localhost/sparkle2023/assets/realTimeUpload/css/RealTimeUpload.css" />
     <!-- Template Main CSS File -->
-    <link href="http://localhost/kpit/css/style.css" rel="stylesheet">
-    <link href="http://localhost/kpit/css/student.css" rel="stylesheet">
-    <link href="http://localhost/kpit/css/mobilechanges.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/css/style.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/css/student.css" rel="stylesheet">
+    <link href="http://localhost/sparkle2023/css/mobilechanges.css" rel="stylesheet">
     <script>
-        var base_url = 'http://localhost/kpit/';
+        var base_url = 'http://localhost/sparkle2023/';
     </script>
-    <link rel="stylesheet" href="http://localhost/kpit/assets/slim/css/slim.min.css">
+    <link rel="stylesheet" href="http://localhost/sparkle2023/assets/slim/css/slim.min.css">
 </head>
 
 <body>
@@ -44,8 +44,8 @@
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
                 <div class="col-xl-12 d-flex align-items-center">
-                    <a href="http://localhost/kpit/" class="logo">
-                        <img src="http://localhost/kpit/images/logo.png" alt="KPIT SPARKLE">
+                    <a href="http://localhost/sparkle2023/" class="logo">
+                        <img src="http://localhost/sparkle2023/images/logo.png" alt="KPIT SPARKLE">
                     </a>
                     <div class="myprofile ml-auto d-lg-block ">
                         <span class="myaccount">
@@ -57,13 +57,13 @@
 
                             </div>
                             <div class="sub-myaccount">
-                                <p><a href="http://localhost/kpit/student/dashboard"
+                                <p><a href="http://localhost/sparkle2023/student/dashboard"
                                         class="d-block dashboard0 make-active">My Dashboard</a></p>
-                                <p><a href="http://localhost/kpit/student/myaccount"
+                                <p><a href="http://localhost/sparkle2023/student/myaccount"
                                         class="d-block myaccount0 make-active">My Profile</a></p>
-                                <p><a href="http://localhost/kpit/" class="d-block kpit0 make-active">Helpful
+                                <p><a href="http://localhost/sparkle2023/" class="d-block kpit0 make-active">Helpful
                                         Resources</a></p>
-                                <p><a href="http://localhost/kpit//logout"
+                                <p><a href="http://localhost/sparkle2023//logout"
                                         class="d-block logout0 make-active">Logout</a></p>
                             </div>
                         </span>
@@ -83,7 +83,7 @@
             <div class="row submit-hide  pt-3 m-0">
                 <div class="d-flex">
                     <div class="col-sm-2 col-2">
-                        <a href="http://localhost/kpit/student/project"><i class="bx bxs-chevron-left bx-sm"
+                        <a href="http://localhost/sparkle2023/student/project"><i class="bx bxs-chevron-left bx-sm"
                                 style="color:#C8C8C8;"></i></a>
 
                     </div>
@@ -113,7 +113,7 @@
                     <div class="full-left noFooter">
                         <div class="section-nav d-md-flex justify-content-between">
                             <div class="back">
-                                <a href="http://localhost/kpit/student/dashboard"><i
+                                <a href="http://localhost/sparkle2023/student/dashboard"><i
                                         class='bx bx-chevron-left'></i> <span>Back to Dashboard</span></a>
                             </div>
                             <div class="status">
@@ -143,7 +143,7 @@
                                     <br />
 
                                     <input class="mr-2" type="submit"
-                                        onclick="location.href='http://localhost/kpit//student/submit-idea'"
+                                        onclick="location.href='http://localhost/sparkle2023//student/submit-idea'"
                                         name="save" id="save" value="Continue editing" />
                                     <!--<a href=""><i class="icofont-play-alt-2"></i>&nbsp;&nbsp;Play Prototype</a>-->
                                     <div class="clearfix"></div>
@@ -327,7 +327,7 @@
                                     <p>(Maximum 4 memberss & 2 Mentors)</p>
                                 </div><br>
                                 <form id="memberDetail"
-                                    action="http://localhost/kpit//student/addMemberDetails" method="post">
+                                    action="http://localhost/sparkle2023//student/addMemberDetails" method="post">
                                     <input type="hidden" class="form-control" name="projettid" id="projectid"
                                         placeholder="Enter projectid" value="97">
                                     <div class="row">
@@ -830,28 +830,28 @@
 
 
     <!-- Vendor JS Files -->
-    <script src="http://localhost/kpit/assets/jquery/jquery.min.js"></script>
-    <script src="http://localhost/kpit/assets/typeahead/typeahead.bundle.js"></script>
-    <script src="http://localhost/kpit/assets/typeahead/typeahead.bundle.min.js"></script>
-    <script src="http://localhost/kpit/assets/typeahead/typeahead.js"></script>
-    <script src="http://localhost/kpit/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="http://localhost/kpit/assets/jquery.easing/jquery.easing.min.js"></script>
-    <script src="http://localhost/kpit/assets/owl.carousel/owl.carousel.min.js"></script>
-    <script src="http://localhost/kpit/assets/waypoints/jquery.waypoints.min.js"></script>
-    <script src="http://localhost/kpit/assets/counterup/counterup.min.js"></script>
-    <script src="http://localhost/kpit/assets/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="http://localhost/kpit/assets/jquery.validate/jquery.validate.js"></script>
-    <script src="http://localhost/kpit/assets/realTimeUpload/js/RealTimeUpload.js"></script>
-   <script src="http://localhost/kpit/assets/aos/aos.js"></script>
-    <script src="http://localhost/kpit/assets/paroller/dist/jquery.paroller.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/jquery/jquery.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/typeahead/typeahead.bundle.js"></script>
+    <script src="http://localhost/sparkle2023/assets/typeahead/typeahead.bundle.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/typeahead/typeahead.js"></script>
+    <script src="http://localhost/sparkle2023/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/jquery.easing/jquery.easing.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/owl.carousel/owl.carousel.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/waypoints/jquery.waypoints.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/counterup/counterup.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="http://localhost/sparkle2023/assets/jquery.validate/jquery.validate.js"></script>
+    <script src="http://localhost/sparkle2023/assets/realTimeUpload/js/RealTimeUpload.js"></script>
+   <script src="http://localhost/sparkle2023/assets/aos/aos.js"></script>
+    <script src="http://localhost/sparkle2023/assets/paroller/dist/jquery.paroller.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Template Main JS File -->
-    <script src="http://localhost/kpit/assets/alertifyjs/alertify.min.js"></script>
-    <script src="http://localhost/kpit/js/student/common.js"></script>
-    <script src="http://localhost/kpit/js/student/submitIdea.js"></script>
-    <script src="http://localhost/kpit/assets/slim/js/slim.kickstart.js" type="text/javascript"></script>
+    <script src="http://localhost/sparkle2023/assets/alertifyjs/alertify.min.js"></script>
+    <script src="http://localhost/sparkle2023/js/student/common.js"></script>
+    <script src="http://localhost/sparkle2023/js/student/submitIdea.js"></script>
+    <script src="http://localhost/sparkle2023/assets/slim/js/slim.kickstart.js" type="text/javascript"></script>
     <!-- <script src="assets/js/slim.kickstart.min.js"></script> -->
-    <script src="http://localhost/kpit/js/main.js"></script>
+    <script src="http://localhost/sparkle2023/js/main.js"></script>
     <script>
         $(function () {
             $("#upload_link").on('click', function (e) {

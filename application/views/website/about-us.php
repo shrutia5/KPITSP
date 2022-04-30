@@ -14,12 +14,12 @@
 </section><!-- End Hero -->
  <section class="services section-bg">
   <div class="container" data-aos="fade-up">
-        <h2 class="section_secondary_title text-center">OUR Objectives</h2>
+        <h2 class="section_secondary_title text-center">Our Objectives</h2>
         <div class="row mt-md-3 blogs">
             <div class="col-md-6 p-0" data-aos="zoom-in" data-aos-delay="500">
                 <div class="card mb-2 mt-2">
                     <div class="card-body graytext">
-                        <h3 class="title">The culture innovation</h3>
+                        <h3 class="title">The culture of innovation</h3>
                         <p>Spread the culture of innovation at grassroot level and inculcate innovative thinking to identify and solve a real-life use-case/problem by developing a solution.</p>
                     </div>
                 </div>

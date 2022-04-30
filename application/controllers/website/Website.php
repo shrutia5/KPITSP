@@ -71,29 +71,29 @@ class Website extends CI_Controller {
             }
         }
 
-        if(!$this->input->post('g-recaptcha-response'))
-        {
-           $status['msg'] = "Catpcha Not Verified"; 
-           $status['statusCode'] = validation_errors();
-            $status['flag'] = 'F';
-            echo json_encode($status); exit;
-        }else
-        {
-            $secKey="6LeK_UocAAAAAPLz7igmepUEDqt7QsnTzK9Owpof";
-            $ip=$_SERVER['REMOTE_ADDR'];
-            $response=$this->input->post('g-recaptcha-response');
-            $url="https://www.google.com/recaptcha/api/siteverify?secret=$secKey&response=$response&remoteip=$ip";
-            $fire=file_get_contents($url);
-            $data=json_decode($fire);
+//        if(!$this->input->post('g-recaptcha-response'))
+//        {
+//           $status['msg'] = "Catpcha Not Verified"; 
+//           $status['statusCode'] = validation_errors();
+//            $status['flag'] = 'F';
+//            echo json_encode($status); exit;
+//        }else
+//        {
+//            $secKey="6LeK_UocAAAAAPLz7igmepUEDqt7QsnTzK9Owpof";
+//            $ip=$_SERVER['REMOTE_ADDR'];
+//            $response=$this->input->post('g-recaptcha-response');
+//            $url="https://www.google.com/recaptcha/api/siteverify?secret=$secKey&response=$response&remoteip=$ip";
+//            $fire=file_get_contents($url);
+//            $data=json_decode($fire);
             // print_r($data->success);exit;
-            if(!$data->success)
-            {
-                $status['msg'] = "Captcha Not Verified!"; 
-                $status['statusCode'] = validation_errors();
-                $status['flag'] = 'F';
-                echo json_encode($status); exit;
-            }
-        }
+//            if(!$data->success)
+//            {
+//                $status['msg'] = "Captcha Not Verified!"; 
+//                $status['statusCode'] = validation_errors();
+//                $status['flag'] = 'F';
+//                echo json_encode($status); exit;
+//            }
+//        }
 
 
         $userDetails=array();

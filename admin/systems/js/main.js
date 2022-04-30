@@ -6,14 +6,14 @@ APPNAME = "KPIT";
 COKI = "/";
 
 
-// APPPATH = "http://localhost/kpit/admin";
-// APIPATH = "http://localhost/kpit/admin/crmAPI/";
+// APPPATH = "http://localhost/sparkle2023/admin";
+// APIPATH = "http://localhost/sparkle2023/admin/crmAPI/";
 // FRONTIMAGES = "http:///localhost/kpit/images";
 // ResourceImage = "http:///localhost/kpit/uploads/helpfulResources/";
 
-APPPATH = "http://localhost/kpit/admin";
-APIPATH = "http://localhost/kpit/admin/crmAPI/";
-FRONTIMAGES = "http://localhost/kpit/images";
+APPPATH = "http://localhost/sparkle2023/admin";
+APIPATH = "http://localhost/sparkle2023/admin/crmAPI/";
+FRONTIMAGES = "http://localhost/sparkle2023/images";
 ResourceImage = "http://localhost/kpit-masteruploads/helpfulResources/";
 IMAGES = APPPATH+"/"+"images";
 

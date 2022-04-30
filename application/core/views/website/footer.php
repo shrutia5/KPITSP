@@ -5,7 +5,7 @@
 
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright mt-2">
-         <span>KPITSparkle2021@kpit.com</span>
+         <span>KPITSparkle2023@kpit.com</span>
         </div>
         <!--<div class="credits">
           Designed by <a href="https://webtrixsolutions.com/">Webtrix Solutions Pvt. Ltd.</a>

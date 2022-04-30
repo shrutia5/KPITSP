@@ -2,28 +2,13 @@
     <div id="portal-space"></div>
     <div class="container-fluid p-0 mb-2">
         <div class="">
-            <!-- <div class="incuFinalist">
-                <span>Innovate Finalists</span>
-                <i class='bx bx-chevron-down'></i>
-            </div> -->
             <div class="col-md-3" style="z-index: 10;">
                 <select class="invoFilter form-select" aria-label="" style="position: absolute;top: 10px;left: 19px;">
                     <option <?php if($type == "top") { echo "selected"; } ?> value="top">Top 100</option>
-                    <option <?php if($type == "finalist") { echo "selected"; } ?> value="finalist">Finalist</option>
-                    <option <?php if($type == "kpitSelect") { echo "selected"; } ?> value="kpitSelect">Kpit Recommendation</option>
+                    <option <?php if($type == "finalist") { echo "selected"; } ?> value="finalist">Finalists</option>
+                    <option <?php if($type == "kpitSelect") { echo "selected"; } ?> value="kpitSelect">Kpit Recommendations</option>
                 </select>
-                <!-- <a onclick="$('.incuFina-content').toggle('display-none');"> <span class="change-text">Innovate Finalists</span><i class='bx bx-chevron-down'></i>
-                <div class="incuFina-content">
-                    <input type="radio" name="incubateFina" id="top100" value="top">
-                    <label for="top">Top 100</label><br>
-                    <input type="radio" name="incubateFina" id="finalist" value="finalist">
-                    <label for="finalist">Finalist</label><br>
-                    <input type="radio" name="incubateFina" id="recommendation" value="recommendation">
-                    <label for="recommendation">Kpit Recommendation</label><br>
-                </div>
-                </a> -->
             </div>
-            <!--<span class="search-icon"><i class='bx bx-search-alt-2'></i></span>-->
         </div>
         <div class="container-fluid p-0 incu-dash">
         <table id="incubatorFinalist" class="table table-striped" style="width:100%">

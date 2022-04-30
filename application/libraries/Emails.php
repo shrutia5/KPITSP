@@ -1,52 +1,60 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
-	
-	class Emails
-	{
-		var $live_url="";
-		var $appName="";
-		public function __construct(){
-		
-			//parent::__construct();
-			$this->CI = &get_instance();
-			$this->CI->load->library('email');
-			//$this->CI->load->library('textlocal');
-			$this->CI->load->helper('url');
-			$this->live_url = $this->CI->config->item('live_base_url');
-			$this->appName = $this->CI->config->item('appName');
-			$this->supportEmail = $this->CI->config->item('supportEmail');
-			$this->fromName = $this->CI->config->item('fromName');
-		}
-		public function sendMailDetails($to,$cc='',$bcc='',$subject,$msg){
 
-			
-			$this->CI->email->set_mailtype("html");
-			$this->CI->email->from($this->supportEmail,$this->fromName);
-			$this->CI->email->to($to);
-			
-			if(!empty($cc))
-			$this->CI->email->cc($cc);
+class Emails {
 
-			if(!empty($bcc))
-			$this->CI->email->bcc($bcc);
+    var $live_url = "";
+    var $appName = "";
 
-			$this->CI->email->subject($subject);
-			$this->CI->email->message($this->mailFormat($msg));
-			return $this->CI->email->send();
-			
-		}
-	public function mailFormat($message)
-	{
-		$mainTemp = $this->mailFormatHTML();
-		
-		$mainTemp = str_replace("{appName}",$this->CI->config->item('appName'),$mainTemp);
-		$mainTemp = str_replace("{{mainMailBody}}",$message,$mainTemp);
-		return $mainTemp;
-		
-	}
-	public function mailFormatHTML()
-	{
-		return $mailFormat='<!DOCTYPE html>
+    public function __construct() {
+
+        //parent::__construct();
+        $this->CI = &get_instance();
+        $this->CI->load->library('email');
+        //$this->CI->load->library('textlocal');
+        $this->CI->load->helper('url');
+        $this->live_url = $this->CI->config->item('live_base_url');
+        $this->appName = $this->CI->config->item('appName');
+        $this->supportEmail = $this->CI->config->item('supportEmail');
+        $this->fromName = $this->CI->config->item('fromName');
+    }
+
+    public function sendMailDetails($from, $fromName, $to, $cc = '', $bcc = '', $subject, $msg) {
+
+        $config = array();
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'hjph3hive';
+        $config['smtp_user'] = '';
+        $config['smtp_pass'] = '';
+        $config['smtp_port'] = 10025;
+        $this->CI->email->initialize($config);
+
+        $this->CI->email->set_mailtype("html");
+        $this->CI->email->from($from, $fromName);
+        $this->CI->email->to($to);
+
+        if (!empty($cc))
+            $this->CI->email->cc($cc);
+
+        if (!empty($bcc))
+            $this->CI->email->bcc($bcc);
+
+        $this->CI->email->subject($subject);
+        $this->CI->email->message($this->mailFormat($msg));
+        return $this->CI->email->send();
+    }
+
+    public function mailFormat($message) {
+        $mainTemp = $this->mailFormatHTML();
+
+        $mainTemp = str_replace("{appName}", $this->CI->config->item('appName'), $mainTemp);
+        $mainTemp = str_replace("{{mainMailBody}}", $message, $mainTemp);
+        return $mainTemp;
+    }
+
+    public function mailFormatHTML() {
+        return $mailFormat = '<!DOCTYPE html>
 				<head >
 				    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 				    <META NAME="referrer" CONTENT="no-referrer">
@@ -159,10 +167,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				                            &nbsp;&nbsp;&nbsp;
 				                        </td>
 				                        <td align="left" style="position: relative; top: 10px; right: 35px;" >
-				                        	<img src="'.base_url()."images/logo.png".'" alt="KPIT SPARKLE" style="height:25px">
+				                        	<img src="' . base_url() . "images/logo.png" . '" alt="KPIT SPARKLE" style="height:25px">
 				                        </td>
 										<td align="right" style="position: relative; top: 10px; right: 35px;" >
-				                        	<img src="'.base_url()."images/kpitlogo.png".'" alt="KPIT SPARKLE" style="height:50px">
+				                        	<img src="' . base_url() . "images/kpitlogo.png" . '" alt="KPIT SPARKLE" style="height:50px">
 				                        </td>
 				                    </tr>
 				                </table>
@@ -211,12 +219,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				                <div style="height: 10px; line-height: 80px; font-size: 10px;"> </div> 
 				                <span  style="font-size: 13px;">
 				                   <a href="" style="text-align:center;display:block;text-decoration:none;color:#fff !important;margin-top: 10px;"> www.{appName}.com. Copyright &copy; 2018 {appName}.com All rights reserved</a><br><br><br>
-								   <span align="left">KPITSparkle2021@kpit.com</span>
+								   <span align="left">KPITSparkle2023@kpit.com</span>
 								   <span align="right" style="float: right;">
-								   		<img src="'.base_url()."images/Facebook.png".'" alt="KPIT SPARKLE" style="height:15px; padding: 15px;">
-										<img src="'.base_url()."images/Twitter.png".'" alt="KPIT SPARKLE" style="height:15px; padding: 15px;">
-										<img src="'.base_url()."images/Instagram.png".'" alt="KPIT SPARKLE" style="height:15px; padding: 15px;">
-										<img src="'.base_url()."images/Youtube.png".'" alt="KPIT SPARKLE" style="height:15px; padding: 15px;">
+								   		<img src="' . base_url() . "images/Facebook.png" . '" alt="KPIT SPARKLE" style="height:15px; padding: 15px;">
+										<img src="' . base_url() . "images/Twitter.png" . '" alt="KPIT SPARKLE" style="height:15px; padding: 15px;">
+										<img src="' . base_url() . "images/Instagram.png" . '" alt="KPIT SPARKLE" style="height:15px; padding: 15px;">
+										<img src="' . base_url() . "images/Youtube.png" . '" alt="KPIT SPARKLE" style="height:15px; padding: 15px;">
 									</span>
 				                   <div style="height: 50px; line-height: 80px; font-size: 10px;"> </div> 
 				                </span>
@@ -244,8 +252,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div> 
 				</body>
 				</html>';
-	}
-		
-		
-	}
-	
+    }
+
+}

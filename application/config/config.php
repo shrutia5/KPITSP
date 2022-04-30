@@ -23,17 +23,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
- $config['base_url'] = 'http://localhost/kpit';
+ $config['base_url'] = 'http://localhost/sparkle2023';
 //$config['base_url'] = 'http://kpit.webtrixsolutions.com';
 // $config['imagesPATH'] = 'http://localhost/kpit/admin/images/';
-$config['imagesPATH'] = $_SERVER['DOCUMENT_ROOT'].'/kpit/images/';
-$config['PROFILE_IMAGE_PATH'] = $_SERVER['DOCUMENT_ROOT']."/kpit/uploads/profile_pic/";
-$config['ICARD_PATH'] = $_SERVER['DOCUMENT_ROOT']."/kpit/uploads/student_icards/";
-$config['appName'] = "KPIT";
-$config['supportEmail'] = "aarti.jawalkar@webtrixsolutions.com";
-$config['CCEmail'] = "aarti.jawalkar@webtrixsolutions.com";
+$config['imagesPATH'] = $_SERVER['DOCUMENT_ROOT'].'/sparkle2023/images/';
+$config['PROFILE_IMAGE_PATH'] = $_SERVER['DOCUMENT_ROOT']."/sparkle2023/uploads/profile_pic/";
+$config['ICARD_PATH'] = $_SERVER['DOCUMENT_ROOT']."/sparkle2023/uploads/student_icards/";
+$config['appName'] = "KPIT Sparkle 2023";
+$config['supportEmail'] = "KPITSparkle2023@kpit.com";
+$config['CCEmail'] = "KPITSparkle2023.com";
 
-$config['fromName'] = "KPIT Sparkle";
+$config['fromName'] = "Team KPIT Sparkle 2023";
 /*
 |--------------------------------------------------------------------------
 | Index File

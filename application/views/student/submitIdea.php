@@ -135,9 +135,13 @@
                                     </select>
                                 </div>
                             </div>
-                            <h4>Team Formation Guide</h4>
-                            <p>Following members are required with respective expertise.</p>
-                            <div id="expertise" name="expertise">
+                            <div class="row p-4 field" >
+                                <div class="col-12 bor-pro">
+                                    <h4>Team Formation Guide</h4>
+                                    <p class="sub-info"><small>According to the category selected, you need to consider the following skills while forming your team:</small></p>
+                                </div>
+                            </div>
+                             <div id="expertise" name="expertise">
                             
                             <br>
                             <?php if(isset($projectdetails->categoryID) && $projectdetails->categoryID != "")
@@ -476,7 +480,7 @@
                          <ul class="ul-helpful">
                            <li>
                                <h5 class="h5-helpful">Idea submission</h5>
-                                <p class="para-helpful">This video explains the new process of idea submission for KPIT Sparkle 2022</p>
+                                <p class="para-helpful">This video explains the new process of idea submission for KPIT Sparkle</p>
                                 <a class="link-helpful" href="https://www.youtube.com/watch?v=SQyeLY6Wldc">Watch Video</a>
                             </li>
                             <li>
