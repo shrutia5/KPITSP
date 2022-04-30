@@ -1,0 +1,110 @@
+<div class="right_col overflow-hidden" role="main">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Access Control</h2>
+        <div class="clearfix">&nbsp;</div>
+      </div>
+      <div class="x_content">
+          <div class="clearfix">&nbsp;</div>
+          <div class="col-xs-12 exportData">
+            <div class="col-sm-4">
+              <label for="roleID">Select Role:</label>
+              <select id="roleID" name="roleID" class="form-control dropval">
+              <option value="">Select Role</option>
+              <% _.each(accessDetails.roleList, function(model) { %>
+                <option <% if(model.roleID == accessDetails.roleID){ %> selected <% } %> value="<%=model.roleID%>"><%=model.roleName%></option>
+              <%}); %>
+            </select>
+            </div>
+            <div class="col-sm-8">
+                <div class="clearfix">&nbsp;</div>
+                 <button id="saveAccessDetails" type="button" class="btn btn-default btn-success">Save</button> 
+            </div>
+
+          </div>
+          
+          <div class="clearfix">&nbsp;</div>
+          <%if(accessDetails.models.length > 0) { %>
+          <table id="moduleTable"class="table jambo_table bulk_action tableList">
+            <tbody>
+              <tr>
+                <th>Module</th>
+                <th>View</th>
+                <th>Add</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            <% _.each(accessDetails.models, function(model) { %>
+              <tr>
+                <td><%=model.attributes.menuName%></td>
+                <td>
+                  <span>
+                    <label class="switch__box">
+                      <input class="switchChange" data-modelID="<%=model.attributes.menuID%>" data-inID="view" type="checkbox" <% if(model.attributes.view == 'yes') { %> checked <% } %> >
+                      <div class="slider__box round"></div>
+                    </label>
+                  </span>
+                 </td>
+                 <td>
+                  <span>
+                    <label class="switch__box">
+                      <input class="switchChange" data-modelID="<%=model.attributes.menuID%>" data-inID="add" type="checkbox" <% if(model.attributes.add == 'yes') { %> checked <% } %> >
+                      <div class="slider__box round"></div>
+                    </label>
+                  </span>
+                 </td>
+                 <td>
+                  <span>
+                    <label class="switch__box">
+                      <input class="switchChange" data-modelID="<%=model.attributes.menuID%>" data-inID="edit" type="checkbox" <% if(model.attributes.edit == 'yes') { %> checked <% } %> >
+                      <div class="slider__box round"></div>
+                    </label>
+                  </span>
+                 </td>
+                 <td>
+                  <span>
+                    <label class="switch__box">
+                      <input class="switchChange" data-modelID="<%=model.attributes.menuID%>" data-inID="delete" type="checkbox" <% if(model.attributes.delete == 'yes') { %> checked <% } %> >
+                      <div class="slider__box round"></div>
+                    </label>
+                  </span>
+                 </td>
+              </tr>
+            <%});%>
+            </tbody>
+          </table>
+          <%}%>
+         
+          
+          <div class="clearfix">&nbsp;</div>
+          <div class="profile-loader"><img src="systems/images/loading.gif"></div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div id="modalBody" class="modal-body">
+        <div class="popupLoader text-center"><img src="systems/images/loading.gif"></div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

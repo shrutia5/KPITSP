@@ -1,0 +1,20 @@
+<tr class="even pointer bg-<%=stateMasterDetails.attributes.status%>" >
+  <td class="a-center">
+      <div class="bg__control normal">
+        <label class="check__box">
+          <input class="memberlistcheck" type="checkbox" data-stateID="<%= stateMasterDetails.attributes.stateID %>">
+            <div class="square__box round"></div>
+        </label> 
+      </div>
+  </td><!-- 
+  <td class=""><%=stateMasterDetails.attributes.stateID%></td> -->
+  <td class=""><%= stateMasterDetails.attributes. stateID%></td>
+  <td class=""><%= stateMasterDetails.attributes. stateCode%></td>
+  <td class="loadview" data-toggle="modal" data-target="#myModal" data-stateID="<%=stateMasterDetails.attributes.stateID%>" data-show="singlestateMasterData" ><a href="javascript:;"><b><u><%=stateMasterDetails.attributes.stateName%></u></b></a></td>
+  <td class=""><%= formatDate(stateMasterDetails.attributes.createdDate,'no') %></td>
+  <td>
+    <button type="button" class="btn btn-info btn-xs loadview" data-toggle="modal" data-target="#myModal" data-stateID="<%=stateMasterDetails.attributes.stateID%>" data-show="singlestateMasterData">Edit</button>
+  
+  </td>
+</tr>
+              
