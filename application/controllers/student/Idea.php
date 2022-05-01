@@ -486,8 +486,7 @@ class Idea extends CI_Controller {
                 $length = strlen($value);
                 $where = array("trlQuestionID =" => $ideaData['questionID']);
                 $qDetails = $this->CommonModel->GetMasterListDetails('*', "trl_questions", $where, '', '', $join = array(), $other = array());
-                //print_r($qDetails);
-                //echo $qDetails[0]->minLength;exit;
+                
                 if ($qDetails[0]->isRequired === "Yes" && $ideaData['qanswer'] === "") {
                     $issue[$count]['qid'] = $ideaData['questionID'];
                     $issue[$count]['message'] = "This field is required";
