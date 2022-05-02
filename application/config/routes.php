@@ -82,7 +82,6 @@ $route['reset-password'] = 'student/Register/resetPassword';
 $route['getcontactno'] = 'student/Register/getcontactno';
 $route['getCityList'] = 'student/Register/getCityList';
 $route['getCollegelist'] = 'student/Register/getCollegelist';
-$route['getStateList'] = 'student/Register/getStateList';
 
 
 $route['student/getCity'] = 'student/Myaccount/getCity';

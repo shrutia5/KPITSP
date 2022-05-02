@@ -54,7 +54,7 @@
                                 <label class="fb-icon">Whatsapp Contact Number*</label>
                                 <div class="d-flex flex-row">
                                     <div class="col-md-3">
-                                        <select class="form-control changeCountry" name="countryCode" id="countryCode">
+                                        <select class="form-control" name="countryCode" id="countryCode">
                                             <option value="101">91</option>
                                             <option value="82">49</option>
                                             <option value="217">66</option>

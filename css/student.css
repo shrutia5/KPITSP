@@ -814,10 +814,9 @@ border-bottom: 1px solid #555;
   background: rgb(255, 20, 20) !important;
   width: 100% !important;
 }
-#mobileView,.mobileViewDetails{
+#mobileView{
   display:none;
 }
-
 /* message css */
 .messageout{
   z-index: 999999;    
@@ -1216,26 +1215,13 @@ form .show-pass input[type = password]
 
 @media screen and (max-width: 768px) {
   #mobileView{
-    display:block !important;
-  }
-  .mobileViewDetails{
     display:block;
   }
-  .mobileViewDetails .tab-pane.active{
-    display:block !important;
+  #desktopView{
+    display:none;
   }
   .nav-tabs-c .nav-link {
     border-left: 0;
     padding: 10px 20px;
-  }
-  #desktopView .nav-item{
-    width: 32.33%;
-    text-align: center;
-    font-size: 11px !important;
-  }
-  #profilePicMobile {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
   }
 }

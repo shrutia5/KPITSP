@@ -490,43 +490,6 @@ $(document).ready(function(){
         });
         
     });
-    $(".changeCountry").on("change",function(e){
-        //alert("hiiii");
-        var valuetxt = $(e.currentTarget).val(); 
-         //alert(valuetxt);
-        if(valuetxt !=""){
-            $.ajax({
-                type: "POST",
-                url: base_url+'/getStateList',
-                data: {telID:valuetxt}, // serializes the form's elements.
-                datatype:'JSON',
-                beforeSend: function(request) {
-                },
-                success:function(res){
-                res = JSON.parse(res);
-                $('#state').find('option').remove().end().append('<option value="">Select</option>');
-                $('#cityList').val("");
-                if(res.flag == "F")
-                {
-                    
-                }   // alert(res.msg);
-                if(res.flag == "S"){
-                    if(res.data!="")
-                    {
-                        res.data.forEach(function(opt){
-                        $('#state').append("<option value='"+opt.state_id+"'>"+opt.state_name+"</option>");
-                        })
-                    }
-                    
-                }
-                }
-            });
-        }else{
-            $('#cityList').val("");
-            $('#state').find('option').remove().end().append('<option value="">Select</option>');
-        }
-        
-    });
 
     $(".changeState").on("change",function(e){
         //alert("hiiii");
