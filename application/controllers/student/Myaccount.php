@@ -101,9 +101,14 @@ class Myaccount extends CI_Controller {
                 $data['userStream'] = "";
             }
 
+            $userID=$this->session->userdata('userId');
+            $whereuserid=array("userID="=>$userID);
+            $infoGuidedData = $this->CommonModel->GetMasterListDetails("*",'guidedstatus',$whereuserid,'','',array(),'');
+
             $data['pageTitle']="KPIT sparkle | Student Dashboard";
             $data['metaDescription']="Student Dashboard";
             $data['metakeywords']="KPIT sparkle Student Dashboard";
+            $data['infoGuidedData']=$infoGuidedData;
             $this->load->view('student/header',$data);
             $this->load->view('student/myAccount',$data);
             $this->load->view('student/footer');

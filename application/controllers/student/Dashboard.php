@@ -10,6 +10,30 @@ class Dashboard extends CI_Controller {
         $this->load->model('CommonModel');
         // Your own constructor code
     }
+
+    function updateguide($section) {
+
+        $guideStatusData = array();
+        $userID = $this->session->userdata['userId'];
+        $guideStatusData['userId'] = $userID;
+        
+        if($section == 'student_dashboard') {
+            $guideStatusData['std_dashboard'] = 'Y';
+        }
+        else if($section == 'student_submitidea') {
+            $guideStatusData['std_submitidea'] = 'Y';
+        }
+        else if($section == 'student_profile') {
+            $guideStatusData['std_myaccount'] = 'Y';
+        }
+        else if($section == 'student_project') {
+            $guideStatusData['std_project'] = 'Y';
+        }
+
+        $whereuser=array("userID="=>$userID);
+        $saveguidedstatus = $this->CommonModel->updateMasterDetails('guidedstatus', $guideStatusData, $whereuser);
+    }
+
 	public function index()
 	{
         if(empty($this->session->userdata('userId')))
@@ -17,14 +41,12 @@ class Dashboard extends CI_Controller {
             redirect("logout");
             exit;
         }
-
         
         $this->CommonModel->validateUserType("User");
         $join = array();$data=array();
         $infoData = $this->CommonModel->GetMasterListDetails("*",'infoSettings',array(),'','',$join,'');
 
         $data['infoSetting'] =$infoData[0];
-		
            
             $join[0]['type'] ="LEFT JOIN";
             $join[0]['table']="master_category";
@@ -37,7 +59,6 @@ class Dashboard extends CI_Controller {
             $join[1]['alias'] ="sc";
             $join[1]['key1'] ="subCategoryID";
             $join[1]['key2'] ="sub_cat_id";
-
             
              $select1="t.*,c.category_name,sc.sub_cat_name";
              //print_r($select1);exit;
@@ -75,6 +96,9 @@ class Dashboard extends CI_Controller {
         $teamProjects = $this->CommonModel->GetMasterListDetails($select,'membersdetails',$where1,'','',$join,'');
         $data['teamProjects'] = $teamProjects;
 
+        $whereuserid=array("userID="=>$userID);
+        $infoGuidedData = $this->CommonModel->GetMasterListDetails("*",'guidedstatus',$whereuserid,'','',array(),'');        
+
         // $where=array("userID"=>$this->session->userdata('userId'),"status"=>"active");
         // $data['ideaDetails']=$this->CommonModel->getMasterDetails('project_master',"*",$where);
         // $data['pageTitle']="KPIT-SHODH | Student Dashboard";
@@ -85,6 +109,7 @@ class Dashboard extends CI_Controller {
         $data['pageTitle']="KPIT sparkle | Student Dashboard";
         $data['metaDescription']="Student Dashboard";
         $data['metakeywords']="KPIT sparkle Student Dashboard";
+        $data['infoGuidedData']=$infoGuidedData;
         $this->load->view('student/header',$data);
         $this->load->view('student/dashboard',$data);
         //$this->load->view('student/project-details',$data);
