@@ -101,6 +101,40 @@ $(document).ready(function () {
       //memberID:memberID
     }
   });
+  
+  $('#profilePicMobile').slim({ratio: '1:1',
+            minSize: {
+                width: 250,
+                height: 250,
+            },
+            size: {
+                width: 250,
+                height: 250,
+            },
+            ratio:"1:1",
+            push:true,
+            rotateButton:true,
+            service: base_url+'student/Myaccount/SetprofilePic',
+            download: false,
+            willSave: function(data, ready) {
+                //alert('saving!');
+                ready(data);
+            },
+            didUpload:function(error, data, response){
+              $(".overlap").css("display","block");
+            },
+            willTransform:function(data, ready){
+              ready(data);
+            },
+            willRemove :function(data,remove)
+            {
+                remove();
+            },
+            label: 'Click here to add new image or Drop your image here.',
+            buttonConfirmLabel: 'Ok',
+            meta: {
+                //memberID:memberID
+            }});
 
 
   $("#login").validate({
@@ -618,7 +652,7 @@ $(document).ready(function () {
 
 
 
-  $("#updateEduProfile").submit(function (e) {
+  $(".updateEduProfile").submit(function (e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
     var form = $(this);
 
@@ -635,7 +669,7 @@ $(document).ready(function () {
       cache: false,
       processData: false,
       beforeSend: function (request) {
-        $("#updateuser").html("<span>Updating..</span>");
+        $(".eduDetails").val("Updating..");
       },
       success: function (res) {
         res = JSON.parse(res);
@@ -649,14 +683,14 @@ $(document).ready(function () {
           //alert("hiiii");return;
           var msg = alertify.success('Default message');
           msg.delay(3).setContent(res.msg);
-          msg.ondismiss = function () { window.location.replace(res.redirect); };
+          //msg.ondismiss = function () { window.location.replace(res.redirect); };
           // alertify.success(res.msg);
           //   //alert(res.redirect)
           //    window.location.replace(res.redirect);
 
         }
         setTimeout(function () {
-          $("#updateuser").html("update");
+          $(".eduDetails").val("UPDATE");
         }, 3000);
 
       }
@@ -770,7 +804,7 @@ $(document).ready(function () {
       data: form.serialize(), // serializes the form's elements.
       datatype: 'JSON',
       beforeSend: function (request) {
-        $("#updaterefuser").html("<span>Updating..</span>");
+        $(".eduDetails").val("Updating..");
       },
       success: function (res) {
         res = JSON.parse(res);
@@ -783,15 +817,15 @@ $(document).ready(function () {
         if (res.flag == "S") {
           var msg = alertify.success('Default message');
           msg.delay(3).setContent(res.msg);
-          msg.ondismiss = function () { window.location.replace(res.redirect); };
+          //msg.ondismiss = function () { window.location.replace(res.redirect); };
           //alertify.success(res.msg);
           //alert(res.redirect)
           //window.location.replace(res.redirect);
 
         }
         setTimeout(function () {
-          $("#updaterefuser").html("update");
-        }, 3000);
+          $(".eduDetails").val("UPDATE");
+        }, 1000);
 
       }
     });
@@ -800,7 +834,7 @@ $(document).ready(function () {
 
 
 
-  $("#updateresources").submit(function (e) {
+  $(".updateresources").submit(function (e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
     var form = $(this);
     //console.log(form);return;
@@ -814,7 +848,7 @@ $(document).ready(function () {
       data: form.serialize(), // serializes the form's elements.
       datatype: 'JSON',
       beforeSend: function (request) {
-        $("#updatereso").html("<span>Updating..</span>");
+        $(".updatereso").val("Updating..");
       },
       success: function (res) {
         res = JSON.parse(res);
@@ -830,12 +864,10 @@ $(document).ready(function () {
           //    window.location.replace(res.redirect);
           var msg = alertify.success('Default message');
           msg.delay(3).setContent(res.msg);
-          msg.ondismiss = function () { window.location.replace(res.redirect); };
-
         }
         setTimeout(function () {
-          $("#updatereso").html("update");
-        }, 3000);
+          $(".updatereso").val("UPDATE");
+        }, 1000);
 
       }
     });
