@@ -89,6 +89,7 @@ $route['student/getCity'] = 'student/Myaccount/getCity';
 
 $route['student/register'] = 'student/Register/registerUser';
 $route['student/dashboard'] = 'student/Dashboard/index';
+$route['student/updateguide/(:any)'] = 'student/Dashboard/updateguide/$1';
 $route['student/final'] = 'student/Dashboard/finalIdea';
 $route['student/submit-idea'] = 'student/Idea/index';
 $route['student/verifyuser'] = 'student/Register/verifyuser';

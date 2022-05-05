@@ -29,10 +29,18 @@
   <link href="<?php echo base_url();?>assets/aos/aos.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/alertifyjs/css/alertify.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/realTimeUpload/css/RealTimeUpload.css" />
+
   <!-- Template Main CSS File -->
   <link href="<?php echo base_url();?>css/style.css" rel="stylesheet">
   <link href="<?php echo base_url();?>css/student.css" rel="stylesheet">
   <link href="<?php echo base_url();?>css/mobilechanges.css" rel="stylesheet">
+
+  <?php if(($this->uri->segment(1) == 'student' && $this->uri->segment(2) == 'dashboard') || 
+  ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'submit-idea') || 
+  ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'myaccount') || 
+  ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'project')) { ?>
+  <link href="<?php echo base_url();?>css/chariot.css" rel="stylesheet">
+  <?php } ?>
 
   <script>
     var base_url = '<?= base_url()?>';
@@ -49,10 +57,10 @@
           <a href="<?php echo base_url();?>" class="logo">
             <img src="<?php echo base_url();?>images/logo.png" alt="KPIT SPARKLE">
           </a>
-          <div class="myprofile ml-auto d-lg-block ">
+          <div class="myprofile ml-auto d-lg-block">
             <?php if($this->session->userdata('userId'))
           { ?>
-            <span class="myaccount">
+            <span class="myaccount" id="profile-dropdown">
 
               <div class="my-pro" id="menu">
                 <span>

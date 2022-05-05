@@ -472,7 +472,7 @@
                 </div>
             </div>
             <div class="col-md-3 col-12 pt-4 helpful-section">
-                <h4  class="sub1">Helpful Resources</h4>
+                <h4 class="sub1" id="helpful-resources-head">Helpful Resources</h4>
                 <hr class="hr-helpful sub1">
 
                 <div class="card-helpful">

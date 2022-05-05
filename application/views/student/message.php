@@ -8,10 +8,9 @@ $userId = $this->session->userdata('userId');
     <span class="unreadCount"></span>
     <div class="row">
         <div class="col-md-12 col-12 top-txt">
-            <a href="<?php echo base_url();?>student/project"><i class="bx bxs-chevron-left bx-sm mentor-msg"
-                    style="color:#C8C8C8;"></i></a>
+            <a href="<?php echo base_url();?>student/project"><i class="bx bxs-chevron-left bx-sm mentor-msg" style="color:#C8C8C8;"></i></a>
             <div class="header messageOpen">
-                Message to <span><i class='bx bxs-chevron-down'></i></span>
+                Message to <span><i class='bx bxs-chevron-down chat-box-head'></i></span>
             </div>
         </div>
 
