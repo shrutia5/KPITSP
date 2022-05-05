@@ -352,8 +352,8 @@ class Idea extends CI_Controller {
         $projectDetails = $this->CommonModel->getMasterDetails('project_master', '', $where);
 
         $where = array("userID" => $this->session->userdata('userId'));
-        $userDetails = $this->CommonModel->getMasterDetails('userregistration', '', $where);
-
+        $userDetails = $this->CommonModel->getMasterDetails('userregistration','', $where);
+        //print_r($userDetails);exit;
         if (isset($projectDetails) && !empty($projectDetails)) {
             if ($projectDetails[0]->currentStep == 1)
                 $projectData['currentStep'] = 2;
@@ -381,13 +381,14 @@ class Idea extends CI_Controller {
                 $length = 6;
                 $sparkleID = substr(str_repeat(0, $length) . $projectID, - $length);
 
-                if ($userDetails['country_id'] == 101) {
+                if ($userDetails[0]->country_id == 101) {
                     $sparkleIDarr = array("sparkleID" => "INSP23" . $sparkleID);
-                } else if ($userDetails['country_id'] == 82) {
+                } else if ($userDetails[0]->country_id == 82) {
                     $sparkleIDarr = array("sparkleID" => "DESP23" . $sparkleID);
-                } else if ($userDetails['country_id'] == 217) {
+                } else if ($userDetails[0]->country_id == 217) {
                     $sparkleIDarr = array("sparkleID" => "THSP23" . $sparkleID);
                 }
+                //print_r($sparkleIDarr); exit;
                 $where = array("userID" => $this->session->userdata('userId'));
                 $iscreated = $this->CommonModel->updateMasterDetails('project_master', $sparkleIDarr, $where);
                 $this->CommonModel->logUserActivity("Project details submited", "PROJECT_SUBMITED", $projectID);

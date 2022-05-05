@@ -197,7 +197,7 @@
                                 <div class="validate"></div>
                             </div>
                             <div class="col-md-6 form-group">
-                                <label class="fb-icon">Stream</label>
+                                <label class="fb-icon">Stream*</label>
                                 <!-- <input type="text" class="form-control" name="stream" id="stream" placeholder="Confirm your Password"> -->
                                 <select class="form-control" data-action="<?php base_url(); ?>getCityList" name="stream" id="stream">
                                     <option value="">Select stream</option>
