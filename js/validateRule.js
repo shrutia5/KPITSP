@@ -10,7 +10,7 @@ $.validator.addMethod("fullEmail", function(value) {
     return /^\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i.test(value)
 });
 $.validator.addMethod("mobileNo", function(value) {
-    return /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/i.test(value)
+    return /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$/i.test(value)
 });
 $.validator.addMethod( "extension", function( value, element, param ) {
     param = typeof param === "string" ? param.replace( /,/g, "|" ) : "png|jpe?g|pdf";

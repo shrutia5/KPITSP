@@ -20,7 +20,10 @@ class Register extends CI_Controller {
 
     public function register() {
         $data = array();
-        $wherestate = array("status=" => 'active', "country_id=" => '101');
+        $wherestate = array("is_active=" => '1', "tel_code=" => '91');
+        $userCountry = $this->CommonModel->getMasterDetails('master_country','country_id',$wherestate);
+
+        $wherestate = array("status=" => 'active', "country_id=" => $userCountry[0]->country_id);
         $userState = $this->CommonModel->getMasterDetails('master_states', '*', $wherestate);
         $wherebranch = array("status=" => 'active');
         $userBranch = $this->CommonModel->getMasterDetails('master_branch', '*', $wherebranch);
@@ -794,6 +797,27 @@ class Register extends CI_Controller {
             }
         }
     }
+    public function getStateList() {
+        // $city_id= $this->input->post('city_id');
+        $telID = $this->input->post('telID');
+        //echo $stateID."<br>";
+        if (isset($telID)) {
+            $where = array("is_del =" => "0", "country_id=" => $telID);
+            $mstercat = $this->CommonModel->GetMasterListDetails('*', "master_states",$where, '', '', $join = array(), $other = array());
+            if (!empty($mstercat)) {
+                $status['data'] = $mstercat;
+                $status['flag'] = 'S';
+                echo json_encode($status);
+                exit;
+            } else {
+                $status['data'] = "";
+                $status['flag'] = 'F';
+                echo json_encode($status);
+                exit;
+            }
+        }
+    }
+    
 
     public function uploadfile() {
 

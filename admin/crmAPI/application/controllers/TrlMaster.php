@@ -254,17 +254,20 @@ class TrlMaster extends CI_Controller {
 			$trlQuestion['isRequired'] = $this->validatedata->validate('isRequired','isRequired',false,'',array());
 			$trlQuestion['ansType'] = $this->validatedata->validate('ansType','Answer Type',false,'',array()); 
 			$trlQuestion['ansGuide'] = $this->validatedata->validate('ansGuide','Answer Guide',false,'',array());
-			$trlQuestion['qoptions'] = json_encode($this->input->post("qoptions"));	;
+			//$trlQuestion['qoptions'] = json_encode($this->input->post("qoptions"));
+			if($this->input->post("qoptions") != ""){
+				$trlQuestion['qoptions'] = json_encode($this->input->post("qoptions"));
+			}
 			if($trlQuestion['ansType'] == "file"){
 
 				$trlQuestion['fileSize'] = $this->validatedata->validate('fileSize','File Size',true,'',array());
-				$trlQuestion['minLength'] = $this->validatedata->validate('minLength','Minimum Length',true,'',array());
-				$trlQuestion['maxLength'] = $this->validatedata->validate('maxLength','Maximum Length',true,'',array());
 				$trlQuestion['uploadType'] = $this->validatedata->validate('uploadType','Upload File Type',true,'',array());
-				$trlQuestion['qoptions'] = "";
+			}
+			if($trlQuestion['ansType'] == "file" || $trlQuestion['ansType'] == "text"){
+				$trlQuestion['minLength'] = $this->validatedata->validate('minLength','Minimum Charactors Length',true,'',array());
+				$trlQuestion['maxLength'] = $this->validatedata->validate('maxLength','Maximum Charactors Length',true,'',array());
 			}
 			$trlQuestion['status'] = 'active';
-			
 			if($method=="POST")
 			{
 				$iscreated = $this->CommonModel->saveMasterDetails('trl_questions',$trlQuestion);
