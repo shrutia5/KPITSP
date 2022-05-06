@@ -115,6 +115,9 @@ class Idea extends CI_Controller {
         $infoData = $this->CommonModel->GetMasterListDetails("*", 'infoSettings', array(), '', '', array(), '');
         $data['infoSetting'] = $infoData[0];
 
+        $userID=$this->session->userdata('userId');
+        $whereuserid=array("userID="=>$userID);
+        $infoGuidedData = $this->CommonModel->GetMasterListDetails("*",'guidedstatus',$whereuserid,'','',array(),'');
 
         //print "<pre>";
         //print_r($trlNames); exit;
@@ -124,6 +127,7 @@ class Idea extends CI_Controller {
         $data['metaDescription'] = "Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
+        $data['infoGuidedData']=$infoGuidedData;
         $this->load->view('student/header', $data);
         $this->load->view('student/submitIdea', $data);
         $this->load->view('student/footer');
@@ -227,9 +231,14 @@ class Idea extends CI_Controller {
         $projectsMessages = $this->CommonModel->GetMasterListDetails($selectMsg, 'project_messages', $whereMsg, '', '', $joinMsg, '');
         $data['projectsMessages'] = $projectsMessages;
 
+        $userID=$this->session->userdata('userId');
+        $whereuserid=array("userID="=>$userID);
+        $infoGuidedData = $this->CommonModel->GetMasterListDetails("*",'guidedstatus',$whereuserid,'','',array(),'');
+
         $data['pageTitle'] = "KPIT sparkle | Student Dashboard";
         $data['metaDescription'] = "Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
+        $data['infoGuidedData']=$infoGuidedData;
         $this->load->view('student/header', $data);
         $this->load->view('student/project-details', $data);
         $this->load->view('student/footer');
@@ -343,8 +352,8 @@ class Idea extends CI_Controller {
         $projectDetails = $this->CommonModel->getMasterDetails('project_master', '', $where);
 
         $where = array("userID" => $this->session->userdata('userId'));
-        $userDetails = $this->CommonModel->getMasterDetails('userregistration', '', $where);
-
+        $userDetails = $this->CommonModel->getMasterDetails('userregistration','', $where);
+        //print_r($userDetails);exit;
         if (isset($projectDetails) && !empty($projectDetails)) {
             if ($projectDetails[0]->currentStep == 1)
                 $projectData['currentStep'] = 2;
@@ -372,13 +381,14 @@ class Idea extends CI_Controller {
                 $length = 6;
                 $sparkleID = substr(str_repeat(0, $length) . $projectID, - $length);
 
-                if ($userDetails['country_id'] == 101) {
+                if ($userDetails[0]->country_id == 101) {
                     $sparkleIDarr = array("sparkleID" => "INSP23" . $sparkleID);
-                } else if ($userDetails['country_id'] == 82) {
+                } else if ($userDetails[0]->country_id == 82) {
                     $sparkleIDarr = array("sparkleID" => "DESP23" . $sparkleID);
-                } else if ($userDetails['country_id'] == 217) {
+                } else if ($userDetails[0]->country_id == 217) {
                     $sparkleIDarr = array("sparkleID" => "THSP23" . $sparkleID);
                 }
+                //print_r($sparkleIDarr); exit;
                 $where = array("userID" => $this->session->userdata('userId'));
                 $iscreated = $this->CommonModel->updateMasterDetails('project_master', $sparkleIDarr, $where);
                 $this->CommonModel->logUserActivity("Project details submited", "PROJECT_SUBMITED", $projectID);
