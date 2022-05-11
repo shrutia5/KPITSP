@@ -2,7 +2,7 @@
     <div id="portal-space"></div>
     <div class="container-fluid p-0 mb-2">
         <div class="">
-            <div class="col-md-3" style="z-index: 10;">
+            <div class="col-md-3 col-12" style="z-index: 10;">
                 <select class="invoFilter form-select" aria-label="" style="position: absolute;top: 10px;left: 19px;">
                     <option <?php if($type == "top") { echo "selected"; } ?> value="top">Top 100</option>
                     <option <?php if($type == "finalist") { echo "selected"; } ?> value="finalist">Finalists</option>
