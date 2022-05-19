@@ -65,10 +65,9 @@ $(document).ready(function () {
     return sleepFor(0, "didRenderTooltip promise resolved");
   }
   function didFinishStep(step, stepIndex, tutorial) {
-    var baseurl = "/projects/KPIT/";
     $.ajax({
       type: "POST",
-      url: baseurl + "student/updateguide/student_submitidea",
+      url: base_url + "student/updateguide/student_submitidea",
       datatype: "JSON",
 
       success: function (res) {

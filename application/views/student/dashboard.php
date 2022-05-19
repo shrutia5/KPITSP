@@ -76,6 +76,10 @@
                 <?php } ?>
             </div>
             <div class="col-md-8 portal-right">
+                <div class="">
+                    <h6>Congratulations! You are now eligible for “NextGen Activate Program” by Wadhwani Foundation. This course will guide you to
+                    take your idea from concept stage to startup level. <a target="_blank" href="https://web.nen.wfglobal.org/en/guest">Click here to get started..</a></h6>
+                </div>
                 <!-- show this view if there no project default submit view-->
 <?php if ((!isset($adminData1) || empty($adminData1)) && (!isset($teamProjects) || empty($teamProjects))) { ?>
                     <div class="row default-view no-border no-project" style="background: #2A2A2B;">
