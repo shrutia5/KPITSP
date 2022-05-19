@@ -1,0 +1,93 @@
+body {
+    font-family: "Work Sans", sans-serif;
+    color: #212121;
+    font-weight: 300;
+  }
+  #portal{
+    font-family: "Work Sans", sans-serif;
+    
+        color: #fff;
+      
+    font-weight: 300;
+  }
+#portal-space {
+    margin-top: 70px;
+}
+.mentor-dash{
+    position: relative;
+    height: calc(100vh - 100px);
+    background: #2A2A2B;
+    /* padding: 30px; */
+    margin: 20px;
+    }
+    #mentorList_wrapper{
+        padding: 20px;
+    }
+    #mentorList_wrapper #mentorList_length{
+        display: none;
+    }
+    #mentorList_wrapper #mentorList_filter input[type="search"]{
+        background: #212121;
+    border: none;
+    padding-left: 30px;
+    }
+    .mentor-dash table{
+        color: #fff;
+    }
+    .mentor-dash .table thead th{
+        vertical-align: bottom;
+        border-bottom: 1px solid #C8C8C83D;
+        color: #C8C8C8;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .men-fina{
+        position: absolute;
+        top: 22px;
+        left: 20px;
+    }
+    .mentor-dash .men-search{
+        position: absolute;
+    right: 210px;
+    z-index: 1;
+    top: 25px;
+    }
+    #teamdetail .teammember-list-details{
+        list-style-type: none;
+        padding-inline-start: 0px;
+    }
+    #teamdetail .teammember-list-details li{
+        border-bottom: 1px solid #C8C8C83D;
+        padding: 20px;
+    }
+    .questionDetails p{
+        padding-bottom: 13px;
+    border-bottom: 1px solid #C8C8C83D;
+    }
+    form .show-pass i {
+        position: absolute;
+        right: 0px;
+    }
+    #mentorList_previous,#mentorList_next{
+        display: none;
+    }
+    #mentorList_paginate .pagination .page-item.active .page-link {
+        color: #757AF7;
+    background-color: #FFF;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    padding: 3px 9px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    line-height: 19px;
+    }
+    #mentorList_paginate .pagination .page-item .page-link{
+        color: #C8C8C8;
+        background-color: none;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 300;
+    }

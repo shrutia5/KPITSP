@@ -1,0 +1,583 @@
+/* ---------------------------------------------------------
+#for mobile screen 768px
+----------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    /*--- personal details media screen ----*/
+    .trlforms .trlque {
+      position: relative;
+      top: -25px;
+      left: 10px;
+    }
+    .portal-right .row .col-md-6{
+      margin-bottom: 20px;
+    }
+    .myprofile {
+      min-width: 100px;
+    }
+    .register-banner img {
+      width: 137px;
+      margin-top: 79px;
+      }
+      .register-banner h1{
+      font-size: 22px!important;
+      margin-bottom: 0px!important;
+      }
+      .register .logo-r11 {
+        margin: -15px!important;
+        margin-bottom: 0px!important;
+      }
+      .portal-left{
+        float: left;
+      }
+      
+      /*---- educational details media screen -----*/
+      .dropzone {
+        height: 50px;
+        font-size: 13px;
+      }
+      
+      /*---- login media screen -----*/
+      
+      .register-right .log-txt{
+        padding: 10px 10px;
+      }
+      /* .helpful-section.noFooter {
+        display: none;
+      } */
+      /* .register-banner .logo-r {
+        margin: -15px;
+        /* margin-bottom:380px; 
+      }
+      .register-banner .logo-r2{
+        margin: -15px!important;
+      } */
+      .logo-r2 h1{
+        font-size: 24px;
+      }
+      /* .portal-left, .portal-right {
+        height: calc(49vh - 150px);
+      } */
+      .portal-right .green-power1{
+        margin-top: 8px;
+      }
+      .green-power1 .normal{
+        padding-top: 40px;
+          font-size: 19px;
+          color: #fff;
+      }
+      .portal-right .green-power3{
+        margin-top: 8px!important;
+      }
+      .green-power3 .normal{
+        padding-top: 40px;
+        font-size: 19px;
+        color: #fff;
+      }
+      .tt1{
+        color:#fff;
+        font-size: 15px;;
+      }
+      .trlStatusList {
+        color: #C8C8C8;
+        font-size: 15px;
+      }
+      .pro-team p {
+        font-size: #fff!important;
+      }
+      .register {
+        height: 45vh;
+      }
+      .register-form .details-p{
+        margin-top: -35px;
+      }
+      .register-banner h1{
+      font-size: 18px;
+      margin-bottom: 0px;
+    
+      }
+    .register {
+        height: 48vh;
+      }
+      .register-form .details-p{
+        margin-top: -35px;
+        
+      }
+      .ws-form-row .fb-icon{
+        color:#fff;
+        font-weight: 400;
+        font-size: 15px;
+      }
+      .mail-info{
+        padding:15px!important;
+      }
+      input[type="button"] {
+        border-radius: 4px;
+          font-size: 18px;
+          padding: 10px 23px;
+      }
+      .imp-note{
+        color:#fff;
+        font-weight: 400;
+        font-size: 15px;
+      }
+      .register-right {
+        margin: 8px;
+      }
+    
+      .register-form{
+        padding: 1px;
+      }
+    
+      .register-banner .isregister {
+        margin-top: 25px!important;
+      }
+      .header-register {
+        padding: 20px 1px;
+      }
+      .header-register .back a{
+        color:#fff;
+      }
+      .default-view-my-project .header {
+        border-radius: 3px;
+      }
+      .default-view-invited .header {
+      padding: 11px;
+      }
+      /* .default-view-invited .pro-title {
+        margin-top: 0px;
+      } */
+      .wename{
+        display: none;
+      }
+      .sub-myaccount {
+        margin-left: -82px;
+        min-width: 190px;
+      }
+      .default-view-invited {
+        padding: 16px;
+      }
+      .pro-status {
+        background-color: transparent;
+        padding: 1px;
+      } 
+      .ws-form-row label {
+        font-size: 21px;
+          color: #fff;
+      }
+      #updateresources input[type=text], input[type=email], input[type=password], textarea, select {
+        font-size: 18px;
+      }
+      .updateresources .form-group{
+        margin: auto;
+        display: flex;
+      }
+      #mobileView{
+        display:block;
+      }
+      #desktopView{
+        display:none;
+      }
+       #hide1{
+        display:none;
+      }
+       /* .register-banner .logo-r13 {
+        margin-top: 0px;
+    }  */
+    /* #logo-r13 img {
+      width: 133px;
+        margin-top: -23px;
+    }
+    #logo-r13 h1{
+      font-size: 22px;
+    } */
+    
+    .logo-r13 img {
+      width: 143px;
+      margin-top: 44px;
+    }
+    /* .logo-img{
+      border-bottom: 1px solid #c8c8c8;
+        padding-bottom: 17px;
+    } */
+    .isregister a{
+      position: relative;
+      float: right;
+      bottom: 328px;
+        font-weight: normal; 
+        text-transform: uppercase;
+        border: 1px solid #8FDB00;
+        padding: 12px;
+        border-radius: 3px;
+    }
+    .regi3{
+      margin-top: -113px;
+    }
+     #welcom4{
+      margin-top: -108px;
+    } 
+    #welcom4 h2{
+      font-weight: 500;
+        font-size: 37px;
+        line-height: 28px;
+    }
+    .log-txt5{
+      font-size: 18px!important;
+      padding: 0px!important;
+    }
+    .log5{
+      display: none;
+    }
+    .forgotLink {
+      font-size: 17px;
+    } 
+    /* .portal-left{
+      height: calc(52vh - 80px);
+    } */
+    /* .portal-right {
+      padding-top: 0px!important;
+    } */
+    #no2{
+      margin-left: 0px!important;
+    }
+    
+    /* .right21 .row{
+      padding-bottom: 0px!important;
+    } */
+    .portal-right .row{
+      padding-bottom: 13px!important;
+    }
+    /* #r14 img {
+      margin-top: 0px; 
+    } */
+    /* .right21{
+      padding-top: 0px!important;
+    } */
+    .view3{
+      margin-top: 0px!important;
+    }
+    /* #rr211 .row{
+      margin-left: 0px;
+      padding: 0px;
+    }  */
+    .default-view-invited {
+     
+      width: 100%;
+    }
+    /*------------submit idea----------*/
+      #portal .col-md-9{
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+      .footer-action {
+        bottom: -1px;
+      }
+      .section-tab {
+        padding: 10px 3px;
+    } 
+    /* .section-tab .tab-item {
+      padding: 7px 4PX -1PX 5PX!important;
+    }  */
+    
+    .section-tab::before {
+      top: 33px;
+    }
+    .finalidea .final-port1{
+      padding-left: 0px!important;
+      padding-right: 17px;
+      padding-top: 70px!important;
+      height: calc(113vh - 110px);
+    }
+    .finalidea .final-default1{
+      background: #2A2A2B;
+      border: 2px solid green;
+      padding-right: 0px;
+      /* margin-right: 8px; */
+      margin: 8px;
+    
+    }
+    
+    
+    }
+    
+    /* ---------------------------------------------------------
+    #for mobile screen end
+    ----------------------------------------------------------*/
+    
+    .trlforms .trlque{
+      padding-left: 15px;
+    }
+    .trlforms input[type="radio"] {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+      transform: scale(1.5);
+     
+    }
+    .trlforms input[type=radio]:checked + label:after {
+      background: #757AF7;
+    }
+    .patent-dependent #patentStatus option{
+      background: #212121;
+    }
+    
+    /* message css */
+    .messageout {
+      /* position: fixed; */
+      right: 10px;
+      bottom: 0px;
+      /* background: #fff; */
+      width: 350px;
+      box-shadow: 1px 1px 6px 1px #2d2d2d1f;
+    }
+    .messageConversation{
+      list-style: none;
+      padding: 10px;
+    }
+    
+    .messageConversation li{
+      margin-bottom: 10px;
+      clear: both;
+    }
+    .messageConversation li .icon-name{
+      width: 29px;
+      height: 29px;
+      background: #ccc;
+      border-radius: 50%;
+      margin-left: 10px;
+      min-width: 30px;
+      font-size: 12px;
+      padding: 5px;
+      text-transform: uppercase;
+    }
+    .messageConversation li .message{
+      background: rgba(200, 200, 200, 0.2);
+      margin-left: 13px;
+      padding: 10px;
+      font-size: 14px;
+    }
+    .messageConversation li.sender .d-flex {
+      float: right;
+    }
+    .messageConversation .sender .time{
+      font-size: 10px;
+      float: right;
+      margin-right: 40px;
+      margin-bottom: 10px;
+      clear: both;
+    }
+    .messageConversation .receiver .time{
+      font-size: 10px;
+      float: left;    
+      margin-left: 50px;
+      margin-top: 3px;
+      margin-bottom: 10px;
+    }
+    
+    .head11 {
+      padding: 19px!important;
+      font-size: 22px;
+    }
+    .default-view-invited .header {
+     padding: 11px;
+    }
+    .messageout .footer {
+      position: absolute;
+      bottom: 10px;
+      background: linear-gradient(90deg, #1D3A49 0.01%, #1B3745 89.97%);
+      padding: 11px;
+      width: 96%;
+      height: 70px;
+    }
+    .messageout .footer #messagetxt{
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 8px 50px 8px 40px;
+      background: #212121;
+      height: 50px;
+      font-size: 14px;
+      font-weight: normal;
+    }
+    .messageout .footer .sendMsg{
+      position: absolute;
+      right: 14px;
+      top: 22px;
+      background: transparent;
+      border: 0px;
+      color: #8FDB00;
+    }
+    
+    .isregister p{
+      margin-top: 200px;
+    }
+    .text-center p {
+      text-align: center;
+      }
+    
+    .default-msg{
+    max-height: 200px;
+    width: auto;
+    text-align: center;
+    color: #c8c8c8;
+    margin: 0 auto;
+    }
+    .default-msg span{
+      margin: 0 auto;
+    }
+    .unreadCount{
+      position: absolute;
+      left: -7px;
+      top: -11px;
+      background: #ee2b2b;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      border: 2px solid #fff;
+      font-size: 13px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 2px 1px 5px 3px #24242442;
+    }
+    .unread{
+      position: relative;
+      display: block;
+      width: 25px;
+      float: left;
+    }
+    .unread .unreadCount{
+    left: unset;
+    top: -21px;
+    right: -14px;
+    }
+    
+    .footer i{
+      position: absolute;
+      top: 25px;
+      font-size: 25px;
+      color: #757AF7;
+      left: 18px;
+    }
+    .messageout .body {
+      height: calc(30vh - 30px);
+      overflow: scroll;
+      margin-bottom: 70px;
+      display: none;
+    }
+    .trlforms .trlque{
+      padding-left: 15px;
+    }
+    .messageout .body.active {
+      display: block;
+      min-height: 188px;
+      height: calc(30vh - 30px);
+      background: linear-gradient(90deg, #1D3A49 0.01%, #1B3745 89.97%);
+    }
+    .dashboard-section .header, .messageout .header {
+      /* background: #757af7; */
+      padding: 0px 0px 22px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: normal;
+    }
+    .messageout .header {
+      cursor: pointer;
+      padding: 20px;
+    }
+    /* message css ends */
+    /* ---------------------------------------------------------
+    #for smart phone screen 320px
+    ----------------------------------------------------------*/
+    @media screen and (max-width: 320px) {
+      .isregister p{
+        font-size: 15px;
+      }
+    
+    .regi3 {
+      margin-top: -61px;
+    }
+    #logo-r13 img {
+      width: 111px;
+      margin-top: -23px;
+    }
+    #logo-r13 h1 {
+      font-size: 19px;
+    }
+    .isregister a {
+      position: relative;
+      left: -31px;
+      padding: 8px;
+    }
+    .welcom4 h2 {
+      font-weight: 500;
+      font-size: 29px;
+      line-height: 28px;
+    }
+    .welcom4 {
+       margin-top: 0px; 
+    }
+    .pro7{
+      margin-top: 80px!important;
+    }
+    .view3 input[type="submit"]{
+      font-size: 13px;
+      padding: 10px 10px 10px 8px;
+    }
+    /* .portal-left {
+      height: calc(60vh - 80px);
+    } */
+    .section-tab {
+      padding: 6px 1px;
+    }
+    .section-tab .tab-item i {
+      margin-top: 4px!important;
+      margin-right: -6px!important;
+    }
+    .section-tab .section-txt1{
+      padding: 6px!important;
+    }
+    /* .section-tab .tab-item {
+      line-height: 7px!important;
+    } */
+    .section-tab::before {
+      top: 36px!important;
+    }
+    .alert-danger-ws {
+      font-size: 14px;
+    }
+    .finalidea .final-port1 {
+      padding-top: 61px!important;
+      height: calc(120vh - 110px);
+    }
+    }
+    /* ------------------------------------
+    #for smart phone screen 480px
+    --------------------------------*/
+    @media screen and (max-width: 480px) {
+    
+      .section-tab .tab-item i {
+        margin-top: 0px;
+        margin-right: 4px;
+      }
+      .section-tab .section-txt1{
+        font-size: 13px!important;
+      }
+      .section-tab .tab-item {
+        line-height: 14px;
+        width: 24%;
+        text-align: center;
+        padding: 8px;
+      }
+      .section-tab::before {
+        top: 30px;
+        margin-left: -18px;
+      }
+      .finalidea .final-port1 {
+        padding-bottom: 14px!important;
+    }
+      
+    
+    }
+    
+    
+    
+    
+    

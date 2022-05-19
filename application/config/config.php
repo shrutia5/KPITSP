@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
- $config['base_url'] = 'https://sparkle.kpit.com';
+ $config['base_url'] = 'http://localhost/sparkle-2023/';
 //$config['base_url'] = 'http://kpit.webtrixsolutions.com';
 // $config['imagesPATH'] = 'http://localhost/kpit/admin/images/';
 $config['imagesPATH'] = $_SERVER['DOCUMENT_ROOT'].'/images/';

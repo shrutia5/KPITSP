@@ -1,0 +1,403 @@
+body {
+    font-family: "Work Sans", sans-serif;
+    color: #212121;
+    font-weight: 300;
+  }
+  #portal{
+    font-family: "Work Sans", sans-serif;
+    
+        color: #fff;
+      
+    font-weight: 300;
+  }
+#portal-space {
+    margin-top: 90px;
+}
+.eval-dash{
+    margin: 20px;
+}
+.eval-table{
+    border-left: 1px solid #c8c8c8;
+    padding: 10px 0px;
+    position: relative;
+    height: 85vh;
+    overflow-y: scroll;
+}
+.eval-table #example_wrapper #example th{
+    color: #c8c8c8;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+}
+.eval-table #example_wrapper .dataTables_length{
+    display: none;
+}
+.eva-list{
+    position: absolute;
+    padding-left: 10px;
+    top: 15px;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+}
+.eva-mem{
+    position: absolute;
+    left:200px;
+    top: 19px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+}
+.eva-mem span{
+    padding: 10px;
+}
+.eval-table #example_wrapper .table thead th {
+    vertical-align: bottom;
+    border-bottom: none;
+} 
+.nav-menu ul li a{
+    color: #fff;
+}
+.full-left-eval {
+    background: #2A2A2B;
+    height: calc(100vh - 100px);
+    /* margin-top: 18px; */
+    overflow-x: hidden;
+    margin-bottom: 10px;
+}
+
+.helpful-section1-eval.noFooter1 {
+    background: #2a2a2b;
+    height: calc(100vh - 100px);
+    color: #fff;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    /* overflow-x: hidden; */
+}
+.intrs p{
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid #c8c8c878;
+    padding-bottom: 10px;
+}
+.help {
+    padding: 20px;
+}
+.help-list ul li{
+    margin-bottom: 10px;
+    color: #fff;
+}
+.helpdo-mess p{
+    font-size: 18px;
+    padding: 20px;
+    border-top: 1px solid #c8c8c878;
+    border-bottom: 1px solid #c8c8c878;
+    /* padding-bottom: 5px;*/
+}   
+.help-dont,.help-notes{
+    color: #fff;
+}
+.help-rem{
+    border-bottom:1px solid #c8c8c878;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+.helprem-text {
+    padding-top: 10px;
+}
+.helprem-text ul li{
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+#example td {
+    color: #fff;
+}
+.eva_cancel{
+    padding-left: 20px;
+}
+
+.eval-dash .eva-cate a{
+    color: #fff;
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    padding-right: 33px;
+    font-weight: normal;
+    display: block;
+}
+.subCategoryBody{
+    padding-left: 11px;
+    padding-top: 10px;
+}
+/* .eva-cate {
+    padding: 20px;
+} */
+.eva-cate .panel-body label {
+    /* position: relative;
+    left: 30px; */
+    font-size: 16px;
+    line-height: 19px;
+}
+.eva-cate .panel-body{
+    padding: 10px;
+}
+input[type=checkbox] {
+    position: absolute;
+    cursor: pointer;
+    width: 0px;
+    height: 0px;
+  }
+
+  .eva-cat {
+    display: block;
+    position: relative;
+    padding-left: 27px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .eva-cat input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #2A2A2B;
+    border-radius: 50%;
+    border: 1px solid #C8C8C83D;
+  }
+  .eva-cat input:checked ~ .checkmark {
+    border:1px solid #8FDB00;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .eva-cat input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .eva-cat .checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid #8FDB00;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  #example .star-icon i{
+      padding-right: 20px;
+  }
+  .nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+    padding: unset;
+  }
+  .eval-table .eva-mem .selection-star,.dataTable .selection-star
+  {
+      color: #8FDB00;
+  }
+  .eval-table .eva-mem .locked-star,.dataTable .locked-star
+  {
+      color: #E22955;
+  }
+  .eval-table .eva-mem .evaluated-star,.dataTable .evaluated-star
+  {
+      color:  #757AF7;
+  }
+   input[type=search]{
+    background: #212121;
+    border: none;
+    padding-left: 30px;
+  }
+  .search-icon{
+    right: 185px;
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    color: #c8c8c8;
+  }
+  .eva-header ul .active{
+  color: #fff !important;
+    background-color: #757AF770;
+    border-bottom: 3px solid #757AF7;
+  }
+  .eva-header ul .active a , .eva-header ul li a:hover{
+      color: #fff;
+      /* padding-top: 6px; */
+      padding-bottom: 10px;
+  }
+  .eva-header ul li a{
+  font-size: 24px;
+    line-height: 28px;
+    font-weight: 300;
+    color: #fff;
+  }
+  .eva-header ul li a{
+    padding:20px 20px;
+  }
+  .questionDetails p{
+    border-bottom: 1px solid #c8c8c83d;
+    padding-bottom: 13px;
+  }
+  .section-criteria .eva-head p{
+  font-weight: 600;
+font-size: 24px;
+line-height: 28px;
+  }
+  .eva-head {
+    border-bottom: 1px solid #c8c8c83d;
+    padding-bottom: 17px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+  .eva-score {
+    padding: 0px 20px 20px 20px;
+  }
+  .eva-score .col-md-4{
+      padding-top: 70px;
+  }
+  .teammember-list-details li{
+    border-bottom: 1px solid #c8c8c83d;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  #teamdetail ul{
+    list-style-type: none;
+  }
+  .full-left {
+    background: #2A2A2B;
+    height: calc(100vh - 160px);
+    margin-top: 0px;
+    overflow-x: hidden;
+    margin-bottom: 10px;
+}
+.score {
+    padding-top: 40px;
+}
+.score-submit {
+    padding-top: 30px;
+}
+.eva-cate-head{
+    border-bottom: 1px solid #c8c8c83d;
+    padding: 14px 15px 0px;
+    width: 100%;
+}
+.eva-cate .headingOne{
+    border-bottom: 1px solid #c8c8c83d;
+    padding:10px 10px 10px 20px;
+    /* width: 104%; */
+    position: relative;
+}
+ .eva-category .eva-category-list{
+     position: relative;
+ }
+.eva-cate.eva-category .eva-category-list a.collapsed i.icon-show {
+    display: inline-block;
+}
+.eva-cate.eva-category .eva-category-list a.collapsed .icon-close {
+    display: none;
+}
+.eva-cate .eva-category .eva-category-list a i {
+    font-size: 30px;
+    position: absolute;
+    color: #8FDB00;
+    right: 0px;
+}
+.eva-category .eva-category-list  a.collapsed .icon-show {
+    display: inline-block;
+}
+.eva-category .eva-category-list .icon-show {
+    display: none;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #757AF7;
+    background-color: #fff;
+    border-color: #fff;
+    border-radius: 50%;
+    /* margin: 7px; */
+    padding: 0;
+    padding-top: 2px;
+    top: 16px;
+    text-align: center;
+    /* font-size: 17px; */
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+}
+ .page-item .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: 5px;
+    line-height: 1.25;
+    color: rgba(200, 200, 200, 1);
+    background:none;
+    border: none;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    top: 10px;
+    font-weight: bold;
+}
+
+.agreement {
+    height: 500px;
+    overflow-y: scroll;
+}
+ .section-criteria select {
+    background: #212121 ;
+}
+.eva-cate .collapse.show .panel-body{
+    border-bottom: 1px solid #C8C8C83D;
+    /* width: 104%; */
+}
+.eval-dash{
+    background: #2a2a2b;
+    height: calc(100vh - 100px);
+    margin-top: 18px;
+
+    color: #fff;
+    margin-bottom: 10px;
+}
+.eva-cate{
+    overflow-y: scroll;
+    height: 76vh;
+}
+#example_wrapper #example_previous a,#example_wrapper #example_next a{
+    display: none;
+}
+#example_wrapper .pagination .page-link:focus{
+    box-shadow: none;
+}
+
+.eval-table #example_wrapper .dataTables_paginate{
+    padding-right: 20px;
+}
+/* .eva-cate{
+    overflow-x: scroll;
+    height: 78vh;
+} */
