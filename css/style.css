@@ -3608,5 +3608,8 @@ input:-webkit-autofill:focus {
   .profile-dropdown-guide .chariot-tooltip-arrow {
     left: 90% !important;
   }
+  .chat-box-head {
+    color: #8fdb00;
+  }
 }
 /* ##### Chariot Tooltip Ends ##### */

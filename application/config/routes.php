@@ -109,6 +109,13 @@ $route['student/savePrototypeDetails'] = 'student/Idea/savePrototypeDetails';
 $route['student/removeAttFiles'] = 'student/Idea/removeIdeaAttFiles';
 $route['student/getideafile'] = 'student/Idea/getIdeaFile';
 $route['student/shareWithIncubation'] = 'student/Idea/shareWithIncubation';
+
+$route['student/mentor-details'] = 'student/Finalist/mentorDetails';
+$route['student/personal-details'] = 'student/Finalist/personalDetails';
+$route['student/travel-details'] = 'student/Finalist/travelDetails';
+$route['student/mentor-bank-details'] = 'student/Finalist/mentorBankDetails';
+$route['student/personal-bank-details'] = 'student/Finalist/personalBankDetails';
+
 $route['project/approveProject'] = 'admin/Project/approveProject';
 $route['project/rejectProject'] = 'admin/Project/rejectProject';
 $route['project/holdProject'] = 'admin/Project/holdProject';
