@@ -486,7 +486,7 @@
                             <li>
                                <h5 class="h5-helpful">Sample idea form</h5>
                                 <p class="para-helpful">Following are some of the sample idea submission forms of winners from past editions for your reference:</p>
-                                <a class="link-helpful" href="<?php echo base_url(); ?>/assets/2875Platinum.pdf">Read Now</a>
+                                <a class="link-helpful" href="<?php echo base_url(); ?>/assets/documents/2875Platinum.pdf">Read Now</a>
                             </li>
                             <li>
                                <h5 class="h5-helpful">Get to know about TRL levels</h5>
