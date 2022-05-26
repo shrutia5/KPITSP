@@ -4,17 +4,23 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <title><?php if (isset($pageTitle)) {
-    echo $pageTitle;
-} else {
-    echo "kpit";
-} ?></title>
-        <meta content="<?php if (isset($metaDescription)) {
-    echo $metaDescription;
-} ?>" name="description">
-        <meta content="<?php if (isset($metakeywords)) {
-    echo $metakeywords;
-} ?>" name="keywords">
+        <title><?php
+            if (isset($pageTitle)) {
+                echo $pageTitle;
+            } else {
+                echo "kpit";
+            }
+            ?></title>
+        <meta content="<?php
+            if (isset($metaDescription)) {
+                echo $metaDescription;
+            }
+            ?>" name="description">
+        <meta content="<?php
+              if (isset($metakeywords)) {
+                  echo $metakeywords;
+              }
+            ?>" name="keywords">
         <!-- Favicons -->
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -59,13 +65,14 @@
                 s.parentNode.insertBefore(t, s)
             }(window, document, 'script',
                     'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '187141812592472');
+            fbq('init', '430599718403780');
             fbq('track', 'PageView');
         </script>
     <noscript><img height="1" width="1" style="display:none"
-                   src="https://www.facebook.com/tr?id=187141812592472&ev=PageView&noscript=1"
+                   src="https://www.facebook.com/tr?id=430599718403780&ev=PageView&noscript=1"
                    /></noscript>
     <!-- End Meta Pixel Code -->
+
     <!-- LinkedIn Pixel Code -->
     <script type="text/javascript"> _linkedin_partner_id = "4435793";
         window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -74,7 +81,8 @@
         (function (l) {
             if (!l) {
                 window.lintrk = function (a, b) {
-                    window.lintrk.q.push([a, b])};
+                    window.lintrk.q.push([a, b])
+                };
                 window.lintrk.q = []
             }
             var s = document.getElementsByTagName("script")[0];
@@ -117,51 +125,51 @@
                         </ul>
                     </nav><!-- .nav-menu -->
 
-                            <?php if ($this->session->userdata('userId')) {
-                                ?>
+<?php if ($this->session->userdata('userId')) {
+    ?>
                         <div class="myprofile ml-auto d-none d-lg-block ">
                             <span class="myaccount">
 
                                 <div class="my-pro" id="menu">
                                     <span><?php
-                                $firstl = $this->session->userdata('name');
-                                $firstoflast = $this->session->userdata('lname');
-                                $usertype = $this->session->userdata('usertype');
-                                //$letter= $firstl[0].$firstoflast[0];
-                                //echo $letter;exit;
-                                $letter = $firstl[0];
-                                $profile_img = $this->session->userdata('proImg');
-                                //echo $profile_img;
-                                if (empty($profile_img)) {
-                                    ?>
+    $firstl = $this->session->userdata('name');
+    $firstoflast = $this->session->userdata('lname');
+    $usertype = $this->session->userdata('usertype');
+    //$letter= $firstl[0].$firstoflast[0];
+    //echo $letter;exit;
+    $letter = $firstl[0];
+    $profile_img = $this->session->userdata('proImg');
+    //echo $profile_img;
+    if (empty($profile_img)) {
+        ?>
                                             <span class="span-css"> <?php echo $letter; ?> </span> 
                                 <?php } elseif (!empty($profile_img)) {
                                     ?>
 
                                             <img class="pro-img img-fluid" src="<?php echo base_url(); ?>uploads/profile_pic/<?php echo $profile_img; ?>">
-                                <?php
-                                } else {
-                                    echo "no";
-                                }
-                                ?>
+        <?php
+    } else {
+        echo "no";
+    }
+    ?>
                                     </span> <span class="wename"> <?php echo "Welcome " . ' ' . $this->session->userdata('name'); ?></span>
                                     <i class='bx bxs-chevron-down' id="togglemenu"></i>                      
                                 </div>
 
 
-                                <?php if ($usertype == "User") { ?>
+    <?php if ($usertype == "User") { ?>
                                     <div class="sub-myaccount" style="display: none;">
                                         <p><a href="<?php echo base_url() ?>student/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>student/myaccount" class="d-block myaccount0 make-active">My Profile</a></p>
                                         <p><a href="<?php echo base_url() ?>helpful-resources" class="d-block kpit0 make-active">Helpful Resources</a></p>
                                         <p><a href="<?php echo base_url() ?>logout" class="d-block logout0 make-active">Logout</a></p>
                                     </div>
-    <?php } elseif ($usertype == "Incubator") { ?>
+                                <?php } elseif ($usertype == "Incubator") { ?>
                                     <div class="sub-myaccount" style="display: none;">
                                         <p><a href="<?php echo base_url() ?>incubator/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>/logout" class="d-block logout0 make-active">Logout</a></p>
                                     </div>
-    <?php } elseif ($usertype == "Evaluator") { ?>
+                                <?php } elseif ($usertype == "Evaluator") { ?>
                                     <div class="sub-myaccount" style="display: none;">
                                         <p><a href="<?php echo base_url() ?>evaluator/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>logout" class="d-block logout0 make-active">Logout</a></p>
@@ -184,7 +192,7 @@
     <?php } ?>
                             </span>
                         </div>
-<?php } else { ?>
+        <?php } else { ?>
                         <div class="ml-auto d-none d-lg-block ">
                             <a href="<?php echo base_url() ?>login" class="login-btn">Login</a>
                             <a href="<?php echo base_url() ?>register" class="register-btn">Register Now</a>
