@@ -115,9 +115,6 @@ class Idea extends CI_Controller {
         $infoData = $this->CommonModel->GetMasterListDetails("*", 'infoSettings', array(), '', '', array(), '');
         $data['infoSetting'] = $infoData[0];
 
-        $userID=$this->session->userdata('userId');
-        $whereuserid=array("userID="=>$userID);
-        $infoGuidedData = $this->CommonModel->GetMasterListDetails("*",'guidedstatus',$whereuserid,'','',array(),'');
 
         //print "<pre>";
         //print_r($trlNames); exit;
@@ -127,7 +124,6 @@ class Idea extends CI_Controller {
         $data['metaDescription'] = "Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
-        $data['infoGuidedData']=$infoGuidedData;
         $this->load->view('student/header', $data);
         $this->load->view('student/submitIdea', $data);
         $this->load->view('student/footer');
@@ -231,14 +227,9 @@ class Idea extends CI_Controller {
         $projectsMessages = $this->CommonModel->GetMasterListDetails($selectMsg, 'project_messages', $whereMsg, '', '', $joinMsg, '');
         $data['projectsMessages'] = $projectsMessages;
 
-        $userID=$this->session->userdata('userId');
-        $whereuserid=array("userID="=>$userID);
-        $infoGuidedData = $this->CommonModel->GetMasterListDetails("*",'guidedstatus',$whereuserid,'','',array(),'');
-
         $data['pageTitle'] = "KPIT sparkle | Student Dashboard";
         $data['metaDescription'] = "Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
-        $data['infoGuidedData']=$infoGuidedData;
         $this->load->view('student/header', $data);
         $this->load->view('student/project-details', $data);
         $this->load->view('student/footer');
@@ -250,10 +241,8 @@ class Idea extends CI_Controller {
             $where = array("status =" => "'active'", "category_id=" => $cateID);
             $mstercat = $this->CommonModel->GetMasterListDetails('sub_cat_name,sub_cat_id', "master_sub_category", $where, '', '', $join = array(), $other = array());
             // print_r($mstercat);exit;
-            $expertise = $this->CommonModel->GetMasterListDetails('expertise', "master_category", $where);
-
             if (!empty($mstercat)) {
-                $status['data'] = $expertise;
+                $status['data'] = $mstercat;
                 $status['flag'] = 'S';
                 echo json_encode($status);
                 exit;
@@ -307,14 +296,14 @@ class Idea extends CI_Controller {
                         exit;
                     } else {
                         //echo "Memmber already exits";
-                        $status['msg'] = 'Member already exists.';
+                        $status['msg'] = 'Member already exits.';
                         $status['statusCode'] = validation_errors();
                         $status['flag'] = 'F';
                         echo json_encode($status);
                         exit;
                     }
                 } else {
-                    $status['msg'] = 'Maximum 4 Members allowed';
+                    $status['msg'] = 'Maximum 4 Member';
                     $status['statusCode'] = validation_errors();
                     $status['flag'] = 'M';
                     $status['redirect'] = base_url() . "/student/project";
@@ -348,12 +337,14 @@ class Idea extends CI_Controller {
         $projectData['subCategoryID'] = $this->input->post('suCategory');
         $projectData['projectDiscription'] = $this->input->post('projectDiscription');
         $projectData['userID'] = $this->session->userdata('userId');
+        //$projectData['projectID']= $this->input->post('projectID');  
+        // echo $projectData['projectName']."<br>";
+        // echo  $projectData['categoryID']."<br>";
+        // echo  $projectData['subCategoryID']."<br>";
+        // echo $projectData['projectDiscription']."<br>";exit;
         $where = array("userID" => $this->session->userdata('userId'));
         $projectDetails = $this->CommonModel->getMasterDetails('project_master', '', $where);
 
-        $where = array("userID" => $this->session->userdata('userId'));
-        $userDetails = $this->CommonModel->getMasterDetails('userregistration','', $where);
-        //print_r($userDetails);exit;
         if (isset($projectDetails) && !empty($projectDetails)) {
             if ($projectDetails[0]->currentStep == 1)
                 $projectData['currentStep'] = 2;
@@ -363,7 +354,7 @@ class Idea extends CI_Controller {
             if (!empty($iscreated)) {
                 $status['data'] = ""; //$projectID;
                 $status['flag'] = 'S';
-                $this->CommonModel->logUserActivity("Project details updated", "PROJECT_MODIFIED", $projectDetails[0]->projectID);
+                $this->CommonModel->logUserActivity("Project details updated", "PROJECT_MODIFIED", $projectDetails["projectID"]);
                 echo json_encode($status);
                 exit;
             } else {
@@ -388,7 +379,7 @@ class Idea extends CI_Controller {
                 } else if ($userDetails[0]->country_id == 217) {
                     $sparkleIDarr = array("sparkleID" => "THSP23" . $sparkleID);
                 }
-                //print_r($sparkleIDarr); exit;
+
                 $where = array("userID" => $this->session->userdata('userId'));
                 $iscreated = $this->CommonModel->updateMasterDetails('project_master', $sparkleIDarr, $where);
                 $this->CommonModel->logUserActivity("Project details submited", "PROJECT_SUBMITED", $projectID);
@@ -496,18 +487,19 @@ class Idea extends CI_Controller {
                 $length = strlen($value);
                 $where = array("trlQuestionID =" => $ideaData['questionID']);
                 $qDetails = $this->CommonModel->GetMasterListDetails('*', "trl_questions", $where, '', '', $join = array(), $other = array());
-                
+                //print_r($qDetails);
+                //echo $qDetails[0]->minLength;exit;
                 if ($qDetails[0]->isRequired === "Yes" && $ideaData['qanswer'] === "") {
                     $issue[$count]['qid'] = $ideaData['questionID'];
                     $issue[$count]['message'] = "This field is required";
                     $count++;
                 }
-                if ($qDetails[0]->minLength == 200 && $length < 200) {
+                if (isset($qDetails[0]->minLength) && !empty($qDetails[0]->minLength) && $length < $qDetails[0]->minLength) {
                     $issue[$count]['qid'] = $ideaData['questionID'];
                     $issue[$count]['message'] = "Minimum 200 characters required";
                     $count++;
                 }
-                if ($qDetails[0]->maxLength == 1000 && $length > 1000) {
+                if (isset($qDetails[0]->maxLength) && !empty($qDetails[0]->maxLength) && $length > $qDetails[0]->maxLength) {
                     $issue[$count]['qid'] = $ideaData['questionID'];
                     $issue[$count]['message'] = "Maximum 1000 characters required";
                     $count++;
@@ -688,7 +680,7 @@ class Idea extends CI_Controller {
                 foreach ($projectDetails as $key => $val) {
                     if ($key == $questionID) {
                         $status['flag'] = 'S';
-                        $status['message'] = "<div class='attfile_" . $keyarry[1] . "'><a href='" . $linkPath . "/" . $val . "' target='_blank'>" . $val . "</a><span data-field='" . $questionID . "' data-questionID='" . $questionID . "' class='removeAttFiles'><i class='bx bx-trash-alt'></i></span></div>";
+                        $status['message'] = "<div class='attfile_" . $keyarry[1] . "'><a href='" . $linkPath . "/" . $val . "'>" . $val . "</a><span data-field='" . $questionID . "' data-questionID='" . $questionID . "' class='removeAttFiles'><i class='bx bx-trash-alt'></i></span></div>";
                     }
                 }
             } else {
@@ -696,7 +688,7 @@ class Idea extends CI_Controller {
                 $fileDetails = $this->CommonModel->getMasterDetails('trl_users_question_answers', '', $where);
                 if (isset($fileDetails) && !empty($fileDetails)) {
                     $status['flag'] = 'S';
-                    $status['message'] = "<div class='tlfile_" . $keyarry[1] . "'><a href='" . $linkPath . "/" . $fileDetails[0]->docName . "' target='_blank'>" . $fileDetails[0]->docName . "</a><span data-trlQAnsID='" . $fileDetails[0]->trlQAnsID . "' data-questionID='" . $keyarry[1] . "' class='removeTlFiles'><i class='bx bx-trash-alt'></i></span></div>";
+                    $status['message'] = "<div class='tlfile_" . $keyarry[1] . "'><a href='" . $linkPath . "/" . $fileDetails[0]->docName . "'>" . $fileDetails[0]->docName . "</a><span data-trlQAnsID='" . $fileDetails[0]->trlQAnsID . "' data-questionID='" . $keyarry[1] . "' class='removeTlFiles'><i class='bx bx-trash-alt'></i></span></div>";
                 }
             }
         }
@@ -973,6 +965,17 @@ class Idea extends CI_Controller {
             $data['trlquestionans'] = "";
         }
         //ab_trl_users_question_answers
+        $whereMsg = array("t.project_id=" => $proId);
+        $joinMsg = array();
+        $joinMsg[0]['type'] = "LEFT JOIN";
+        $joinMsg[0]['table'] = "userregistration";
+        $joinMsg[0]['alias'] = "u";
+        $joinMsg[0]['key1'] = "sender_id";
+        $joinMsg[0]['key2'] = "userID";
+
+        $selectMsg = "t.*,u.firstname,u.lastName,u.status";
+        $projectsMessages = $this->CommonModel->GetMasterListDetails($selectMsg, 'project_messages', $whereMsg, '', '', $joinMsg, '');
+        $data['projectsMessages'] = $projectsMessages;
 
         $data['pageTitle'] = "KPIT sparkle | Student Dashboard";
         $data['metaDescription'] = "Student Dashboard";
@@ -1074,10 +1077,8 @@ class Idea extends CI_Controller {
             $wheresubcat = array("status =" => "'active'", "category_id=" => $categoryId);
             $mstercat = $this->CommonModel->GetMasterListDetails('*', "master_sub_category", $wheresubcat, '', '', '', '');
             //print_r($mstercat);exit;
-            $expertise = $this->CommonModel->GetMasterListDetails("expertise", "master_category", $wheresubcat, '', '', '', '');
             if (!empty($mstercat)) {
                 $status['data'] = $mstercat;
-                $status['data1'] = $expertise[0]->expertise;
                 $status['flag'] = 'S';
                 echo json_encode($status);
                 exit;
