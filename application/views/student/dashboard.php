@@ -76,7 +76,7 @@
                 <?php } ?>
             </div>
             <div class="col-md-8 portal-right">
-                <?php if ($adminData1->phaseOneDataSubmited == "1") { ?>
+                <?php if (isset($adminData1) && !empty($adminData1)) { ?>
                 <div class="">
                     <h6>Congratulations! You are now eligible for “NextGen Activate Program” by Wadhwani Foundation. This course will guide you to
                     take your idea from concept stage to startup level. <a target="_blank" href="https://web.nen.wfglobal.org/en/guest">Click here to get started..</a></h6>
