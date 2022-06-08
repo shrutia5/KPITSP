@@ -46,7 +46,7 @@
           </a>
           <nav class="nav-menu d-none d-lg-block m-auto" id="incu-headBar">
             <ul>
-              <li <?php if(isset($menuName) &&!empty($menuName)){ if($menuName =="sparkle2021"){ echo 'class="active"'; } } ?>  ><a  href="<?php echo base_url();?>incubator/dashboard">Sparkle 2022-23</a></li>
+              <li <?php if(isset($menuName) &&!empty($menuName)){ if($menuName =="sparkle2021"){ echo 'class="active"'; } } ?>  ><a  href="<?php echo base_url();?>incubator/dashboard">Sparkle 2020-21</a></li>
               <!-- <li <?php if(isset($menuName) &&!empty($menuName)){ if($menuName =="sparkle2020"){ echo 'class="active"'; } } ?>  ><a href="<?php echo base_url();?>incubator/sparkle2020">Sparkle 2020</a></li>
               <li <?php if(isset($menuName) &&!empty($menuName)){ if($menuName =="sparkle2019"){ echo 'class="active"'; } } ?> ><a href="<?php echo base_url();?>incubator/sparkle2019">Sparkle 2019</a></li> -->
               <!-- <li><a  href="<?php echo base_url();?>evaluator/help">Help</a></li> -->
@@ -98,8 +98,8 @@
     </div>
     </div>
     <!-- <div class="col-xl-12 p-0 d-block d-lg-none">
-        <a href="https://localhost/sparkle-2023/login" class="login-btn">Login</a>
-        <a href="https://localhost/sparkle-2023/registration/signup" class="register-btn">Register Now</a>
+        <a href="https://sparkle.kpit.com/login" class="login-btn">Login</a>
+        <a href="https://sparkle.kpit.com/registration/signup" class="register-btn">Register Now</a>
     </div> -->
 </header><!-- End Header -->
 

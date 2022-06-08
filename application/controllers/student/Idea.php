@@ -371,13 +371,15 @@ class Idea extends CI_Controller {
 
                 $length = 6;
                 $sparkleID = substr(str_repeat(0, $length) . $projectID, - $length);
-
+                $userDetails = $this->CommonModel->getMasterDetails('userregistration','', array("userID ="=>$this->session->userdata('userId')));
                 if ($userDetails[0]->country_id == 101) {
                     $sparkleIDarr = array("sparkleID" => "INSP23" . $sparkleID);
                 } else if ($userDetails[0]->country_id == 82) {
                     $sparkleIDarr = array("sparkleID" => "DESP23" . $sparkleID);
                 } else if ($userDetails[0]->country_id == 217) {
                     $sparkleIDarr = array("sparkleID" => "THSP23" . $sparkleID);
+                }else{
+                    $sparkleIDarr = array("sparkleID" =>$sparkleID);
                 }
 
                 $where = array("userID" => $this->session->userdata('userId'));
@@ -1074,10 +1076,15 @@ class Idea extends CI_Controller {
         $categoryId = $this->input->post('categoryID');
         // echo $categoryId;exit;
         if (isset($categoryId)) {
+            
+            $wherecat = array("category_id=" => $categoryId);
+            $mstercate = $this->CommonModel->GetMasterListDetails('expertise', "master_category", $wherecat, '', '', '', '');
+
             $wheresubcat = array("status =" => "'active'", "category_id=" => $categoryId);
             $mstercat = $this->CommonModel->GetMasterListDetails('*', "master_sub_category", $wheresubcat, '', '', '', '');
             //print_r($mstercat);exit;
             if (!empty($mstercat)) {
+                $status['data1'] = $mstercate[0]->expertise;
                 $status['data'] = $mstercat;
                 $status['flag'] = 'S';
                 echo json_encode($status);

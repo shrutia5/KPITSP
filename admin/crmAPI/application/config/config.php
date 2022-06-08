@@ -24,7 +24,7 @@ date_default_timezone_set('Asia/Kolkata');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'localhost/sparkle2023/admin/crmAPI/';
+$config['base_url'] = 'https://sparkle.kpit.com/admin/crmAPI/';
 $config['appName'] = 'KPIT';
 $config['imagesPATH'] = $_SERVER['DOCUMENT_ROOT'].'/kpit/images/';
 $config['HELPFUL_RESOURCE_PATH'] = $_SERVER['DOCUMENT_ROOT'].'/kpit/uploads/helpfulResources';

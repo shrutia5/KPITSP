@@ -88,8 +88,8 @@
     </div>
     </div>
     <!-- <div class="col-xl-12 p-0 d-block d-lg-none">
-        <a href="https://localhost/sparkle-2023/login" class="login-btn">Login</a>
-        <a href="https://localhost/sparkle-2023/registration/signup" class="register-btn">Register Now</a>
+        <a href="https://sparkle.kpit.com/login" class="login-btn">Login</a>
+        <a href="https://sparkle.kpit.com/registration/signup" class="register-btn">Register Now</a>
     </div> -->
 </header>
 <!-- End Header -->
