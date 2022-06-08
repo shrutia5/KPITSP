@@ -1,0 +1,61 @@
+ <div id="adminData" class="modelbox">
+    <div class="clearfix">&nbsp;</div>
+
+<form id="adminDetails" name="adminDetails" action="#">
+    <div class="col-xs-12">
+        <div class="member-profile-img">
+            <img src="">
+        </div>
+    </div>
+    <div class="col-xs-12 form-control-row">
+        <div class="col-sm-12 has-feedback">
+                <label for="name">Name <span class="error">*</span> :</label>
+                <input id="name" class="form-control txtchange has-feedback-left" name="name" required="" type="text" value="<%=  model.name %>">
+                <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+        </div> 
+    </div>  
+    <div class="col-xs-12 form-control-row">  
+        <div class="col-sm-12 has-feedback">
+                <label for="userName">Email-ID <span class="error">*</span> :</label>
+                <input id="email" class="form-control txtchange has-feedback-left" name="email" required="" type="text" value="<%=  model.email %>">
+                <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+        </div>  
+    </div>
+     <div class="col-xs-12 form-control-row">
+        <div class="col-sm-6 has-feedback">
+              <label for="userName">User Name <span class="error">*</span> :</label>
+              <input id="userName" class="form-control txtchange has-feedback-left" name="userName" required=""type="text" value="<%=  model.userName %>">
+              <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+      </div> 
+       <div class="col-sm-6">
+              <label for="password">Password <span class="error">*</span> :</label>
+              <input id="password" class="form-control txtchange" name="password" required="" maxlength="45" type="text" value="<%=  model.password %>">
+      </div>
+   </div>
+    <div class="col-xs-12 form-control-row"> 
+         <div class="col-sm-6">
+                <label for="roleID">User Role<span class="error">*</span> :</label>
+                <select id="roleID" name="roleID" class="form-control dropval">
+              <option value="">Select User Role</option>
+              <% _.each(userRoleList, function(model1) { %>
+                <option <% if(model1.attributes.roleID == model.roleID){ %> selected <% } %> value="<%=model1.attributes.roleID%>"><%=model1.attributes.roleName%></option>
+              <%}); %>
+            </select>
+        </div> 
+        <div class="col-sm-6">
+                <label for="status">Status <span class="error">*</span> :</label>
+                <ul class="item-container" data-valid="status">
+                  <li class="status multiSel" data-single="Y" data-value="active">Active</li>
+                  <li class="status multiSel" data-single="Y" data-value="inactive">InActive</li>
+                  <li class="status multiSel" data-single="Y" data-value="delete">Delete</li>
+              </ul>
+            </div>
+    </div>
+     <div class="clearfix">&nbsp;</div>
+        
+        <div class="text-center">
+        <div class="clearfix">&nbsp;</div>
+        <button id="saveEduDetails" type="button" class="btn btn-default btn-success">Save</button>
+      </div>
+      </form>
+</div>

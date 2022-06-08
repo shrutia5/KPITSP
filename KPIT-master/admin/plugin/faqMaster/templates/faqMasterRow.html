@@ -1,0 +1,19 @@
+<tr class="even pointer bg-<%=faqMasterDetails.attributes.status%>" >
+  <td class="a-center">
+      <div class="bg__control normal">
+        <label class="check__box">
+          <input class="memberlistcheck " type="checkbox" data-faqID="<%= faqMasterDetails.attributes.faqID %>">
+            <div class="square__box round"></div>
+        </label> 
+      </div>
+  </td><!-- 
+  <td class=""><%=faqMasterDetails.attributes.faqID%></td> -->
+  <td class="loadview text-warning" data-toggle="modal" data-target="#myModal" data-faqID="<%=faqMasterDetails.attributes.faqID%>"data-show="singlefaqMasterData" ><a href="javascript:;"><b><u><%=faqMasterDetails.attributes.faqQuestion%></u></b></a></td>
+  <td class=""><%=faqMasterDetails.attributes.status%></td>
+  <td class=""><%= formatDate(faqMasterDetails.attributes.createdDate,'no') %></td>
+  <td>
+    <button type="button" class="btn btn-info btn-xs loadview" data-toggle="modal" data-target="#myModal" data-faqID="<%=faqMasterDetails.attributes.faqID%>" data-show="singlefaqMasterData">Edit</button>
+  
+  </td>
+</tr>
+              
