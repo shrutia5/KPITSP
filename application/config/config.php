@@ -23,12 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
- $config['base_url'] = 'https://sparkle.kpit.com';
+//$config['base_url'] = 'https://sparkle.kpit.com';
+ $config['base_url'] = 'http://localhost/KPIT-1';
 //$config['base_url'] = 'http://kpit.webtrixsolutions.com';
 // $config['imagesPATH'] = 'http://localhost/kpit/admin/images/';
-$config['imagesPATH'] = $_SERVER['DOCUMENT_ROOT'].'/images/';
-$config['PROFILE_IMAGE_PATH'] = $_SERVER['DOCUMENT_ROOT']."/uploads/profile_pic/";
-$config['ICARD_PATH'] = $_SERVER['DOCUMENT_ROOT']."/uploads/student_icards/";
+$config['imagesPATH'] = $_SERVER['DOCUMENT_ROOT']."/KPIT-1/images/";
+$config['PROFILE_IMAGE_PATH'] = $_SERVER['DOCUMENT_ROOT']."/KPIT-1/uploads/profile_pic/";
+$config['ICARD_PATH'] = $_SERVER['DOCUMENT_ROOT']."/KPIT-1/uploads/student_icards/";
 $config['appName'] = "KPIT Sparkle 2023";
 $config['supportEmail'] = "KPITSparkle2023@kpit.com";
 $config['CCEmail'] = "KPITSparkle2023.com";

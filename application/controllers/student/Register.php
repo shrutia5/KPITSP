@@ -477,6 +477,7 @@ class Register extends CI_Controller {
         $userData['sms_otp'] = random_int(1000, 9999);
         $userData['yearOfCompletion'] = $this->validatedata->validate('YearOfCompletion', 'Year of completion', true, '', array());
         $userData['identityCard'] = $this->input->post('identityCard');
+        $userData['createdDate'] = Date("YYYY-MM-DD");
         if ($userData['college_id'] == "other") {
             $userData['college_id'] = "";
             $userData['otherCollege'] = $this->validatedata->validate('otherCollege', 'Other College Name', true, '', array());

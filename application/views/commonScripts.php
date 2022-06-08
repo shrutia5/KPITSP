@@ -47,3 +47,4 @@
   <script src="<?php echo base_url();?>js/validateRule.js"></script>
   <script src="<?php echo base_url();?>assets/slim/js/slim.jquery.min.js" type="text/javascript"></script> 
  <!-- <script src="<?php echo $this->config->item('live_base_url');?>assets/js/slim.kickstart.min.js"></script> -->
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js" integrity="sha256-cHVO4dqZfamRhWD7s4iXyaXWVK10odD+qp4xidFzqTI=" crossorigin="anonymous"></script>
