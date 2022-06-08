@@ -747,9 +747,7 @@ $(document).ready(function () {
                 if (res.flag == "S") {
                     if (res.data != "")
                     {
-                        if(res.data1 != "undefined"){
-                            $('#expertise').html("<p>"+res.data1+"</p>");
-                        }
+                        $('#expertise').html("<p>"+res.data1+"</p>");
                         res.data.forEach(function (opt) {
                             //$('#subCategory').html(opt.sub_cat_name);
                             $('#subCategory').append("<option value='" + opt.sub_cat_id + "'>" + opt.sub_cat_name + "</option>");

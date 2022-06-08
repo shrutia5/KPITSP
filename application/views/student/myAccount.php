@@ -74,7 +74,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" id="EducationalDetails-tab" data-toggle="tab" href="#EducationalDetails" role="tab" aria-controls="EducationalDetails" aria-selected="true">Educational Details</a>
                         </li>
-                        <li class="nav-item" id="reference-details-head">
+                        <li class="nav-item">
                             <a class="nav-link" id="ReferenceDetail-tab" data-toggle="tab" href="#ReferenceDetail" role="tab" aria-controls="ReferenceDetails" aria-selected="false">Reference Details</a>
                         </li>
                     </ul>

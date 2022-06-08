@@ -1,3 +1,9 @@
 /nbproject/*
 /uploads/*
 /images/studentFiles/*
+.htaccess
+admin/crmAPI/application/config/config.php
+admin/crmAPI/application/config/database.php
+application/config/config.php
+application/config/database.php
+system/core/Config.php

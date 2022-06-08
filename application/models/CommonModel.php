@@ -654,25 +654,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             exit;
         }
 	}
-
-	public function getProjectstatRecord($createdDate,$endDate){
-
-
-		$sql = "select count(projectID) as tot,WEEK(createdDate) weekdays FROM ".$this->db->dbprefix."project_master WHERE createdDate BETWEEN '".$createdDate."' AND '".$endDate."' GROUP BY weekdays  ORDER BY  createdDate  ASC ";
-		$query = $this->db->query($sql);
-		$result = $query->result();
-
-		return $result;
-
-	}
-	public function getUserstatRecord($createdDate,$endDate){
-
-
-		$sql = "select count(userID) as tot,WEEK(createdDate) weekdays FROM ".$this->db->dbprefix."userregistration WHERE createdDate BETWEEN '".$createdDate."' AND '".$endDate."' GROUP BY weekdays  ORDER BY  createdDate  ASC ";
-		$query = $this->db->query($sql);
-		$result = $query->result();
-
-		return $result;
-
-	}
 }	

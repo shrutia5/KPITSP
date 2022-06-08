@@ -12,7 +12,8 @@
                 <div class="row mt-4">
                     <div class="col-xl-5">
                         <p>i-Innovate encourages the submission of incredible ideas to India’s challenges for sustainable development. You get an opportunity to propose & submit pioneering solutions based on your selected problem statements and WIN BIG.</p>
-                        <a href="https://www.youtube.com/watch?v=PQHkD0QIKZI&t=26s" target="_blank" data-aos="zoom-out" data-aos-delay="2500">KNOW MORE <i class="icofont-long-arrow-right"></i></a>
+                        <!--<a href="https://www.youtube.com/watch?v=PQHkD0QIKZI&t=26s" target="_blank" data-aos="zoom-out" data-aos-delay="2500">KNOW MORE <i class="icofont-long-arrow-right"></i></a>-->
+                        <a href="https://youtu.be/IODEy3oxVz8" target="_blank" data-aos="zoom-out" data-aos-delay="2500">KNOW MORE <i class="icofont-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

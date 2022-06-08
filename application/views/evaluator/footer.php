@@ -1,7 +1,7 @@
 
 <div id="myAggregment" class="modal fade">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content" style="width: auto;">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 600px;">
                 <div class="modal-header">
                     <h5 class="modal-title">NON DISCLOSURE AGREEMENT</h5>
                     <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->

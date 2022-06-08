@@ -43,12 +43,6 @@
           <a href="<?php echo base_url();?>" class="logo">
             <img src="<?php echo base_url();?>images/logo.png" alt="KPIT SPARKLE">
           </a>
-          <nav class="nav-menu nav-menu-admin d-none d-lg-block" id="eva-headBar" style="margin:0 auto;height:100%;">
-            <ul style="height:100%;">
-              <li <?php if(isset($menuName) &&!empty($menuName)){ if($menuName =="dashboard"){ echo 'class="active"'; } }?> ><a  href="<?php echo base_url();?>admin/dashboard">Home</a></li>
-              <li <?php if(isset($menuName) &&!empty($menuName)){ if($menuName =="reports"){ echo 'class="active"'; } }?>><a href="<?php echo base_url();?>admin/reports">Reports</a></li>
-            </ul>
-          </nav><!-- .nav-menu -->
         <div class="myprofile ml-auto d-lg-block ">
         <!-- <span class="myaccount" style="width: 150px;"><?php echo "Welcome Pragati";?> </span> -->
         <?php if($this->session->userdata('userId'))
@@ -102,8 +96,8 @@
     </div>
     </div>
     <!-- <div class="col-xl-12 p-0 d-block d-lg-none">
-        <a href="https://sparkle.kpit.com/login" class="login-btn">Login</a>
-        <a href="https://sparkle.kpit.com/registration/signup" class="register-btn">Register Now</a>
+        <a href="https://localhost/sparkle-2023/login" class="login-btn">Login</a>
+        <a href="https://localhost/sparkle-2023/registration/signup" class="register-btn">Register Now</a>
     </div> -->
 </header><!-- End Header -->
 

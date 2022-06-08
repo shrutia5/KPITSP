@@ -20,8 +20,7 @@
                     <?php if($projectd->userID == $userid && $projectd->projectStatus!="Reject" && $projectd->phaseTwoStatus!="Reject" && $projectd->phaseThreeStatus!="Reject") { ?>
                     <h4 class="mobile-team"><button class="btn2"><i class='bx bx-plus bx-sm'></i></button></h4>
                     <?php } ?>
-                    
-                    <i class="bx bxs-chat bx-sm  mobile-click chat-box-head" style="color:#8FDB00;"></i>
+                    <i class="bx bxs-chat bx-sm  mobile-click" style="color:#8FDB00;"></i>
                    
                     <i class="bx bx-group bx-sm  mobile-click" style="color:#8FDB00;"></i>
                     
@@ -462,7 +461,7 @@
                             <div class="my-teamh">
                                 <?php if($projectd->userID == $userid && $projectd->projectStatus!="Reject" && $projectd->phaseTwoStatus!="Reject" && $projectd->phaseThreeStatus!="Reject") { ?>
                                 <span class="team-mobile">My Team </span><button class="btn2 team-mobile"><i class='bx bx-plus'></i></i></button>
-                                <p id="add-max-four-members">(Max 4 member)</p>
+                                <p>(Max 4 member)</p>
                                 <?php }
                             else echo "<span>Team Members</span>";
                             ?>
