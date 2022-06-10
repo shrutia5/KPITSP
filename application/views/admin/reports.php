@@ -9,12 +9,12 @@
                             <div class="col-md-4">
                                 <select id="reportType" name="reportType" class="form-control">
                                     <option value="">Reports</option>
-                                    <option <?php if($filter['reportType'] == "list_of_reg"){echo "selected='selected'";}?> value="list_of_reg">List of Registration</option>
+                                    <option <?php if($filter['reportType'] == "list_of_reg"){echo "selected='selected'";}?> value="list_of_reg">List of Registrations</option>
                                     <option <?php if($filter['reportType'] == "all_report"){echo "selected='selected'";}?> value="all_report">All Report</option>
                                     <option <?php if($filter['reportType'] == "statistics"){echo "selected='selected'";}?> value="statistics">Statistics</option>
                                     <option <?php if($filter['reportType'] == "statistics2"){echo "selected='selected'";}?> value="statistics2">Statistics Week wise</option>
-                                    <option <?php if($filter['reportType'] == "evaluators"){echo "selected='selected'";}?> value="evaluators">Evaluators</option>
-                                    <option <?php if($filter['reportType'] == "voting_graph"){echo "selected='selected'";}?> value="voting_graph">Voting Detail Graph</option>
+                                    <!-- <option <?php if($filter['reportType'] == "evaluators"){echo "selected='selected'";}?> value="evaluators">Evaluators</option>
+                                    <option <?php if($filter['reportType'] == "voting_graph"){echo "selected='selected'";}?> value="voting_graph">Voting Detail Graph</option> -->
                                 </select>
                             </div>  
                             <div class="col-md-4">
@@ -146,16 +146,16 @@
                     <div class="full-left noFooter">
                         <p style="font-size: 18px;">Useful Links</p>
                         <hr class="admin-link">
-                        <p style="font-size: 16px;" class="p1">View Evaluation progress <a href=""><i class='bx bxs-chevron-right'></i></a></p>
+                        <!-- <p style="font-size: 16px;" class="p1">View Evaluation progress <a href=""><i class='bx bxs-chevron-right'></i></a></p>
                         <hr class="admin-link">
                         <p style="font-size: 16px;" class="p1">View Incubation progress <a href=""><i class='bx bxs-chevron-right'></i></a></p>
                         <hr class="admin-link">
                         <p style="font-size: 16px;" class="p1">Schedule Webinars <a href=""><i class='bx bxs-chevron-right'></i></a></p>
-                        <hr class="admin-link">
-                        <p style="font-size: 16px;" class="p1">Reports <a href=""><i class='bx bxs-chevron-right'></i></a></p>
+                        <hr class="admin-link"> -->
+                        <a href=""><p style="font-size: 16px;" class="p1">Reports <i class='bx bxs-chevron-right'></i></a></p>
                     </div>
                 </div>
-                <div class="row form-row ws-form-row m-0 voat-star" style="display: block !important;">
+                <!-- <div class="row form-row ws-form-row m-0 voat-star" style="display: block !important;">
                     <div class="full-left noFooter">
                         <p style="font-size: 18px;">Voting Stats</p>
                         <hr class="admin-link">
@@ -192,7 +192,7 @@
                             <hr class="admin-link">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
