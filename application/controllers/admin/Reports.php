@@ -352,15 +352,13 @@ class Reports extends CI_Controller {
                 }
                 
                 
-                print "<pre>";
-                print_r($datan); 
-                print_r($UserRecord); 
-                print_r($weekRecord); exit;
+                // print "<pre>";
+                // print_r($datan); 
+                // print_r($UserRecord); 
+                // print_r($weekRecord); exit;
                 $data['statData'] = $stateList;
                 break;
             }
-
-           
 
             case 'evaluators':{
                 
@@ -368,6 +366,56 @@ class Reports extends CI_Controller {
             }
             case 'voting_graph':{
                 
+                break;
+            }
+
+            default:{ // Abhay : Added this default case in order to show Statistics reports by default on reports page. Same code as case 'statistics' above.
+                
+                $join = array();
+                $other= array();
+                $wherec = array();
+                $stateList = array();
+                
+                $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot",'userregistration',array(),'','',array(),array());    
+                $stateList['numberOfreg'] = $numberOfreg[0]->tot;
+
+                
+                $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot",'project_master',array(),'','',array(),array());    
+                $stateList['ideaSubmission'] = $numberOfreg[0]->tot;
+                
+                $wherec["phaseTwoDataSubmited"] = " = '1'";
+                $join[0]['type'] ="LEFT JOIN";
+                $join[0]['table']="project_master";
+                $join[0]['alias'] ="p";
+                $join[0]['key1'] ="userID";
+                $join[0]['key2'] ="userID";
+                $numberOfidea2 = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
+                $stateList['numberOfidea2'] = $numberOfidea2[0]->tot;
+
+                $join = array();
+                $wherec = array();
+                $wherec["phaseTwoStatus"] = " = 'Approved'";
+                $wherec["currentPhase"] = " = '3'";
+                
+                $join[0]['type'] ="LEFT JOIN";
+                $join[0]['table']="project_master";
+                $join[0]['alias'] ="p";
+                $join[0]['key1'] ="userID";
+                $join[0]['key2'] ="userID";
+                $numberOfidea100 = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
+                $stateList['numberOfidea100'] = $numberOfidea100[0]->tot;
+
+                $wherec = array();
+                $join = array();
+                $wherec["phaseThreeStatus"] = " = '50'";
+                $join[0]['type'] ="LEFT JOIN";
+                $join[0]['table']="project_master";
+                $join[0]['alias'] ="p";
+                $join[0]['key1'] ="userID";
+                $join[0]['key2'] ="userID";
+                $numberOfideafinal = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
+                $stateList['numberOfideafinal'] = $numberOfideafinal[0]->tot;
+                $data['statData'] = $stateList;
                 break;
             }
         }

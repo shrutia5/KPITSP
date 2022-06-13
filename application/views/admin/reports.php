@@ -24,7 +24,7 @@
                         <?php if($filter['reportType'] == "all_report"){ ?>
                         <div class="row">
                             <div class="col-md-3">
-                            <input type="radio" id="branch_wise" name="allrep"><label for="country_wise">Country Wise</label>
+                            <input type="radio" id="branch_wise" name="allrep"><label for="country_wise">&nbsp;Country Wise</label>
                                 <select class="form-control" id="country_id" name="country_id" onchange="this.form.submit()">
                                     <option value="">Select</option>
                                     <?php foreach ($countryList as $key => $value){
@@ -38,7 +38,7 @@
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="state_wise" name="allrep" value="state_wise"><label for="state_wise">State Wise</label>
+                                <input type="radio" id="state_wise" name="allrep" value="state_wise"><label for="state_wise">&nbsp;State Wise</label>
                                 <select class="form-control" id="state_id" name="state_id" onchange="this.form.submit()">
                                     <option value="">Select</option>
                                     <?php foreach ($stateList as $key => $value) {
@@ -53,7 +53,7 @@
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="city_wise" name="allrep" value="city_wise"><label for="city_wise">City Wise</label>
+                                <input type="radio" id="city_wise" name="allrep" value="city_wise"><label for="city_wise">&nbsp;City Wise</label>
                                 <select class="form-control" id="city_id" name="city_id" onchange="this.form.submit()">
                                     <option value="">Select</option>
                                     <?php foreach ($cityList as $key => $value) {
@@ -70,27 +70,27 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <input type="radio" id="premier_wise" name="allrep" value="premier_wise"><label for="premier_wise">Premier Colleges</label>
+                                <input type="radio" id="premier_wise" name="allrep" value="premier_wise"><label for="premier_wise">&nbsp;Premier Colleges</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="branch_wise" name="allrep" value="branch_wise"><label for="branch_wise">Branch Wise</label>
+                                <input type="radio" id="branch_wise" name="allrep" value="branch_wise"><label for="branch_wise">&nbsp;Branch Wise</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="degree_wise" name="allrep" value="degree_wise"><label for="degree_wise">Degree Wise</label>
+                                <input type="radio" id="degree_wise" name="allrep" value="degree_wise"><label for="degree_wise">&nbsp;Degree Wise</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="year_of_com" name="allrep" value="year_of_com"><label for="year_of_com">Year of Completion wise</label>
+                                <input type="radio" id="year_of_com" name="allrep" value="year_of_com"><label for="year_of_com">&nbsp;Year of Completion wise</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <input type="radio" id="gender_wise" name="allrep" value="gender_wise"><label for="gender_wise">Gender Wise</label>
+                                <input type="radio" id="gender_wise" name="allrep" value="gender_wise"><label for="gender_wise">&nbsp;Gender Wise</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="week_wise" name="allrep" value="week_wise"><label for="week_wise">Week Wise</label>
+                                <input type="radio" id="week_wise" name="allrep" value="week_wise"><label for="week_wise">&nbsp;Week Wise</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" id="top_100_clg" name="allrep" value="top_100_clg"><label for="top_100_clg">Top 100 Colleges</label>
+                                <input type="radio" id="top_100_clg" name="allrep" value="top_100_clg"><label for="top_100_clg">&nbsp;Top 100 Colleges</label>
                             </div>
                         </div>
                             <?php } ?>
@@ -137,6 +137,9 @@
                         case 'voting_graph':
                             $this->load->view('admin/voating_report',$otherPage);
                         break;
+                        default: // Abhay : Added this default case in order to show Statistics reports by default on reports page.
+                            $this->load->view('admin/statistics_report',$otherPage);
+                        break;
                     }
                     ?> 
                 </div>
@@ -152,7 +155,7 @@
                         <hr class="admin-link">
                         <p style="font-size: 16px;" class="p1">Schedule Webinars <a href=""><i class='bx bxs-chevron-right'></i></a></p>
                         <hr class="admin-link"> -->
-                        <a href=""><p style="font-size: 16px;" class="p1">Reports <i class='bx bxs-chevron-right'></i></a></p>
+                        <a href="<?php echo base_url()?>admin/reports"><p style="font-size: 16px;" class="p1">Reports <i class='bx bxs-chevron-right'></i></a></p>
                     </div>
                 </div>
                 <!-- <div class="row form-row ws-form-row m-0 voat-star" style="display: block !important;">
