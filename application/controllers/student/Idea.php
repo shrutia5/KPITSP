@@ -115,6 +115,8 @@ class Idea extends CI_Controller {
         $infoData = $this->CommonModel->GetMasterListDetails("*", 'infoSettings', array(), '', '', array(), '');
         $data['infoSetting'] = $infoData[0];
 
+        $whereuserid=array("userID="=>$userid);
+        $infoGuidedData = $this->CommonModel->GetMasterListDetails("*",'guidedstatus',$whereuserid,'','',array(),'');
 
         //print "<pre>";
         //print_r($trlNames); exit;
@@ -124,6 +126,7 @@ class Idea extends CI_Controller {
         $data['metaDescription'] = "Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
+        $data['infoGuidedData']=$infoGuidedData;
         $this->load->view('student/header', $data);
         $this->load->view('student/submitIdea', $data);
         $this->load->view('student/footer');
@@ -227,9 +230,13 @@ class Idea extends CI_Controller {
         $projectsMessages = $this->CommonModel->GetMasterListDetails($selectMsg, 'project_messages', $whereMsg, '', '', $joinMsg, '');
         $data['projectsMessages'] = $projectsMessages;
 
+        $whereuserid=array("userID="=>$userid);
+        $infoGuidedData = $this->CommonModel->GetMasterListDetails("*",'guidedstatus',$whereuserid,'','',array(),'');
+
         $data['pageTitle'] = "KPIT sparkle | Student Dashboard";
         $data['metaDescription'] = "Student Dashboard";
         $data['metakeywords'] = "KPIT sparkle Student Dashboard";
+        $data['infoGuidedData']=$infoGuidedData;
         $this->load->view('student/header', $data);
         $this->load->view('student/project-details', $data);
         $this->load->view('student/footer');

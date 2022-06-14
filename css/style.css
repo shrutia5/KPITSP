@@ -229,27 +229,24 @@ h2.section_secondary_title.dark {
   text-transform: uppercase;
   font-family: "Work Sans", sans-serif;
 }
-.nav-menu-admin > ul > li
-{
-position: relative;
-white-space: nowrap;
-padding: 0px 20px;
-line-height: 64px;
-vertical-align: middle;
+.nav-menu-admin > ul > li {
+  position: relative;
+  white-space: nowrap;
+  padding: 0px 20px;
+  line-height: 64px;
+  vertical-align: middle;
 }
 
 .nav-menu-admin a {
   color: #ffffff;
 }
 .nav-menu-admin > ul > li.active {
-background: #757AF73D;
-border-bottom: 2px solid #757AF7;
-
+  background: #757af73d;
+  border-bottom: 2px solid #757af7;
 }
 .nav-menu-admin > ul > li.active > a {
-  
   color: #fff;
-  }
+}
 
 .nav-menu a:hover,
 .nav-menu .active > a,
