@@ -21,7 +21,7 @@
                     <h4 class="mobile-team"><button class="btn2"><i class='bx bx-plus bx-sm'></i></button></h4>
                     <?php } ?>
                     
-                    <i class="bx bxs-chat bx-sm mobile-click hat-box-head" style="color:#8FDB00;"></i>
+                    <i class="bx bxs-chat bx-sm mobile-click chat-box-head" style="color:#8FDB00;"></i>
                    
                     <i class="bx bx-group bx-sm mobile-click" style="color:#8FDB00;"></i>
                     
