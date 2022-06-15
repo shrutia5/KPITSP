@@ -1,4 +1,29 @@
 
+$(document).ready(function(){
+  
+  $("body").on("click","#excel",function(e){
+    $("#report_type").val($(e.currentTarget).val());
+    //$("#reportFilter").attr("target","_blank");
+    $("#reportFilter").submit();
+  });
+  $("body").on("click","#pdf",function(e){
+    $("#report_type").val($(e.currentTarget).val());
+    $("#reportFilter").attr("target","_blank");
+    $("#reportFilter").submit();
+  });
+
+  $("body").on("click","#filter",function(e){
+    $("#report_type").val('');
+    $("#reportFilter").attr("target","_self");
+    $("#reportFilter").submit();
+  });
+  
+  $("body").on("change",".dropChange",function(e){
+    $("#reportFilter").submit();
+  });
+
+});
+
 try{
 const ctx = document.getElementById('year').getContext('2d');
 const data = {
@@ -88,33 +113,40 @@ try{
     }
     try{
         const ctx = document.getElementById('statData').getContext('2d');
+       // var daat = JSON.parse(datastat);
         const data = {
-            labels: ['w1','w2'],
+            labels: dataLabel,
             datasets: [
                 {
-                    label: 'Dataset 1',
-                    data: [10,22],
+                    label: 'Users',
+                    data: datastat,
                     backgroundColor:['rgb(255, 99, 132)'],
                 },
                 {
-                    label: 'Dataset 1',
-                    data: [10,22],
+                    label: 'Projects',
+                    data: dataProject,
                     backgroundColor:['rgb(54, 162, 235)'],
                 },
+                
             ]
           };
-          console.log(ctx);
           if(ctx != undefined){
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: data,
                 options: {
+                    scales: {
+                      y: {
+                        suggestedMin: 50,
+                        suggestedMax: 100
+                      }
+                    },
                     responsive: true,
                     plugins: {
-                    legend:false,
+                    legend:true,
                     title: {
                         display: true,
-                        text: 'Statstics'
+                        text: 'Weekwise User register and project submission'
                     }
                     }
                 },
