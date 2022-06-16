@@ -53,8 +53,18 @@
                                     }
                                      ?>
                                 </div>
-                                <div class="video-body">
+                                <!-- <div class="video-body">
                                     <div class="play"><i class="icofont-play-alt-2"></i></div>
+                                </div> -->
+
+                                <div class="video-body">
+                                    <div class="play"><i class="">
+                                    <?php if($juryList->juryAction == "Top 10" && $_GET['filterOption']== "top10"){ ?>
+                                            <a href="#removeTop10" class="juryremove" data-proId="<?= $juryList->projectID ?>" data-id="<?= $juryList->sparkleID ?>"  data-toggle="modal">Remove from top 10</i></a>
+                                    <?php } else{?>
+                                        <a href="#prototypeVideojury" class="juryaction juryaction-grid-view-icon" data-id="<?= $juryList->sparkleID ?>" data-url="<?= base_url()?>images/studentFiles/<?= $juryList->sparkleID?>/<?= $juryList->prototypeProgressVideo?>" data-value="<?= $juryList->prototypeProgressVideo ?>" data-toggle="modal"><i class="icofont-play-alt-2"></i></a>
+                                    <?php } ?>
+                                    </i></div>
                                 </div>
                             
                                 <img src="<?php echo base_url();?>images/clients/car.jpg">

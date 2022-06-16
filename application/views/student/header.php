@@ -27,106 +27,66 @@
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
             rel="stylesheet">
 
-        <!-- Vendor CSS Files -->
-        <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/icofont/icofont.min.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/boxicons/css/boxicons.min.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/remixicon/remixicon.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/venobox/venobox.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/aos/aos.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/alertifyjs/css/alertify.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/realTimeUpload/css/RealTimeUpload.css" />
+  <!-- Vendor CSS Files -->
+  <link href="<?php echo base_url();?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/icofont/icofont.min.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/remixicon/remixicon.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/venobox/venobox.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/aos/aos.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>assets/alertifyjs/css/alertify.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/realTimeUpload/css/RealTimeUpload.css" />
 
-        <!-- Template Main CSS File -->
-        <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>css/student.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>css/mobilechanges.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="<?php echo base_url();?>css/style.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>css/student.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>css/mobilechanges.css" rel="stylesheet">
 
-<?php
-if (($this->uri->segment(1) == 'student' && $this->uri->segment(2) == 'dashboard') ||
-        ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'submit-idea') ||
-        ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'myaccount') ||
-        ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'project')) {
-    ?>
-            <link href="<?php echo base_url(); ?>css/chariot.css" rel="stylesheet">
-<?php } ?>
+  <?php if(($this->uri->segment(1) == 'student' && $this->uri->segment(2) == 'dashboard') || 
+  ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'submit-idea') || 
+  ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'myaccount') || 
+  ($this->uri->segment(1) == 'student') && ($this->uri->segment(2) == 'project')) { ?>
+  <link href="<?php echo base_url();?>css/chariot.css" rel="stylesheet">
+  <?php } ?>
 
-        <script>
-            var base_url = '<?= base_url() ?>';
-        </script>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/slim/css/slim.min.css">
-        <!-- Meta Pixel Code -->
-        <script>
-            !function (f, b, e, v, n, t, s)
-            {
-                if (f.fbq)
-                    return;
-                n = f.fbq = function () {
-                    n.callMethod ?
-                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq)
-                    f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                    'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '430599718403780');
-            fbq('track', 'PageView');
-        </script>
-    <noscript><img height="1" width="1" style="display:none"
-                   src="https://www.facebook.com/tr?id=430599718403780&ev=PageView&noscript=1"
-                   /></noscript>
-    <!-- End Meta Pixel Code -->
-
-    <!-- LinkedIn Pixel Code -->
-    <script type="text/javascript"> _linkedin_partner_id = "4435793";
-        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    </script><script type="text/javascript">
-        (function (l) {
-            if (!l) {
-                window.lintrk = function (a, b) {
-                    window.lintrk.q.push([a, b])
-                };
-                window.lintrk.q = []
-            }
-            var s = document.getElementsByTagName("script")[0];
-            var b = document.createElement("script");
-            b.type = "text/javascript";
-            b.async = true;
-            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-            s.parentNode.insertBefore(b, s);
-        })(window.lintrk);
-    </script> 
-    <noscript> 
-    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=4435793&fmt=gif" /> 
-    </noscript>
-    <!-- LinkedIn Pixel Code End-->
+  <script>
+    var base_url = '<?= base_url()?>';
+  </script>
+  <link rel="stylesheet" href="<?php  echo base_url();?>assets/slim/css/slim.min.css">
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '187141812592472');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=187141812592472&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
 </head>
 
 <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container-fluid p-0">
-            <div class="row justify-content-center">
-                <div class="col-xl-12 d-flex align-items-center">
-                    <a href="<?php echo base_url(); ?>" class="logo">
-                        <img src="<?php echo base_url(); ?>images/logo.png" alt="KPIT SPARKLE">
-                    </a>
-                    <div class="myprofile ml-auto d-lg-block">
-                                         <?php if ($this->session->userdata('userId')) {
-                                             ?>
-                            <span class="myaccount" id="profile-dropdown">
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container-fluid p-0">
+      <div class="row justify-content-center">
+        <div class="col-xl-12 d-flex align-items-center">
+          <a href="<?php echo base_url();?>" class="logo">
+            <img src="<?php echo base_url();?>images/logo.png" alt="KPIT SPARKLE">
+          </a>
+          <div class="myprofile ml-auto d-lg-block">
+            <?php if($this->session->userdata('userId'))
+          { ?>
+            <span class="myaccount" id="profile-dropdown">
 
                                 <div class="my-pro" id="menu">
                                     <span>

@@ -140,10 +140,10 @@
                                     <h4>Team Formation Guide</h4>
                                     <p class="sub-info"><small>According to the category selected, you need to consider the following skills while forming your team:</small></p>
                                 </div>
+                               
                             </div>
-                             <div id="expertise" name="expertise">
-                            
-                            <br>
+                            <div class="col-12" id="expertise" name="expertise">
+                                <br>
                             <?php if(isset($projectdetails->categoryID) && $projectdetails->categoryID != "")
                                         {
                                             // var_dump($projectdetails->categoryID);
@@ -472,7 +472,7 @@
                 </div>
             </div>
             <div class="col-md-3 col-12 pt-4 helpful-section">
-                <h4  class="sub1">Helpful Resources</h4>
+                <h4 class="sub1" id="helpful-resources-head">Helpful Resources</h4>
                 <hr class="hr-helpful sub1">
 
                 <div class="card-helpful">

@@ -16,8 +16,8 @@
                        <?php }elseif($allrep == "branch_wise"){ ?>
                             <th>Branch Name</th>
                         <?php }elseif($allrep == "degree_wise"){ ?>
-                            <th>Branch Name</th>
-                        <?php }elseif($allrep == "yearOfCompletion"){ ?>
+                            <th>Degree Name</th>
+                        <?php }elseif($allrep == "year_of_com"){ ?>
                             <th>Year Of Completion</th>
                        <?php }elseif($allrep == "gender_wise"){ ?>
                             <th>Gender</th>

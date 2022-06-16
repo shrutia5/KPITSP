@@ -65,7 +65,6 @@ $(document).ready(function () {
     return sleepFor(0, "didRenderTooltip promise resolved");
   }
   function didFinishStep(step, stepIndex, tutorial) {
-    
     $.ajax({
       type: "POST",
       url: base_url + "student/updateguide/student_project",
