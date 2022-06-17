@@ -1,11 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-=======
 require APPPATH.'../admin/crmAPI/vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
 
 class Reports extends CI_Controller {
 
@@ -25,19 +22,11 @@ class Reports extends CI_Controller {
         $country_id = $this->input->get('country_id');
         $state_id = $this->input->get('state_id');
         $city_id = $this->input->get('city_id');
-
-
-        
-        if(!isset($country_id) || empty($country_id)){
-            $country_id = "101";
-        }
-=======
         $report_type = $this->input->get('report_type');
         
         // if(!isset($country_id) || empty($country_id)){
         //     $country_id = "101";
         // }
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
         $other = array("orderBy"=>$orderBy,"order"=>$order);
 		$wherec = $join = array();
 
@@ -48,12 +37,9 @@ class Reports extends CI_Controller {
 		}
         $data['otherPage']['list'] = "";
         $data['otherPage']['allrep'] = "";
-
-=======
         if(!isset($reportType) || empty($reportType)){
             $reportType = "statistics2";
         }
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
         switch ($reportType) {
             case 'list_of_reg':
             {
@@ -70,10 +56,6 @@ class Reports extends CI_Controller {
                 $join[1]['key1'] ="userID";
                 $join[1]['key2'] ="userID";
 
-
-                $isAll = $this->input->post('getAll');
-                $selectC="t.*,c.college_name,c.is_top_100,c.is_premier,p.projectStatus,p.phaseTwoStatus,p.phaseThreeStatus,p.phaseOneDataSubmited,p.phaseTwoDataSubmited,p.currentPhase,p.phaseThreeStatus";
-=======
                 $join[2]['type'] ="LEFT JOIN";
                 $join[2]['table']="master_country";
                 $join[2]['alias'] ="cou";
@@ -94,52 +76,25 @@ class Reports extends CI_Controller {
 
                 $isAll = $this->input->post('getAll');
                 $selectC="t.*,cou.country_name,s.state_name,c.college_name,ci.city_name,c.is_top_100,c.is_premier,p.projectStatus,p.phaseTwoStatus,p.phaseThreeStatus,p.phaseOneDataSubmited,p.phaseTwoDataSubmited,p.currentPhase,p.phaseThreeStatus";
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                 $registerUsers = $this->CommonModel->GetMasterListDetails($selectC,'userregistration',$wherec,'','',$join,$other);
                 $data['otherPage']['list'] = $registerUsers;
                 break;
             }
             case 'all_report':
             {
-
-                // get country list
-=======
                 // // get country list
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                 $other = array();
                 $wherec = array("is_active"=> " = 1");
                 $countryList = $this->CommonModel->GetMasterListDetails("*",'master_country',$wherec,'','',array(),array());
                 $tes = array_column($countryList,"country_id");
-
-                // get state list
-                $other = array();
-                $wherec = array("is_del"=> " = 0");
-=======
                 // // get state list
                 $other = array();
                 $wherec = array("status"=> " ='active'");
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                 if(isset($country_id) && !empty($country_id)){
                     $wherec ["country_id ="] = $country_id;
                 }
                 
                 $stateList = $this->CommonModel->GetMasterListDetails("*",'master_states',$wherec,'','',array(),$other);
-
-                // get city list
-                $other = array();
-                $wherec = array("is_del"=> " = 0");
-                if(isset($state_id) && !empty($state_id)){
-                    $wherec["state_id ="] = $state_id;
-                }else{
-                    $other['whereIn'] = "state_id";
-                    $other['whereData'] = implode(",",array_column($stateList,"state_id"));
-                }
-                $cityList = $this->CommonModel->GetMasterListDetails("*",'master_cities',$wherec,'','',array(),$other);
-
-                $data['countryList'] = $countryList;
-                $data['stateList'] = $stateList;
-                $data['cityList'] = $cityList;
-=======
                 // // get city list
                 // $other = array();
                 // $wherec = array("status"=> " ='active'");
@@ -154,7 +109,6 @@ class Reports extends CI_Controller {
                 // $data['countryList'] = $countryList;
                 // $data['stateList'] = $stateList;
                 // $data['cityList'] = $cityList;
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                 $data['country_id'] = $country_id;
                 $allrep = $this->input->get('allrep');
                 $tot =0;
@@ -164,11 +118,7 @@ class Reports extends CI_Controller {
 
                         $selectC="t.state_name,t.state_id";
                         
-
-                        $wherec = array("is_del"=> " = 0");
-=======
                         $wherec = array("status"=> " ='active'");
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                         $stateList = $this->CommonModel->GetMasterListDetails($selectC,'master_states',$wherec,'','',$join,$other);
                         foreach ($stateList as $key => $value) {
                             $join = array();
@@ -236,11 +186,7 @@ class Reports extends CI_Controller {
                         {
     
                             $selectC="t.city_name,t.city_id";
-
-                            $wherec = array("is_del"=> " = 0");
-=======
                             $wherec = array("status"=> " ='active'");
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                             if(isset($city_id) && !empty($city_id)){
                                 $wherec["city_id ="] = $city_id;
                             }else{
@@ -311,10 +257,7 @@ class Reports extends CI_Controller {
                             $listData[2] = $object2;
                             $listData[3] = $object3;
                             $clgList = $this->getListDetails($listData,"yearOfCompletion");
-
-=======
                             //print_r($clgList);exit;
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                             $data['otherPage']['list'] = $clgList;
                             $data['otherPage']['allrep'] = $allrep;
                             break;
@@ -351,10 +294,7 @@ class Reports extends CI_Controller {
                             
                             
                 }
-
-=======
                 break;
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
             }
             case 'statistics':{
                 
@@ -412,44 +352,6 @@ class Reports extends CI_Controller {
                 $wherec = array();
                 $stateList = array();
                 $today = Date("Y-m-d");
-
-                $UserRecord = $this->CommonModel->getUserstatRecord('2022-2-01',$today);
-                $weekRecord = $this->CommonModel->getProjectstatRecord('2022-2-01',$today);
-                $datan = array();
-                if(count($UserRecord) > count($weekRecord)){
-                    
-                    foreach ($UserRecord as $key => $value) {
-                        $datan[$key][0] = $value->tot;
-                        if(isset($weekRecord[$key]->tot)){
-                            $datan[$key][1] = $weekRecord[$key]->tot;
-                        }else{
-                            $datan[$key][1] = 0;
-                        }
-                    }
-
-                }else{
-                    foreach ($weekRecord as $key => $value) {
-                        if(isset($UserRecord[$key]->tot)){
-                            $datan[$key][0] = $UserRecord[$key]->tot;
-                        }else{
-                            $datan[$key][0] = 0;
-                        }
-                        $datan[$key][1] = $value->tot;
-                    }
-                }
-                
-                
-                print "<pre>";
-                print_r($datan); 
-                print_r($UserRecord); 
-                print_r($weekRecord); exit;
-                $data['statData'] = $stateList;
-                break;
-            }
-
-           
-
-=======
                 $ddate = "2012-2-01";
                 $date = new DateTime($ddate);
                 $startWeek = $date->format("W");
@@ -483,7 +385,6 @@ class Reports extends CI_Controller {
                 break;
             }
 
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
             case 'evaluators':{
                 
                 break;
@@ -492,8 +393,6 @@ class Reports extends CI_Controller {
                 
                 break;
             }
-
-=======
 
             default:{ // Abhay : Added this default case in order to show Statistics reports by default on reports page. Same code as case 'statistics' above.
                 
@@ -544,28 +443,12 @@ class Reports extends CI_Controller {
                 $data['statData'] = $stateList;
                 break;
             }
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
         }
         //  print "<pre>";
         //  print_r($stateList); exit;
 
         	
 		//print $tot;
-
-
-		
-		
-
-
-        $data['filter']['reportType'] = $reportType;
-        $data['menuName'] = "reports";
-        $data['pageTitle']="KPIT sparkle | Admin Reports";
-        $data['metaDescription']="Admin Reports";
-        $data['metakeywords']="KPIT sparkle Admin Reports";
-        $this->load->view('admin/header',$data);
-        $this->load->view('admin/reports',$data);
-        $this->load->view('admin/footer');
-=======
         if(isset($report_type) && !empty($report_type)){
             if(!isset($allrep) || empty($allrep)){
                 $allrep= "";
@@ -588,7 +471,6 @@ class Reports extends CI_Controller {
             $this->load->view('admin/reports',$data);
             $this->load->view('admin/footer');
         }
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
     }
 
     public function getListDetails($list,$where){
@@ -648,8 +530,6 @@ class Reports extends CI_Controller {
         }
         return $list;
     }
-
-=======
     public function pdfexcelReport($report_type,$printDetails1,$allRepType,$reportType){
         $rowArray = array();$printDetails= array();
         //print_r($printDetails1['otherPage']['list']);
@@ -920,5 +800,4 @@ class Reports extends CI_Controller {
         //exit;
     }
     
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
 }
