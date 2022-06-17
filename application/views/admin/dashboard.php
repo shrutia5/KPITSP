@@ -1007,16 +1007,16 @@
                     <div class="full-left noFooter">
                         <p style="font-size: 18px;">Useful Links</p>
                         <hr class="admin-link">
-                        <p style="font-size: 16px;" class="p1">View Evaluation progress <a href=""><i class='bx bxs-chevron-right'></i></a></p>
+                        <!-- <p style="font-size: 16px;" class="p1">View Evaluation progress <a href=""><i class='bx bxs-chevron-right'></i></a></p>
                         <hr class="admin-link">
                         <p style="font-size: 16px;" class="p1">View Incubation progress <a href=""><i class='bx bxs-chevron-right'></i></a></p>
                         <hr class="admin-link">
                         <p style="font-size: 16px;" class="p1">Schedule Webinars <a href=""><i class='bx bxs-chevron-right'></i></a></p>
-                        <hr class="admin-link">
-                        <p style="font-size: 16px;" class="p1">Reports <a href=""><i class='bx bxs-chevron-right'></i></a></p>
+                        <hr class="admin-link"> -->
+                        <a href="<?php echo base_url()?>admin/reports"><p style="font-size: 16px;" class="p1">Reports <i class='bx bxs-chevron-right'></i></a></p>
                     </div>
                 </div>
-                <div class="row form-row ws-form-row m-0 voat-star" style="display: block !important;">
+                <!-- <div class="row form-row ws-form-row m-0 voat-star" style="display: block !important;">
                     <div class="full-left noFooter">
                         <p style="font-size: 18px;">Voting Stats</p>
                         <hr class="admin-link">
@@ -1053,7 +1053,7 @@
                             <hr class="admin-link">
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

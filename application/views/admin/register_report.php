@@ -39,19 +39,19 @@
                                             <td><?php echo $pdetails->firstname." ".$pdetails->lastName;?></td>
                                             <td><?php echo $pdetails->email;?></td>
                                             <td><?php echo $pdetails->phoneNumber;?></td>
-                                            <td><?php echo $pdetails->country_id;?></td>
-                                            <td><?php echo $pdetails->state_id;?></td>
-                                            <td><?php echo $pdetails->city_id;?></td>
+                                            <td><?php echo $pdetails->country_name;?></td>
+                                            <td><?php echo $pdetails->state_name;?></td>
+                                            <td><?php echo $pdetails->city_name;?></td>
                                             <td><?php echo $pdetails->otherCity;?></td>
                                             <td><?php echo $pdetails->gender;?></td>
                                             <td><?php echo $pdetails->college_name;?></td>
                                             <td><?php if($pdetails->is_top_100 == "1") {echo "Yes";}else{echo "No";}?></td>
                                             <td><?php if($pdetails->is_premier == "1") {echo "Yes";}else{echo "No";}?></td>
                                             <td><?php echo $pdetails->verify_email;?></td>
-                                            <td><?php if($pdetails->phaseOneDataSubmited == "1"){ echo "Yes";}?></td>
-                                            <td><?php if($pdetails->phaseTwoDataSubmited == "1"){ echo "Yes";}?></td>
-                                            <td><?php if($pdetails->phaseTwoStatus == "Approved" && $pdetails->currentPhase =="3"){ echo "Yes";}?></td>
-                                            <td><?php if($pdetails->phaseThreeStatus == "50"){ echo "Yes";}?></td>
+                                            <td><?php if($pdetails->phaseOneDataSubmited == "1"){ echo "Yes";}else{ echo "-";}?></td>
+                                            <td><?php if($pdetails->phaseTwoDataSubmited == "1"){ echo "Yes";}else{ echo "-";}?></td>
+                                            <td><?php if($pdetails->phaseTwoStatus == "Approved" && $pdetails->currentPhase =="3"){ echo "Yes";}else{ echo "-";}?></td>
+                                            <td><?php if($pdetails->phaseThreeStatus == "50"){ echo "Yes";}else{ echo "-";}?></td>
                                             
                                             
                                         </tr>

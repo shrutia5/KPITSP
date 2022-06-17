@@ -477,6 +477,7 @@ class Register extends CI_Controller {
         $userData['sms_otp'] = random_int(1000, 9999);
         $userData['yearOfCompletion'] = $this->validatedata->validate('YearOfCompletion', 'Year of completion', true, '', array());
         $userData['identityCard'] = $this->input->post('identityCard');
+        $userData['createdDate'] = Date("YYYY-MM-DD");
         if ($userData['college_id'] == "other") {
             $userData['college_id'] = "";
             $userData['otherCollege'] = $this->validatedata->validate('otherCollege', 'Other College Name', true, '', array());
@@ -508,33 +509,37 @@ class Register extends CI_Controller {
             exit;
         }
 
-        if (!$this->input->post('g-recaptcha-response')) {
-            $status['msg'] = "Catpcha Not Verified";
-            $status['statusCode'] = validation_errors();
-            $status['flag'] = 'F';
-            echo json_encode($status);
-            exit;
-        } else {
-            $secKey = "6Ld0Sg4fAAAAALxuMTPYx10YB5AIs89Nfv0BnuCb";
-            $ip = $_SERVER['REMOTE_ADDR'];
-            $response = $this->input->post('g-recaptcha-response');
-            $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secKey&response=$response&remoteip=$ip";
-            $fire = file_get_contents($url);
-            $data = json_decode($fire);
-            // print_r($data->success);exit;
-            if (!$data->success) {
-                $status['msg'] = "Captcha Not Verified!";
-                $status['statusCode'] = validation_errors();
-                $status['flag'] = 'F';
-                echo json_encode($status);
-                exit;
-            }
-        }
+        // if (!$this->input->post('g-recaptcha-response')) {
+        //     $status['msg'] = "Catpcha Not Verified";
+        //     $status['statusCode'] = validation_errors();
+        //     $status['flag'] = 'F';
+        //     echo json_encode($status);
+        //     exit;
+        // } else {
+        //     $secKey = "6Ld0Sg4fAAAAALxuMTPYx10YB5AIs89Nfv0BnuCb";
+        //     $ip = $_SERVER['REMOTE_ADDR'];
+        //     $response = $this->input->post('g-recaptcha-response');
+        //     $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secKey&response=$response&remoteip=$ip";
+        //     $fire = file_get_contents($url);
+        //     $data = json_decode($fire);
+        //     // print_r($data->success);exit;
+        //     if (!$data->success) {
+        //         $status['msg'] = "Captcha Not Verified!";
+        //         $status['statusCode'] = validation_errors();
+        //         $status['flag'] = 'F';
+        //         echo json_encode($status);
+        //         exit;
+        //     }
+        // }
+        
         // $this->sendVerificationEmail($name,$userData['email_otp'],$userData['sms_otp'],$userData['email'],$userData['contactNo']);
         $this->sendVerificationEmail($name, $userData['email_otp'], $userData['email_otp'], $userData['email'], $userData['phoneNumber']);
         $iscreated = $this->CommonModel->saveMasterDetails('userregistration', $userData);
 
-        if (!$iscreated) {
+        // To insert userId in guidedstatus table while registration.
+        $lastId = $this->db->insert_id();
+
+        if (!$iscreated) {            
             $status['msg'] = "Something was wrong. Please try again";
             $status['statusCode'] = 998;
             $status['data'] = array();
@@ -546,6 +551,15 @@ class Register extends CI_Controller {
             if (!empty($rUserDetails)) {
                 $this->session->set_userdata('tmpotpUserId', $rUserDetails[0]->userID);
             }
+
+            // Insert guidedstatus data in table while registration.
+            $guidedData['userId'] = $lastId;
+            $guidedData['std_dashboard'] = "N";
+            $guidedData['std_submitidea'] = "N";
+            $guidedData['std_myaccount'] = "N";
+            $guidedData['std_project'] = "N";
+            $addguidedstatus = $this->CommonModel->saveMasterDetails('guidedstatus', $guidedData);
+
             $status['msg'] = $this->systemmsg->getSucessCode(422);
             $status['statusCode'] = 400;
             $status['data'] = array();

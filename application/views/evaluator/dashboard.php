@@ -61,10 +61,10 @@
                     <div class="eval-table">
                         <div class="eva-list">Innovate List </div>
                         <div class="eva-mem">
-                            <span> <span class="available-star"><i class='bx bx-star'></i></span> Available</span>
-                            <span><span class="selection-star"><i class='bx bxs-star' ></i></span>My Selection</span>
-                            <span><span class="locked-star"><i class='bx bxs-star' ></i></span>Locked</span>
-                            <span><span class="evaluated-star"><i class='bx bxs-star' ></i></span>Evaluated</span>
+                            <span class="stars"><span class="available-star"><i class='bx bx-star'></i></span>Available</span>
+                            <span class="stars"><span class="selection-star"><i class='bx bxs-star' ></i></span>My Selection</span>
+                            <span class="stars"><span class="locked-star"><i class='bx bxs-star' ></i></span>Locked</span>
+                            <span class="stars"><span class="evaluated-star"><i class='bx bxs-star' ></i></span>Evaluated</span>
                         </div>
                         <span class="search-icon"><i class='bx bx-search-alt-2'></i></span>
                         <table id="example" class="table table-striped" style="width:100%">

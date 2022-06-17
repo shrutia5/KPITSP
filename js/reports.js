@@ -1,4 +1,32 @@
 
+
+=======
+$(document).ready(function(){
+  
+  $("body").on("click","#excel",function(e){
+    $("#report_type").val($(e.currentTarget).val());
+    //$("#reportFilter").attr("target","_blank");
+    $("#reportFilter").submit();
+  });
+  $("body").on("click","#pdf",function(e){
+    $("#report_type").val($(e.currentTarget).val());
+    $("#reportFilter").attr("target","_blank");
+    $("#reportFilter").submit();
+  });
+
+  $("body").on("click","#filter",function(e){
+    $("#report_type").val('');
+    $("#reportFilter").attr("target","_self");
+    $("#reportFilter").submit();
+  });
+  
+  $("body").on("change",".dropChange",function(e){
+    $("#reportFilter").submit();
+  });
+
+});
+
+>>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
 try{
 const ctx = document.getElementById('year').getContext('2d');
 const data = {
@@ -88,6 +116,7 @@ try{
     }
     try{
         const ctx = document.getElementById('statData').getContext('2d');
+
         const data = {
             labels: ['w1','w2'],
             datasets: [
@@ -104,17 +133,51 @@ try{
             ]
           };
           console.log(ctx);
+=======
+       // var daat = JSON.parse(datastat);
+        const data = {
+            labels: dataLabel,
+            datasets: [
+                {
+                    label: 'Users',
+                    data: datastat,
+                    backgroundColor:['rgb(255, 99, 132)'],
+                },
+                {
+                    label: 'Projects',
+                    data: dataProject,
+                    backgroundColor:['rgb(54, 162, 235)'],
+                },
+                
+            ]
+          };
+>>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
           if(ctx != undefined){
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: data,
                 options: {
+
                     responsive: true,
                     plugins: {
                     legend:false,
                     title: {
                         display: true,
                         text: 'Statstics'
+=======
+                    scales: {
+                      y: {
+                        suggestedMin: 50,
+                        suggestedMax: 100
+                      }
+                    },
+                    responsive: true,
+                    plugins: {
+                    legend:true,
+                    title: {
+                        display: true,
+                        text: 'Weekwise User register and project submission'
+>>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                     }
                     }
                 },
