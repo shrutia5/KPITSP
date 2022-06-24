@@ -1,6 +1,4 @@
 
-
-=======
 $(document).ready(function(){
   
   $("body").on("click","#excel",function(e){
@@ -26,7 +24,6 @@ $(document).ready(function(){
 
 });
 
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
 try{
 const ctx = document.getElementById('year').getContext('2d');
 const data = {
@@ -116,24 +113,6 @@ try{
     }
     try{
         const ctx = document.getElementById('statData').getContext('2d');
-
-        const data = {
-            labels: ['w1','w2'],
-            datasets: [
-                {
-                    label: 'Dataset 1',
-                    data: [10,22],
-                    backgroundColor:['rgb(255, 99, 132)'],
-                },
-                {
-                    label: 'Dataset 1',
-                    data: [10,22],
-                    backgroundColor:['rgb(54, 162, 235)'],
-                },
-            ]
-          };
-          console.log(ctx);
-=======
        // var daat = JSON.parse(datastat);
         const data = {
             labels: dataLabel,
@@ -151,20 +130,11 @@ try{
                 
             ]
           };
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
           if(ctx != undefined){
             const myChart = new Chart(ctx, {
                 type: 'bar',
                 data: data,
                 options: {
-
-                    responsive: true,
-                    plugins: {
-                    legend:false,
-                    title: {
-                        display: true,
-                        text: 'Statstics'
-=======
                     scales: {
                       y: {
                         suggestedMin: 50,
@@ -177,7 +147,6 @@ try{
                     title: {
                         display: true,
                         text: 'Weekwise User register and project submission'
->>>>>>> b590bc205f44aee9bc2d135d8f46191a7647d65b
                     }
                     }
                 },

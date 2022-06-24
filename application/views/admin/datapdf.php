@@ -74,9 +74,8 @@
 					<td class="border-right border-bottom">
 						<strong><?php echo $value1;?></strong>
 					</td>
-					<?} ?>
+					<?php } ?>
 			</tr>
 			<?php } ?>
 	</tbady>
 </table>
-

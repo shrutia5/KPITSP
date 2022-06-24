@@ -26,10 +26,10 @@
                        <?php } ?>
                        
                         <th>Number Of Registration</th>
-                        <th>Nunber of Idea submission</th>
-                        <th>Nunber of Idea in phase 2</th>
-                        <th>Nunber of Idea in top 100</th>
-                        <th>Nunber of Idea in finale</th>
+                        <th>Number of Idea submission</th>
+                        <th>Number of Idea in phase 2</th>
+                        <th>Number of Idea in top 100</th>
+                        <th>Number of Idea in finale</th>
                     </tr>
                 </thead>
                 <tbody>
