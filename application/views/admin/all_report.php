@@ -25,11 +25,11 @@
                             <th>Top 100 College Name</th>
                        <?php } ?>
                        
-                        <th>Number Of Registration</th>
-                        <th>Number of Idea submission</th>
-                        <th>Number of Idea in phase 2</th>
-                        <th>Number of Idea in top 100</th>
-                        <th>Number of Idea in finale</th>
+                        <th>Number of registrations</th>
+                        <th>Number of idea submissions</th>
+                        <th>Number of ideas in phase 2</th>
+                        <th>Number of ideas in top 100</th>
+                        <th>Number of ideas in finale</th>
                     </tr>
                 </thead>
                 <tbody>

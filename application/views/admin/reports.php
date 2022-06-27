@@ -9,10 +9,10 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <select id="reportType" name="reportType" class="dropChange form-control">
-                                    <option <?php if($filter['reportType'] == "statistics2"){echo "selected='selected'";}?> value="statistics2">Statistics Week wise</option>    
+                                    <option <?php if($filter['reportType'] == "statistics2"){echo "selected='selected'";}?> value="statistics2">Week wise statistics</option>    
                                     <!--<option <?php if($filter['reportType'] == "statistics"){echo "selected='selected'";}?> value="statistics">Statistics</option>-->
-                                    <option <?php if($filter['reportType'] == "list_of_reg"){echo "selected='selected'";}?> value="list_of_reg">List of Registrations</option>
-                                    <option <?php if($filter['reportType'] == "all_report"){echo "selected='selected'";}?> value="all_report">All Report</option>
+                                    <option <?php if($filter['reportType'] == "list_of_reg"){echo "selected='selected'";}?> value="list_of_reg">List of registrations</option>
+                                    <option <?php if($filter['reportType'] == "all_report"){echo "selected='selected'";}?> value="all_report">All reports</option>
                                     <!-- <option <?php if($filter['reportType'] == "evaluators"){echo "selected='selected'";}?> value="evaluators">Evaluators</option>
                                     <option <?php if($filter['reportType'] == "voting_graph"){echo "selected='selected'";}?> value="voting_graph">Voting Detail Graph</option> -->
                                 </select>
@@ -30,7 +30,7 @@
                         <?php if($filter['reportType'] == "all_report"){ ?>
                         <div class="row">
                             <div class="col-md-3">
-                            <input type="radio" <?php if(isset($allrep) && $allrep == "country_wise"){echo "checked";} ?> class="dropChange" id="country_wise" name="allrep" value="country_wise"><label for="country_wise">&nbsp;Country Wise</label>
+                            <input type="radio" <?php if(isset($allrep) && $allrep == "country_wise"){echo "checked";} ?> class="dropChange" id="country_wise" name="allrep" value="country_wise"><label for="country_wise">&nbsp;Country wise</label>
                                 <!-- <select class="form-control" id="country_id" name="country_id" onchange="this.form.submit()">
                                     <option value="">Select</option>
                                     <?php foreach($countryList as $key => $value){
@@ -44,7 +44,7 @@
                                 </select> -->
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "state_wise"){echo "checked";} ?> class="dropChange" id="state_wise" name="allrep" value="state_wise"><label for="state_wise">&nbsp;State Wise</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "state_wise"){echo "checked";} ?> class="dropChange" id="state_wise" name="allrep" value="state_wise"><label for="state_wise">&nbsp;State wise</label>
                                 <!-- <select class="form-control" id="state_id" name="state_id" onchange="this.form.submit()">
                                     <option value="">Select</option>
                                     <?php foreach ($stateList as $key => $value) {
@@ -59,7 +59,7 @@
                                 </select> -->
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "city_wise"){echo "checked";} ?> class="dropChange" id="city_wise" name="allrep" value="city_wise"><label for="city_wise">&nbsp;City Wise</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "city_wise"){echo "checked";} ?> class="dropChange" id="city_wise" name="allrep" value="city_wise"><label for="city_wise">&nbsp;City wise</label>
                                 <!-- <select class="form-control" id="city_id" name="city_id" onchange="this.form.submit()">
                                     <option value="">Select</option>
                                     <?php foreach ($cityList as $key => $value) {
@@ -76,27 +76,27 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "premier_wise"){echo "checked";} ?> class="dropChange" id="premier_wise" name="allrep" value="premier_wise"><label for="premier_wise">&nbsp;Premier Colleges</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "premier_wise"){echo "checked";} ?> class="dropChange" id="premier_wise" name="allrep" value="premier_wise"><label for="premier_wise">&nbsp;Premier colleges</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "branch_wise"){echo "checked";} ?> class="dropChange" id="branch_wise" name="allrep" value="branch_wise"><label for="branch_wise">&nbsp;Branch Wise</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "branch_wise"){echo "checked";} ?> class="dropChange" id="branch_wise" name="allrep" value="branch_wise"><label for="branch_wise">&nbsp;Branch wise</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "degree_wise"){echo "checked";} ?> class="dropChange" id="degree_wise" name="allrep" value="degree_wise"><label for="degree_wise">&nbsp;Degree Wise</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "degree_wise"){echo "checked";} ?> class="dropChange" id="degree_wise" name="allrep" value="degree_wise"><label for="degree_wise">&nbsp;Degree wise</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "year_of_com"){echo "checked";} ?> class="dropChange" id="year_of_com" name="allrep" value="year_of_com"><label for="year_of_com">&nbsp;Year of Completion wise</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "year_of_com"){echo "checked";} ?> class="dropChange" id="year_of_com" name="allrep" value="year_of_com"><label for="year_of_com">&nbsp;Year of completion wise</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "gender_wise"){echo "checked";} ?> class="dropChange" id="gender_wise" name="allrep" value="gender_wise"><label for="gender_wise">&nbsp;Gender Wise</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "gender_wise"){echo "checked";} ?> class="dropChange" id="gender_wise" name="allrep" value="gender_wise"><label for="gender_wise">&nbsp;Gender wise</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "week_wise"){echo "checked";} ?> class="dropChange" id="week_wise" name="allrep" value="week_wise"><label for="week_wise">&nbsp;Week Wise</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "week_wise"){echo "checked";} ?> class="dropChange" id="week_wise" name="allrep" value="week_wise"><label for="week_wise">&nbsp;Week wise</label>
                             </div>
                             <div class="col-md-3">
-                                <input type="radio" <?php if(isset($allrep) && $allrep == "top_100_clg"){echo "checked";} ?> class="dropChange" id="top_100_clg" name="allrep" value="top_100_clg"><label for="top_100_clg">&nbsp;Top 100 Colleges</label>
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "top_100_clg"){echo "checked";} ?> class="dropChange" id="top_100_clg" name="allrep" value="top_100_clg"><label for="top_100_clg">&nbsp;Top 100 colleges</label>
                             </div>
                         </div>
                             <?php } ?>

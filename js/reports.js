@@ -146,7 +146,7 @@ try{
                     legend:true,
                     title: {
                         display: true,
-                        text: 'Weekwise User register and project submission'
+                        text: 'Weekwise user registration and project submissions'
                     }
                     }
                 },
