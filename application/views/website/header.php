@@ -12,15 +12,15 @@
             }
             ?></title>
         <meta content="<?php
-            if (isset($metaDescription)) {
-                echo $metaDescription;
-            }
-            ?>" name="description">
+        if (isset($metaDescription)) {
+            echo $metaDescription;
+        }
+        ?>" name="description">
         <meta content="<?php
-              if (isset($metakeywords)) {
-                  echo $metakeywords;
-              }
-            ?>" name="keywords">
+        if (isset($metakeywords)) {
+            echo $metakeywords;
+        }
+        ?>" name="keywords">
         <!-- Favicons -->
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -99,6 +99,19 @@
     </noscript>
     <!-- LinkedIn Pixel Code End-->
 
+    <!-- Google Pixel Code -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBZSMR7VV8"></script>
+    <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-XBZSMR7VV8');
+    </script>
+    <!-- Google Pixel Code End -->
 
 </head>
 
@@ -127,39 +140,39 @@
                         </ul>
                     </nav><!-- .nav-menu -->
 
-<?php if ($this->session->userdata('userId')) {
-    ?>
+                    <?php if ($this->session->userdata('userId')) {
+                        ?>
                         <div class="myprofile ml-auto d-none d-lg-block ">
                             <span class="myaccount">
 
                                 <div class="my-pro" id="menu">
                                     <span><?php
-    $firstl = $this->session->userdata('name');
-    $firstoflast = $this->session->userdata('lname');
-    $usertype = $this->session->userdata('usertype');
-    //$letter= $firstl[0].$firstoflast[0];
-    //echo $letter;exit;
-    $letter = $firstl[0];
-    $profile_img = $this->session->userdata('proImg');
-    //echo $profile_img;
-    if (empty($profile_img)) {
-        ?>
+                                        $firstl = $this->session->userdata('name');
+                                        $firstoflast = $this->session->userdata('lname');
+                                        $usertype = $this->session->userdata('usertype');
+                                        //$letter= $firstl[0].$firstoflast[0];
+                                        //echo $letter;exit;
+                                        $letter = $firstl[0];
+                                        $profile_img = $this->session->userdata('proImg');
+                                        //echo $profile_img;
+                                        if (empty($profile_img)) {
+                                            ?>
                                             <span class="span-css"> <?php echo $letter; ?> </span> 
-                                <?php } elseif (!empty($profile_img)) {
-                                    ?>
+                                        <?php } elseif (!empty($profile_img)) {
+                                            ?>
 
                                             <img class="pro-img img-fluid" src="<?php echo base_url(); ?>uploads/profile_pic/<?php echo $profile_img; ?>">
-        <?php
-    } else {
-        echo "no";
-    }
-    ?>
+                                            <?php
+                                        } else {
+                                            echo "no";
+                                        }
+                                        ?>
                                     </span> <span class="wename"> <?php echo "Welcome " . ' ' . $this->session->userdata('name'); ?></span>
                                     <i class='bx bxs-chevron-down' id="togglemenu"></i>                      
                                 </div>
 
 
-    <?php if ($usertype == "User") { ?>
+                                <?php if ($usertype == "User") { ?>
                                     <div class="sub-myaccount" style="display: none;">
                                         <p><a href="<?php echo base_url() ?>student/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>student/myaccount" class="d-block myaccount0 make-active">My Profile</a></p>
@@ -176,44 +189,44 @@
                                         <p><a href="<?php echo base_url() ?>evaluator/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>logout" class="d-block logout0 make-active">Logout</a></p>
                                     </div>
-    <?php } elseif ($usertype == "Mentor") { ?>
+                                <?php } elseif ($usertype == "Mentor") { ?>
                                     <div class="sub-myaccount" style="display: none;">
                                         <p><a href="<?php echo base_url() ?>mentor/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>logout" class="d-block logout0 make-active">Logout</a></p>
                                     </div>
-    <?php } elseif ($usertype == "Jury") { ?>
+                                <?php } elseif ($usertype == "Jury") { ?>
                                     <div class="sub-myaccount" style="display: none;">
                                         <p><a href="<?php echo base_url() ?>jury/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>logout" class="d-block logout0 make-active">Logout</a></p>
                                     </div>
-    <?php } elseif ($usertype == "Admin") { ?>
+                                <?php } elseif ($usertype == "Admin") { ?>
                                     <div class="sub-myaccount" style="display: none;">
                                         <p><a href="<?php echo base_url() ?>admin/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>logout" class="d-block logout0 make-active">Logout</a></p>
                                     </div>
-    <?php } ?>
+                                <?php } ?>
                             </span>
                         </div>
-        <?php } else { ?>
+                    <?php } else { ?>
                         <div class="ml-auto d-none d-lg-block ">
                             <a href="<?php echo base_url() ?>login" class="login-btn">Login</a>
                             <a href="<?php echo base_url() ?>register" class="register-btn">Register Now</a>
                         </div>
-<?php } ?>
+                    <?php } ?>
 
                 </div>
             </div>
         </div>
-<?php if ($this->session->userdata('userId')) { ?>
+        <?php if ($this->session->userdata('userId')) { ?>
             <div class="col-xl-12 p-0 d-block d-lg-none">
                 <a href="<?php echo base_url() ?>student/dashboard" class="d-block login-btn make-active">My Dashboard</a>
                 <a href="<?php echo base_url() ?>student/myaccount" class="d-block register-btn make-active">My Profile</a>
             </div>
-<?php } else { ?>
+        <?php } else { ?>
             <div class="col-xl-12 p-0 d-block d-lg-none">
                 <a href="<?php echo base_url() ?>login" class="login-btn">Login</a>
                 <a href="<?php echo base_url() ?>register" class="register-btn">Register Now</a>
             </div>
-<?php } ?>
+        <?php } ?>
     </header><!-- End Header -->
     <main id="main">
