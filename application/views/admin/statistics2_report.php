@@ -13,8 +13,8 @@
             <br/>
             <br/>
             <br/>
-            <p>Total User : <?php echo array_sum($statDataUser);?></p>
-            <p>Total Project submitted : <?php echo array_sum($dataProject);?></p>
+            <p>Total users : <?php echo array_sum($statDataUser);?></p>
+            <p>Total projects submitted : <?php echo array_sum($dataProject);?></p>
         </div>
     </div>
 </div>
