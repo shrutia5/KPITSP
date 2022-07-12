@@ -1951,10 +1951,10 @@ $(document).ready(function () {
   });
 });
 
-function onCheck(opt) {
+//function onCheck(opt) {
   // alert("hello world");
-  var radio = document.getElementsByName("fav_language");
-  var displayText = document.getElementById("display");
-  displayText.innerHTML = "Answer guide : " + opt.id;
+  //var radio = document.getElementsByName("fav_language");
+  //var displayText = document.getElementById("display");
+  //displayText.innerHTML = "Answer guide : " + opt.id;
   // alert(opt)
 }

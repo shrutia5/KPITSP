@@ -309,7 +309,11 @@
                                                         $fileHtmlClass = '';
                                                     }
                                                     $fileTypeQuetionsHtml .= '<div class="file-input '.$fileTagClass.' '.$fileRequired.'"><input class="form-control loadfile" type="file" '.$isRequired.' name="trlQuestion_'.$qList->trlQuestionID.'" id="trlQuestion_'.$qList->trlQuestionID.'" data-fleSize="'.$qList->fileSize.'" data-uploadType="'.$qList->uploadType.'"></div>';
-                                                    $fileTypeQuetionsHtml .= '<div class="tlfile_'.$qList->trlQuestionID.' '.$fileHtmlClass.'"><a href="'.$this->config->item("base_url").'/images/studentFiles/'.$projectdetails->sparkleID.'/'.$result->docName.'" target="_blank">'.$result->docName.'</a><span data-trlQAnsID="'.$result->trlQAnsID.'" data-questionID="'.$qList->trlQuestionID.'" class="removeTlFiles"><i class="bx bx-trash-alt" id="removelfile"></i></span></div>';
+                                                        if(isset($projectdetails->sparkleID) && !empty($projectdetails->sparkleID)){
+                                                        $fileTypeQuetionsHtml .= '<div class="tlfile_'.$qList->trlQuestionID.' '.$fileHtmlClass.'"><a href="'.$this->config->item("base_url").'/images/studentFiles/'.$projectdetails->sparkleID.'/'.$result->docName.'" target="_blank">'.$result->docName.'</a><span data-trlQAnsID="'.$result->trlQAnsID.'" data-questionID="'.$qList->trlQuestionID.'" class="removeTlFiles"><i class="bx bx-trash-alt" id="removelfile"></i></span></div>';
+                                                        }else{
+                                                            $fileTypeQuetionsHtml .= '';
+                                                        }
                                                     $fileTypeQuetionsHtml .= '</li>';
                                                 ?>
                                             <?php 
@@ -479,24 +483,25 @@
                     <div class="card-body-helpful">
                          <ul class="ul-helpful">
                            <li>
-                               <h5 class="h5-helpful">Design Thinking Process</h5>
-                                <p class="para-helpful">This video explains the design thinking process of idea submission for KPIT Sparkle</p>
-                                <a class="link-helpful" href="https://www.youtube.com/watch?v=IHnc02ho89Y" target="_blank">Watch Video</a>
+                               <h5 class="h5-helpful">Idea submission</h5>
+                                <p class="para-helpful">This video explains the new process of idea submission for KPIT Sparkle</p>
+                                <a class="link-helpful" href="https://www.youtube.com/watch?v=SQyeLY6Wldc">Watch Video</a>
                             </li>
                             <li>
                                <h5 class="h5-helpful">Sample idea form</h5>
                                 <p class="para-helpful">Following are some of the sample idea submission forms of winners from past editions for your reference:</p>
-                                <a class="link-helpful" href="<?php echo base_url(); ?>/assets/documents/2875Platinum.pdf">Read Now</a>
+                                <a class="link-helpful" href="<?php echo base_url(); ?>/assets/2875Platinum.pdf">Read Now</a>
                             </li>
                             <li>
                                <h5 class="h5-helpful">Get to know about TRL levels</h5>
-                                <p class="para-helpful">Get to know everything about a TRL and about the all the TRLs in this single video</p>
-                                <a class="link-helpful" href="https://youtu.be/LRrtilIUvYU">Watch Video</a>
+                                <p class="para-helpful">Get to know everything about a TRL and about the all the TRLs (1-4) in this single video</p>
+                                <a class="link-helpful" href="https://youtu.be/OvE_fnAqi-k">Watch Video</a>
                             </li>
                             <li>
-                               <h5 class="h5-helpful">What is ASSURED Framework?</h5>
-                                <p class="para-helpful">Get to know everything about ASSURED FRAMEWORK in this video</p>
-                                <a class="link-helpful" href="https://youtu.be/wFyYLwfrkU4">Watch Video</a>
+                               <h5 class="h5-helpful">Guide to create assured framework ppt Part 1 and 2</h5>
+                                <p class="para-helpful">Get to know everything about ASSURED FRAMEWORK and how to create a presentation explaining your project adhering to the ASSURED FRAMEWORK in this video</p>
+                                <a class="link-helpful" href="https://youtu.be/vxGOhD3U-J4">Part 1</a>
+                                <p><a class="link-helpful" href="https://youtu.be/wDP6X2PDJAY">Part 2</a></p>
                             </li>
                         </ul>
                      </div>

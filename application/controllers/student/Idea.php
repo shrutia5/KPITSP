@@ -361,7 +361,9 @@ class Idea extends CI_Controller {
             if (!empty($iscreated)) {
                 $status['data'] = ""; //$projectID;
                 $status['flag'] = 'S';
-                $this->CommonModel->logUserActivity("Project details updated", "PROJECT_MODIFIED", $projectDetails["projectID"]);
+                if(isset($projectDetails["projectID"]) && !empty($projectDetails["projectID"])){
+                    $this->CommonModel->logUserActivity("Project details updated", "PROJECT_MODIFIED", $projectDetails["projectID"]);
+                }
                 echo json_encode($status);
                 exit;
             } else {
