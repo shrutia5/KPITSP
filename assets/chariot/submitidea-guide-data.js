@@ -119,7 +119,7 @@ $(document).ready(function () {
           className: "helpful-resources-guide",
           position: "bottom",
           title: "Easy to configure",
-          text: "This is all the code required to create this two-step tutorial.",
+          text: "Please find all the helpful resources here. Make sure to go through sample idea sumission forms so that you get a clear picture.",
         },
       },
     ],

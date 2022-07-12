@@ -120,9 +120,7 @@ $(document).ready(function () {
           position: "bottom",
           title: "Highlights & Tooltips",
           text:
-            "Chariot highlights element(s), like this div element, over a " +
-            "semi-transparent overlay, and creates a tooltip, like the one " +
-            "you're reading now.",
+            "Please add details of 2 references from your college for communication purpose. So that we can ensure you have help from your institute.",
         },
       },
     ],

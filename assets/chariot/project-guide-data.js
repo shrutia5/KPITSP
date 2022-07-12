@@ -120,9 +120,7 @@ $(document).ready(function () {
           position: "bottom",
           title: "Highlights & Tooltips",
           text:
-            "Chariot highlights element(s), like this div element, over a " +
-            "semi-transparent overlay, and creates a tooltip, like the one " +
-            "you're reading now.",
+            "You can add maximum 4 team members to your team. Refer to expertise guide during idea submission to choose your team carefully.",
         },
       },
 
@@ -133,9 +131,7 @@ $(document).ready(function () {
           position: "bottom",
           title: "Highlights & Tooltips",
           text:
-            "Chariot highlights element(s), like this div element, over a " +
-            "semi-transparent overlay, and creates a tooltip, like the one " +
-            "you're reading now.",
+            "Use this chatbox to connect with the evaluation team from KPIT and they will help and guide you in the entire process.",
         },
       },
     ],

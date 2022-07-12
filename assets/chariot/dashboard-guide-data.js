@@ -120,9 +120,7 @@ $(document).ready(function () {
           position: "bottom",
           title: "Highlights & Tooltips",
           text:
-            "Chariot highlights element(s), like this div element, over a " +
-            "semi-transparent overlay, and creates a tooltip, like the one " +
-            "you're reading now.",
+            "Please add/change your profile details here. You can now add your profile picture too. Also please add your social media handles so that we can tag you in our posts.",
         },
       },
 
@@ -132,9 +130,7 @@ $(document).ready(function () {
           position: "top",
           title: "Highlights & Tooltips",
           text:
-            "Chariot highlights element(s), like this div element, over a " +
-            "semi-transparent overlay, and creates a tooltip, like the one " +
-            "you're reading now.",
+            "You can submit your innovative idea here. Please go through all the available helpful resources before submitting your idea.",
         },
       },
     ],
