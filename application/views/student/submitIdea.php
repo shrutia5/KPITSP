@@ -309,7 +309,11 @@
                                                         $fileHtmlClass = '';
                                                     }
                                                     $fileTypeQuetionsHtml .= '<div class="file-input '.$fileTagClass.' '.$fileRequired.'"><input class="form-control loadfile" type="file" '.$isRequired.' name="trlQuestion_'.$qList->trlQuestionID.'" id="trlQuestion_'.$qList->trlQuestionID.'" data-fleSize="'.$qList->fileSize.'" data-uploadType="'.$qList->uploadType.'"></div>';
-                                                    $fileTypeQuetionsHtml .= '<div class="tlfile_'.$qList->trlQuestionID.' '.$fileHtmlClass.'"><a href="'.$this->config->item("base_url").'/images/studentFiles/'.$projectdetails->sparkleID.'/'.$result->docName.'" target="_blank">'.$result->docName.'</a><span data-trlQAnsID="'.$result->trlQAnsID.'" data-questionID="'.$qList->trlQuestionID.'" class="removeTlFiles"><i class="bx bx-trash-alt" id="removelfile"></i></span></div>';
+                                                        if(isset($projectdetails->sparkleID) && !empty($projectdetails->sparkleID)){
+                                                        $fileTypeQuetionsHtml .= '<div class="tlfile_'.$qList->trlQuestionID.' '.$fileHtmlClass.'"><a href="'.$this->config->item("base_url").'/images/studentFiles/'.$projectdetails->sparkleID.'/'.$result->docName.'" target="_blank">'.$result->docName.'</a><span data-trlQAnsID="'.$result->trlQAnsID.'" data-questionID="'.$qList->trlQuestionID.'" class="removeTlFiles"><i class="bx bx-trash-alt" id="removelfile"></i></span></div>';
+                                                        }else{
+                                                            $fileTypeQuetionsHtml .= '';
+                                                        }
                                                     $fileTypeQuetionsHtml .= '</li>';
                                                 ?>
                                             <?php 
