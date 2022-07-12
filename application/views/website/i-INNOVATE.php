@@ -71,7 +71,7 @@
                             <img src="<?php echo base_url(); ?>/images/note.png">
                         </div>
                     </div>
-                    <h6 class="mt-4">1st May - 31st July 2022</h6>
+                    <h6 class="mt-4">1st May - 31st August 2022</h6>
                     <h5 class="light">Registration, Submission of ideas, Prototyping & Evaluation</h5>
                 </div>
             </div>
