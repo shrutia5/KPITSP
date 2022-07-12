@@ -18,46 +18,46 @@ class Helpful extends CI_Controller {
 
         //videos
         $usefulVideos=array();
-        $usefulVideos[0]['title'] ="How to submit an idea?";
-        $usefulVideos[0]['link'] ="https://www.youtube.com/watch?v=SQyeLY6Wldc";
-        $usefulVideos[0]['duration']="01:09 min";
-        $usefulVideos[0]['image'] ="vishal.JPG";
+        $usefulVideos[0]['title'] ="What is the design thinking process?";
+        $usefulVideos[0]['link'] ="https://www.youtube.com/watch?v=IHnc02ho89Y";
+        $usefulVideos[0]['duration']="03:56 min";
+        $usefulVideos[0]['image'] ="dtp.JPG";
         // $usefulVideos[0]['image'] ="useful-video-idea.png";
 
         $usefulVideos[1]['title'] ="Get to know about all the TRL Levels";
-        $usefulVideos[1]['link'] ="https://www.youtube.com/watch?v=OvE_fnAqi-k&list=PLreiOfKMvymCSv73puCUXHK6hu7DCPJoQ&index=7&t=26s";
-        $usefulVideos[1]['duration']="04:13 min";
-        $usefulVideos[1]['image'] ="two.jpg";
+        $usefulVideos[1]['link'] ="https://www.youtube.com/watch?v=LRrtilIUvYU";
+        $usefulVideos[1]['duration']="11:22 min";
+        $usefulVideos[1]['image'] ="trl.JPG";
         // $usefulVideos[1]['image'] ="Get_know_about_Levels.png";
 
-        $usefulVideos[2]['title'] ="Know about submitting ideas in Mobility";
-        $usefulVideos[2]['link'] ="https://www.youtube.com/watch?v=lFYfWUrDYUA&list=PLreiOfKMvymCSv73puCUXHK6hu7DCPJoQ&index=8&t=6s";
-        $usefulVideos[2]['duration']="09:35 min";
-        $usefulVideos[2]['image'] ="three.jpg";
+        $usefulVideos[2]['title'] ="What is the ASSURED Framework?";
+        $usefulVideos[2]['link'] ="https://www.youtube.com/watch?v=wFyYLwfrkU4";
+        $usefulVideos[2]['duration']="04:27 min";
+        $usefulVideos[2]['image'] ="asf.JPG";
         // $usefulVideos[2]['image'] ="Submittingideasinmobility.png";
 
         $usefulVideos[3]['title'] ="About TRIZ Methodology";
         $usefulVideos[3]['link'] ="https://www.youtube.com/watch?v=zW2gFnq1GgA&list=PLreiOfKMvymCSv73puCUXHK6hu7DCPJoQ&index=9&t=11s";
         $usefulVideos[3]['duration']="12:47 min";
-        $usefulVideos[3]['image'] ="four.jpg";
+        $usefulVideos[3]['image'] ="common.JPG";
         // $usefulVideos[3]['image'] ="About_TRIZ_Methodology.png";
 
         $usefulVideos[4]['title'] ="Using Lean canvas model for submitting ideas";
         $usefulVideos[4]['link'] ="https://www.youtube.com/watch?v=NAMJkl9nRYQ&list=PLreiOfKMvymCSv73puCUXHK6hu7DCPJoQ&index=10&t=6s";
         $usefulVideos[4]['duration']="06:07 min";
-        $usefulVideos[4]['image'] ="five.jpg";
+        $usefulVideos[4]['image'] ="common.JPG";
         // $usefulVideos[4]['image'] ="Using_Lean_submitting_ideas.png";
 
-        $usefulVideos[5]['title'] ="Complete idea submission for KPIT Sparkle 2021";
+        $usefulVideos[5]['title'] ="Complete idea submission for KPIT Sparkle 2023";
         $usefulVideos[5]['link'] ="https://www.youtube.com/watch?v=kIthrux0t3s&list=PLreiOfKMvymCSv73puCUXHK6hu7DCPJoQ&index=11&t=5s";
         $usefulVideos[5]['duration']="10:17 min";
-        $usefulVideos[5]['image'] ="six.jpg";
+        $usefulVideos[5]['image'] ="common.JPG";
         // $usefulVideos[5]['image'] ="Complete_idea_submission_for_KPIT_Sparkle.png";
 
         $usefulVideos[6]['title'] ="Know about submitting ideas in Energy";
         $usefulVideos[6]['link'] ="https://www.youtube.com/watch?v=1S7LBrrgaQw&list=PLreiOfKMvymCSv73puCUXHK6hu7DCPJoQ&index=12&t=6s";
         $usefulVideos[6]['duration']="10:17 min";
-        $usefulVideos[6]['image'] ="seven.jpg";
+        $usefulVideos[6]['image'] ="common.JPG";
         // $usefulVideos[6]['image'] ="Know_about_submitting_ideas_in_Energy.png";
 
         // print_r($usefulVideos);exit;
