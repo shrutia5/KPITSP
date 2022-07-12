@@ -2606,10 +2606,18 @@ section {
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  padding: 15px 23px;
+  /* padding: 15px 23px; */
+  padding: 15px 20px;
   margin: 0 auto;
   background: #7577f7;
 }
+/* TO MAKE BORDER SOLID ACCORDING TO DATE AFTER DYNAMIC */
+/* .active-contest-img .contest-img {
+  border: 2px solid #fff !important;
+}
+.active-contest-img:after {
+  border-top: 2px solid #fff !important;
+} */
 
 .contest img {
   width: 37px;
