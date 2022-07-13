@@ -7,7 +7,7 @@
                 <div class="col-md-6 left">
                     <div class="year-history">
                         <div class="year first"><span>2021</span></div>
-                        <p>IKPIT Sparkle 2021 - The seventh Edition of KPIT Sparkle was successfully completed on 6th March, 2021 and was the first virtual edition because of the global pandemic. The teams with 20 best ideas, shortlisted from over 2,700 entries across India, successfully presented prototypes virtually. Shri Nitin Gadkari, Hon’ble Minister for Road Transport and Highways and Minister of Micro, Small and Medium Enterprises, Govt. of India and Dr Rajiv Kumar, Vice Chairman, NITI Aayog, were guest of honor and chief guest, respectively, at the virtual grand finale event.</p>
+                        <p>KPIT Sparkle 2021 - The seventh Edition of KPIT Sparkle was successfully completed on 6th March, 2021 and was the first virtual edition because of the global pandemic. The teams with 20 best ideas, shortlisted from over 2,700 entries across India, successfully presented prototypes virtually. Shri Nitin Gadkari, Hon’ble Minister for Road Transport and Highways and Minister of Micro, Small and Medium Enterprises, Govt. of India and Dr Rajiv Kumar, Vice Chairman, NITI Aayog, were guest of honor and chief guest, respectively, at the virtual grand finale event.</p>
                         <img src="<?php echo base_url();?>/images/history/Sparkle2021.JPG">
                         <div class="title">Award Winners</div>
                         <ul>

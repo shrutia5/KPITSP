@@ -12,8 +12,7 @@
                 <div class="row mt-4">
                     <div class="col-xl-5">
                         <p>i-Innovate encourages the submission of incredible ideas to India’s challenges for sustainable development. You get an opportunity to propose & submit pioneering solutions based on your selected problem statements and WIN BIG.</p>
-                        <!--<a href="https://www.youtube.com/watch?v=PQHkD0QIKZI&t=26s" target="_blank" data-aos="zoom-out" data-aos-delay="2500">KNOW MORE <i class="icofont-long-arrow-right"></i></a>-->
-                        <a href="https://youtu.be/IODEy3oxVz8" target="_blank" data-aos="zoom-out" data-aos-delay="2500">KNOW MORE <i class="icofont-long-arrow-right"></i></a>
+                        <a href="https://www.youtube.com/watch?v=PQHkD0QIKZI&t=26s" target="_blank" data-aos="zoom-out" data-aos-delay="2500">KNOW MORE <i class="icofont-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -61,40 +60,54 @@
     </div>
 </section>
 <section class="statstics section-bg">
-    <div class="container" data-aos="fade-up">
+    <div class="container-fluid" data-aos="fade-up">
         <h2 class="section_secondary_title text-center mb-2">Contest Structure</h2>
         <div class="row pt-5">
-            <div class="col-md-4 pr-0">
+            <div class="col-md-3 pr-0">
                 <div class="text-center">
+                    <!-- TO MAKE BORDER SOLID ACCORDING TO DATE AFTER DYNAMIC -->
+                    <!-- <div class="contest active-contest-img">
+                        <div class="contest-img active-contest-img"> -->
                     <div class="contest">
                         <div class="contest-img">
                             <img src="<?php echo base_url(); ?>/images/note.png">
                         </div>
                     </div>
-                    <h6 class="mt-4">1st May - 31st August 2022</h6>
-                    <h5 class="light">Registration, Submission of ideas, Prototyping & Evaluation</h5>
+                    <h6 class="mt-4">1st May - 31st July 22</h6>
+                    <h5 class="light mr-3 ml-3">Pre-finale Selection of Top 25 teams and mentorship</h5>
                 </div>
             </div>
-            <div class="col-md-4 pr-0 pl-0">
+            <div class="col-md-3 pr-0 pl-0">
+                <div class="text-center">
+                    <div class="contest mid">
+                        <div class="contest-img">
+                            <img src="<?php echo base_url(); ?>/images/bulb.png">
+                        </div>
+                    </div>
+                    <h6 class="mt-4">31st August 22</h6>
+                    <h5 class="light mr-3 ml-3">Premier round Selection of Top 100 teams</h5>
+                </div>
+            </div>
+            <div class="col-md-3 pr-0 pl-0">
                 <div class="text-center">
                     <div class="contest mid">
                         <div class="contest-img">
                             <img src="<?php echo base_url(); ?>/images/think.png">
                         </div>
                     </div>
-                    <h6 class="mt-4">31st August - 25th September 2022</h6>
-                    <h5 class="light">Premier and Pre-Finale Round</h5>
+                    <h6 class="mt-4">25th September 22</h6>
+                    <h5 class="light mr-3 ml-3">Pre-finale Selection of Top 25 teams and mentorship</h5>
                 </div>
             </div>
-            <div class="col-md-4 pl-0">
+            <div class="col-md-3 pl-0">
                 <div class="text-center">
                     <div class="contest last">
                         <div class="contest-img">
                             <img src="<?php echo base_url(); ?>/images/win.png">
                         </div>
                     </div>
-                    <h6 class="mt-4">1st October 2022 - 28 Feb 23</h6>
-                    <h5 class="light">Mentorship to the Finalists and Grand Finale</h5>
+                    <h6 class="mt-4">25th Feb 23</h6>
+                    <h5 class="light mr-3 ml-3">Selection of Finalists & Grand Finale</h5>
                 </div>
             </div>
 

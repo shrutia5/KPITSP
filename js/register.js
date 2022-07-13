@@ -253,7 +253,7 @@ $(document).ready(function () {
         lettersonly: "Only characters allowed",
       },
       otherCollege: {
-        required: "Please Enter City Name",
+        required: "Please Enter College Name",
         lettersonly: "Only characters allowed",
       },
       college: "Please Select College",

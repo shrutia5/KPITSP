@@ -1957,4 +1957,4 @@ $(document).ready(function () {
   //var displayText = document.getElementById("display");
   //displayText.innerHTML = "Answer guide : " + opt.id;
   // alert(opt)
-}
+//}
