@@ -359,7 +359,7 @@ class Idea extends CI_Controller {
             $where = array("userID" => $this->session->userdata('userId'));
             $iscreated = $this->CommonModel->updateMasterDetails('project_master', $projectData, $where);
             if (!empty($iscreated)) {
-                $status['data'] = ""; //$projectID;
+                $status['data'] =  $projectDetails[0]->projectID;
                 $status['flag'] = 'S';
                 if(isset($projectDetails["projectID"]) && !empty($projectDetails["projectID"])){
                     $this->CommonModel->logUserActivity("Project details updated", "PROJECT_MODIFIED", $projectDetails["projectID"]);
@@ -367,7 +367,7 @@ class Idea extends CI_Controller {
                 echo json_encode($status);
                 exit;
             } else {
-                $status['data'] = "";
+                $status['data'] =  $projectDetails[0]->projectID;
                 $status['flag'] = 'F';
                 echo json_encode($status);
                 exit;
