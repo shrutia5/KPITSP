@@ -137,7 +137,7 @@ src="https://www.facebook.com/tr?id=187141812592472&ev=PageView&noscript=1"
             </div>
         </div>
         <!-- <div class="col-xl-12 p-0 d-block d-lg-none">
-            <a href="https://sparkle.kpit.com/login" class="login-btn">Login</a>
-            <a href="https://sparkle.kpit.com/registration/signup" class="register-btn">Register Now</a>
+            <a href="http://localhost/sparkle2023/login" class="login-btn">Login</a>
+            <a href="http://localhost/sparkle2023/registration/signup" class="register-btn">Register Now</a>
         </div> -->
     </header><!-- End Header -->
