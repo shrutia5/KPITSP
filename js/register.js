@@ -229,7 +229,7 @@ $(document).ready(function () {
             return true;
           },
         },
-        lettersonly: true,
+        // lettersonly: true,
       },
       otherCity: {
         required: {
@@ -238,7 +238,7 @@ $(document).ready(function () {
             return true;
           },
         },
-        lettersonly: true,
+        // lettersonly: true,
       },
       card: {
         required: true,
@@ -250,11 +250,11 @@ $(document).ready(function () {
       city: "Please Select College City",
       otherCity: {
         required: "Please Enter City Name",
-        lettersonly: "Only characters allowed",
+        // lettersonly: "Only characters allowed",
       },
       otherCollege: {
-        required: "Please Enter College Name",
-        lettersonly: "Only characters allowed",
+        required: "Please Enter City Name",
+        // lettersonly: "Only characters allowed",
       },
       college: "Please Select College",
       branch: "Please Select branch",
