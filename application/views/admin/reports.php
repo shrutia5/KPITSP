@@ -29,9 +29,9 @@
                         </div>
                         <?php if($filter['reportType'] == "all_report"){ ?>
                         <div class="row">
-                            <div class="col-md-3">
-                            <input type="radio" <?php if(isset($allrep) && $allrep == "country_wise"){echo "checked";} ?> class="dropChange" id="country_wise" name="allrep" value="country_wise"><label for="country_wise">&nbsp;Country Wise</label>
-                                <!-- <select class="form-control" id="country_id" name="country_id" onchange="this.form.submit()">
+                        <!--<div class="col-md-3">
+                             <input type="radio" <?php if(isset($allrep) && $allrep == "country_wise"){echo "checked";} ?> class="dropChange" id="country_wise" name="allrep" value="country_wise"><label for="country_wise">&nbsp;Country Wise</label>
+                               <select class="form-control" id="country_id" name="country_id" onchange="this.form.submit()">
                                     <option value="">Select</option>
                                     <?php foreach($countryList as $key => $value){
                                         if($value->country_id == $country_id){
@@ -41,8 +41,8 @@
                                         }
                                        echo "<option ".$sel." value='".$value->country_id."' >".$value->country_name."</option>";
                                     } ?>
-                                </select> -->
-                            </div>
+                                </select> 
+                            </div>-->
                             <div class="col-md-3">
                                 <input type="radio" <?php if(isset($allrep) && $allrep == "state_wise"){echo "checked";} ?> class="dropChange" id="state_wise" name="allrep" value="state_wise"><label for="state_wise">&nbsp;State Wise</label>
                                 <!-- <select class="form-control" id="state_id" name="state_id" onchange="this.form.submit()">
@@ -92,9 +92,9 @@
                             <div class="col-md-3">
                                 <input type="radio" <?php if(isset($allrep) && $allrep == "gender_wise"){echo "checked";} ?> class="dropChange" id="gender_wise" name="allrep" value="gender_wise"><label for="gender_wise">&nbsp;Gender Wise</label>
                             </div>
-                            <div class="col-md-3">
+                            <!-- <div class="col-md-3">
                                 <input type="radio" <?php if(isset($allrep) && $allrep == "week_wise"){echo "checked";} ?> class="dropChange" id="week_wise" name="allrep" value="week_wise"><label for="week_wise">&nbsp;Week Wise</label>
-                            </div>
+                            </div> -->
                             <div class="col-md-3">
                                 <input type="radio" <?php if(isset($allrep) && $allrep == "top_100_clg"){echo "checked";} ?> class="dropChange" id="top_100_clg" name="allrep" value="top_100_clg"><label for="top_100_clg">&nbsp;Top 100 Colleges</label>
                             </div>
@@ -103,7 +103,8 @@
 
                     </form>
                     <?php 
-                    switch ($filter['reportType']) {
+                    //print_r($filter); exit;
+                    switch ($allrep) {
                         case 'list_of_reg':
                             $this->load->view('admin/register_report',$otherPage);
                             break;
@@ -123,7 +124,7 @@
                             $this->load->view('admin/all_report',$otherPage);
                         break;
                         case 'gender_wise':
-                            $this->load->view('admin/all_report',$otherPage);
+                            $this->load->view('admin/genderReport',$otherPage);
                         break;
                         case 'week_wise':
                             $this->load->view('admin/all_report',$otherPage);
