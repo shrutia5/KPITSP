@@ -30,7 +30,7 @@
                         <?php if($filter['reportType'] == "all_report"){ ?>
                         <div class="row">
                         <!--<div class="col-md-3">
-                             <input type="radio" <?php if(isset($allrep) && $allrep == "country_wise"){echo "checked";} ?> class="dropChange" id="country_wise" name="allrep" value="country_wise"><label for="country_wise">&nbsp;Country Wise</label>
+                             <input type="radio" <  ?php if(isset($allrep) && $allrep == "country_wise"){echo "checked";} ?> class="dropChange" id="country_wise" name="allrep" value="country_wise"><label for="country_wise">&nbsp;Country Wise</label>
                                <select class="form-control" id="country_id" name="country_id" onchange="this.form.submit()">
                                     <option value="">Select</option>
                                     <?php foreach($countryList as $key => $value){
