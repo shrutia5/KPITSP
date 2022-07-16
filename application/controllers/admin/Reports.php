@@ -40,6 +40,7 @@ class Reports extends CI_Controller {
         if(!isset($reportType) || empty($reportType)){
             $reportType = "statistics2";
         }
+       // print $reportType; exit;
         switch ($reportType) {
             case 'list_of_reg':
             {
@@ -111,6 +112,9 @@ class Reports extends CI_Controller {
                 // $data['cityList'] = $cityList;
                 $data['country_id'] = $country_id;
                 $allrep = $this->input->get('allrep');
+                if(!isset($allrep) || empty($allrep)){
+                    $allrep = "";
+                }
                 $tot =0;
                 switch ($allrep) {
                     case 'state_wise':
@@ -308,7 +312,8 @@ class Reports extends CI_Controller {
                 }
                 break;
             }
-            case 'statistics':{
+            case 'statistics':
+                {
                 
                 $join = array();
                 $other= array();
@@ -407,7 +412,7 @@ class Reports extends CI_Controller {
             }
 
             default:{ // Abhay : Added this default case in order to show Statistics reports by default on reports page. Same code as case 'statistics' above.
-                
+               // print "ggg"; exit;
                 $join = array();
                 $other= array();
                 $wherec = array();
@@ -456,8 +461,8 @@ class Reports extends CI_Controller {
                 break;
             }
         }
-        //  print "<pre>";
-        //  print_r($stateList); exit;
+        //   print "<pre>";
+        //   print_r($data); exit;
 
         	
 		//print $tot;
@@ -474,6 +479,8 @@ class Reports extends CI_Controller {
             $data['filter']['reportType'] = $reportType;
             if(isset($allrep) && !empty($allrep)){
                 $data['allrep'] = $allrep;
+            }else{
+                $data['allrep'] ="";
             }
             $data['menuName'] = "reports";
             $data['pageTitle']="KPIT sparkle | Admin Reports";
