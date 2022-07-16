@@ -152,7 +152,7 @@
                             $this->load->view('admin/voating_report',$otherPage);
                         break;
                         default: // Abhay : Added this default case in order to show Statistics reports by default on reports page.
-                            $this->load->view('admin/statistics2_report',$otherPage);
+                            //$this->load->view('admin/statistics2_report',$otherPage);
                         break;
                     }
                     ?> 

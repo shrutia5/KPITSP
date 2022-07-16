@@ -532,7 +532,7 @@ class Reports extends CI_Controller {
                 $removeRow = false;
             }   
 
-            $wherec = array($vv=>  "'".$value->$where."'");
+            $wherec = array($vv=>"'".$value->$where."'");
             $join = array();
             $wherec["phaseTwoStatus"] = " = 'Approved'";
             $wherec["currentPhase"] = " = '3'";
