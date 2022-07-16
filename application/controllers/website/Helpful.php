@@ -60,6 +60,12 @@ class Helpful extends CI_Controller {
         $usefulVideos[6]['image'] ="common.JPG";
         // $usefulVideos[6]['image'] ="Know_about_submitting_ideas_in_Energy.png";
 
+        $usefulVideos[7]['title'] ="Know about submitting ideas in Mobility";
+        $usefulVideos[7]['link'] ="https://www.youtube.com/watch?v=lFYfWUrDYUA&list=PLreiOfKMvymCSv73puCUXHK6hu7DCPJoQ&index=8&t=6s";
+        $usefulVideos[7]['duration']="09:35 min";
+        $usefulVideos[7]['image'] ="common.JPG";
+        // $usefulVideos[2]['image'] ="Submittingideasinmobility.png";        
+
         // print_r($usefulVideos);exit;
         $protoTypeVideos=array();
         $protoTypeVideos[0]['title'] ="KPIT Sparkle 2021 Platinum Award Winner";
