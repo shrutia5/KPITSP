@@ -40,6 +40,7 @@ class Reports extends CI_Controller {
         if(!isset($reportType) || empty($reportType)){
             $reportType = "statistics2";
         }
+       // print $reportType; exit;
         switch ($reportType) {
             case 'list_of_reg':
             {
@@ -111,11 +112,14 @@ class Reports extends CI_Controller {
                 // $data['cityList'] = $cityList;
                 $data['country_id'] = $country_id;
                 $allrep = $this->input->get('allrep');
+                if(!isset($allrep) || empty($allrep)){
+                    $allrep = "";
+                }
                 $tot =0;
                 switch ($allrep) {
                     case 'state_wise':
                     {
-
+                       
                         $selectC="t.state_name,t.state_id";
                         
                         $wherec = array("status"=> " ='active'");
@@ -124,11 +128,13 @@ class Reports extends CI_Controller {
                             $join = array();
                             $other= array();
                             $wherec = array();
-
+                            $removeRow = true;
                             $wherec = array("state_id = "=> $value->state_id);
                             $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot",'userregistration',$wherec,'','',$join,$other);    
                             $stateList[$key]->numberOfreg = $numberOfreg[0]->tot;
-                            //$tot += $numberOfreg[0]->tot;
+                            if($numberOfreg[0]->tot > 0){
+                                $removeRow = false;
+                            }
 
                             $wherec["phaseOneDataSubmited"] = " = '1'";
                             $join[0]['type'] ="LEFT JOIN";
@@ -139,7 +145,9 @@ class Reports extends CI_Controller {
                             $numberOfidea = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
                             $stateList[$key]->numberOfidea = $numberOfidea[0]->tot;
                             //$tot += $numberOfidea[0]->tot;
-                            
+                            if($numberOfidea[0]->tot > 0){
+                                $removeRow = false;
+                            }
                             $wherec = array("state_id = "=> $value->state_id);
                             $join = array();
                             $wherec["phaseTwoDataSubmited"] = " = '1'";
@@ -150,9 +158,9 @@ class Reports extends CI_Controller {
                             $join[0]['key2'] ="userID";
                             $numberOfidea2 = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
                             $stateList[$key]->numberOfidea2 = $numberOfidea2[0]->tot;
-                            //$tot += $numberOfidea[0]->tot;
-                            //print "<br>";
-                            //print_r($numberOfidea2);
+                            if($numberOfidea2[0]->tot > 0){
+                                $removeRow = false;
+                            }
                             $wherec = array("state_id = "=> $value->state_id);
                             $join = array();
                             $wherec["phaseTwoStatus"] = " = 'Approved'";
@@ -165,7 +173,9 @@ class Reports extends CI_Controller {
                             $join[0]['key2'] ="userID";
                             $numberOfidea100 = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
                             $stateList[$key]->numberOfidea100 = $numberOfidea100[0]->tot;
-
+                            if($numberOfidea100[0]->tot > 0){
+                                $removeRow = false;
+                            }
                             $wherec = array("state_id = "=> $value->state_id);
                             $join = array();
                             $wherec["phaseThreeStatus"] = " = '50'";
@@ -176,7 +186,12 @@ class Reports extends CI_Controller {
                             $join[0]['key2'] ="userID";
                             $numberOfideafinal = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
                             $stateList[$key]->numberOfideafinal = $numberOfideafinal[0]->tot;
-                            
+                            if($numberOfideafinal[0]->tot > 0){
+                                $removeRow = false;
+                            }
+                            if($removeRow){
+                                unset($stateList[$key]);
+                            }
                         }
                         $data['otherPage']['list'] = $stateList;
                         $data['otherPage']['allrep'] = $allrep;
@@ -195,11 +210,12 @@ class Reports extends CI_Controller {
                             }
                             //print_r($other);exit;
                             $cityList = $this->CommonModel->GetMasterListDetails($selectC,'master_cities',$wherec,'','',$join,$other);
-                            //print_r($cityList);exit;
+                            
+                            $cityList = $this->getListDetails($cityList,"city_id",true);
+                            foreach ($cityList as $key => $value) {
+                                $removeRow = true;
+                            }
                              
-
-                            // needd t 
-                            $cityList = $this->getListDetails($cityList,"city_id");
                             
                             $data['otherPage']['list'] = $cityList;
                             $data['otherPage']['allrep'] = $allrep;
@@ -212,7 +228,7 @@ class Reports extends CI_Controller {
                             $wherec["is_premier ="] = "1";
                             $clgList = $this->CommonModel->GetMasterListDetails($selectC,'master_college',$wherec,'','',array(),array());
                             //print_r($clgList);exit;
-                            $clgList = $this->getListDetails($clgList,"college_id");
+                            $clgList = $this->getListDetails($clgList,"college_id",false);
                             $data['otherPage']['list'] = $clgList;
                             $data['otherPage']['allrep'] = $allrep;
                             break;
@@ -224,7 +240,7 @@ class Reports extends CI_Controller {
                             $wherec["is_del ="] = "0";
                             $clgList = $this->CommonModel->GetMasterListDetails($selectC,'master_branch',$wherec,'','',array(),array());
                             //print_r($clgList);exit;
-                            $clgList = $this->getListDetails($clgList,"branch_id");
+                            $clgList = $this->getListDetails($clgList,"branch_id",false);
                             $data['otherPage']['list'] = $clgList;
                             $data['otherPage']['allrep'] = $allrep;
                             break;
@@ -236,7 +252,7 @@ class Reports extends CI_Controller {
                             $wherec["is_del ="] = "0";
                             $clgList = $this->CommonModel->GetMasterListDetails($selectC,'master_degree',$wherec,'','',array(),array());
                             //print_r($clgList);exit;
-                            $clgList = $this->getListDetails($clgList,"degree_id");
+                            $clgList = $this->getListDetails($clgList,"degree_id",false);
                             $data['otherPage']['list'] = $clgList;
                             $data['otherPage']['allrep'] = $allrep;
                             break;
@@ -256,7 +272,7 @@ class Reports extends CI_Controller {
                             $listData[1] = $object1;
                             $listData[2] = $object2;
                             $listData[3] = $object3;
-                            $clgList = $this->getListDetails($listData,"yearOfCompletion");
+                            $clgList = $this->getListDetails($listData,"yearOfCompletion",false);
                             //print_r($clgList);exit;
                             $data['otherPage']['list'] = $clgList;
                             $data['otherPage']['allrep'] = $allrep;
@@ -274,7 +290,7 @@ class Reports extends CI_Controller {
                                 $listData[0] = $object;
                                 $listData[1] = $object1;
                                 $listData[2] = $object2;
-                                $clgList = $this->getListDetails($listData,"gender");
+                                $clgList = $this->getListDetails($listData,"gender",false);
                                 $data['otherPage']['list'] = $clgList;
                                 $data['otherPage']['allrep'] = $allrep;
                                 break;
@@ -286,7 +302,7 @@ class Reports extends CI_Controller {
                                     $wherec["is_top_100 ="] = "1";
                                     $clgList = $this->CommonModel->GetMasterListDetails($selectC,'master_college',$wherec,'','',array(),array());
                                     //print_r($clgList);exit;
-                                    $clgList = $this->getListDetails($clgList,"college_id");
+                                    $clgList = $this->getListDetails($clgList,"college_id",false);
                                     $data['otherPage']['list'] = $clgList;
                                     $data['otherPage']['allrep'] = $allrep;
                                     break;
@@ -296,7 +312,8 @@ class Reports extends CI_Controller {
                 }
                 break;
             }
-            case 'statistics':{
+            case 'statistics':
+                {
                 
                 $join = array();
                 $other= array();
@@ -395,7 +412,7 @@ class Reports extends CI_Controller {
             }
 
             default:{ // Abhay : Added this default case in order to show Statistics reports by default on reports page. Same code as case 'statistics' above.
-                
+               // print "ggg"; exit;
                 $join = array();
                 $other= array();
                 $wherec = array();
@@ -444,8 +461,8 @@ class Reports extends CI_Controller {
                 break;
             }
         }
-        //  print "<pre>";
-        //  print_r($stateList); exit;
+        //   print "<pre>";
+        //   print_r($data); exit;
 
         	
 		//print $tot;
@@ -462,6 +479,8 @@ class Reports extends CI_Controller {
             $data['filter']['reportType'] = $reportType;
             if(isset($allrep) && !empty($allrep)){
                 $data['allrep'] = $allrep;
+            }else{
+                $data['allrep'] ="";
             }
             $data['menuName'] = "reports";
             $data['pageTitle']="KPIT sparkle | Admin Reports";
@@ -473,16 +492,19 @@ class Reports extends CI_Controller {
         }
     }
 
-    public function getListDetails($list,$where){
+    public function getListDetails($list,$where,$isRemove){
         foreach ($list as $key => $value) {
             $join = array();
             $other= array();
             $wherec = array();
             $vv = $where."=";
+            $removeRow = true;
             $wherec = array($vv => "'".$value->$where."'");
             $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot",'userregistration',$wherec,'','',$join,$other);    
             $list[$key]->numberOfreg = $numberOfreg[0]->tot;
-            //$tot += $numberOfreg[0]->tot;
+            if($numberOfreg[0]->tot > 0){
+                $removeRow = false;
+            }
 
             $wherec["phaseOneDataSubmited"] = " = '1'";
             $join[0]['type'] ="LEFT JOIN";
@@ -492,7 +514,9 @@ class Reports extends CI_Controller {
             $join[0]['key2'] ="userID";
             $numberOfidea = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
             $list[$key]->numberOfidea = $numberOfidea[0]->tot;
-                                            
+            if($numberOfidea[0]->tot > 0){
+                $removeRow = false;
+            }                                
             $wherec = array($vv=> "'".$value->$where."'");
             $join = array();
             $wherec["phaseTwoDataSubmited"] = " = '1'";
@@ -503,7 +527,12 @@ class Reports extends CI_Controller {
             $join[0]['key2'] ="userID";
             $numberOfidea2 = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
             $list[$key]->numberOfidea2 = $numberOfidea2[0]->tot;
-            $wherec = array($vv=>  "'".$value->$where."'");
+
+            if($numberOfidea2[0]->tot > 0){
+                $removeRow = false;
+            }   
+
+            $wherec = array($vv=>"'".$value->$where."'");
             $join = array();
             $wherec["phaseTwoStatus"] = " = 'Approved'";
             $wherec["currentPhase"] = " = '3'";
@@ -515,6 +544,9 @@ class Reports extends CI_Controller {
             $join[0]['key2'] ="userID";
             $numberOfidea100 = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
             $list[$key]->numberOfidea100 = $numberOfidea100[0]->tot;
+            if($numberOfidea100[0]->tot > 0){
+                $removeRow = false;
+            }   
 
             $wherec = array($vv=> "'".$value->$where."'");
             $join = array();
@@ -526,6 +558,12 @@ class Reports extends CI_Controller {
             $join[0]['key2'] ="userID";
             $numberOfideafinal = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot",'userregistration',$wherec,'','',$join,$other);    
             $list[$key]->numberOfideafinal = $numberOfideafinal[0]->tot;
+            if($numberOfideafinal[0]->tot > 0){
+                $removeRow = false;
+            }
+            if($removeRow && $isRemove){
+                unset($list[$key]);
+            }   
             
         }
         return $list;
@@ -688,8 +726,19 @@ class Reports extends CI_Controller {
                     }
                     case 'top_100_clg':
                     {
-                        $data['otherPage']['list'] = $clgList;
-                        $data['otherPage']['allrep'] = $allrep;
+                        //print_r($printDetails1['otherPage']['list']);exit;
+                        foreach($printDetails1['otherPage']['list'] as $key => $value){
+                            $printDetails[$i]['college_name'] = $value->college_name;
+                            $printDetails[$i]['numberOfreg'] = $value->numberOfreg;
+                            $printDetails[$i]['numberOfidea'] = $value->numberOfidea;
+                            $printDetails[$i]['numberOfidea2'] = $value->numberOfidea2;
+                            $printDetails[$i]['numberOfidea100'] = $value->numberOfidea100;
+                            $printDetails[$i]['numberOfideafinal'] = $value->numberOfideafinal;
+                            $i++;
+                        }
+
+                        
+                        $rowArray = array("Top 100 College Name","Number of Registration","Number of Idea Submission","Number of Idea in Phase 2","Number Of Idea in Top 100","Number Of Idea in Finale");
                         break;
                     }
                 }
@@ -730,7 +779,7 @@ class Reports extends CI_Controller {
 
             
         }
-        // print "<pre>";
+         //print "<pre>";
         // print_r($rowArray);
         // print_r($printDetails);
         // exit;
