@@ -73,8 +73,8 @@
                             <img src="<?php echo base_url(); ?>/images/note.png">
                         </div>
                     </div>
-                    <h6 class="mt-4">1st May - 31st July 22</h6>
-                    <h5 class="light mr-3 ml-3">Pre-finale Selection of Top 25 teams and mentorship</h5>
+                    <h6 class="mt-4">1st May - 31st August 2022</h6>
+                    <h5 class="light mr-3 ml-3">Registration, Idea submission and team formation</h5>
                 </div>
             </div>
             <div class="col-md-3 pr-0 pl-0">
@@ -84,8 +84,8 @@
                             <img src="<?php echo base_url(); ?>/images/bulb.png">
                         </div>
                     </div>
-                    <h6 class="mt-4">31st August 22</h6>
-                    <h5 class="light mr-3 ml-3">Premier round Selection of Top 100 teams</h5>
+                    <h6 class="mt-4">31st August 2022</h6>
+                    <h5 class="light mr-3 ml-3">Premier Round, Selection of Top 100 teams</h5>
                 </div>
             </div>
             <div class="col-md-3 pr-0 pl-0">
@@ -95,8 +95,8 @@
                             <img src="<?php echo base_url(); ?>/images/think.png">
                         </div>
                     </div>
-                    <h6 class="mt-4">25th September 22</h6>
-                    <h5 class="light mr-3 ml-3">Pre-finale Selection of Top 25 teams and mentorship</h5>
+                    <h6 class="mt-4">25th September 2022</h6>
+                    <h5 class="light mr-3 ml-3">Pre-finale, Selection of Finalists and virtual prototyping</h5>
                 </div>
             </div>
             <div class="col-md-3 pl-0">
@@ -106,8 +106,8 @@
                             <img src="<?php echo base_url(); ?>/images/win.png">
                         </div>
                     </div>
-                    <h6 class="mt-4">25th Feb 23</h6>
-                    <h5 class="light mr-3 ml-3">Selection of Finalists & Grand Finale</h5>
+                    <h6 class="mt-4">1st Oct - 25th Feb 2023</h6>
+                    <h5 class="light mr-3 ml-3">Mentorship to Finalists, actual prototyping & Grand Finale</h5>
                 </div>
             </div>
 
