@@ -13,8 +13,16 @@
             <br/>
             <br/>
             <br/>
-            <p>Total users : <?php echo array_sum($statDataUser);?></p>
-            <p>Total projects submitted : <?php echo array_sum($dataProject);?></p>
+            <p>Total users : <?php echo $regCount;?></p>
+            <p>Previous Registered users : 5356</p>
+            <br/>
+            <p>New Registered users : <?php echo $newregCount;?></p>
+            <p>Number of States : <?php echo $stateCount;?></p>
+            <p>Number of Colleges : <?php echo $collegeCount;?></p>
+            <p>Number of Premier Institutes : <?php echo $premCount;?></p>
+            <p>Number of Top 100 colleges : <?php echo $topCount;?></p>
+            <br/>
+            <p>Total ideas submitted : <?php echo $ideaCount;?></p>
         </div>
     </div>
 </div>

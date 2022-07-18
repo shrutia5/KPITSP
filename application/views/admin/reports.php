@@ -112,6 +112,12 @@
                         $filterType =$allrep;
                     }
                     switch ($filterType) {
+                        case 'state_wise':
+                            $this->load->view('admin/all_report',$otherPage);
+                        break;
+                        case 'city_wise':
+                            $this->load->view('admin/all_report',$otherPage);
+                        break;
                         case 'list_of_reg':
                             $this->load->view('admin/register_report',$otherPage);
                             break;
