@@ -13,16 +13,17 @@
             <br/>
             <br/>
             <br/>
-            <p>Total users : <?php echo $regCount;?></p>
+            <p>Total users : <?php echo $regCount;?> & Total ideas : <?php echo $ideaCount;?></p>
             <p>Previous Registered users : 5356</p>
             <br/>
             <p>New Registered users : <?php echo $newregCount;?></p>
             <p>Number of States : <?php echo $stateCount;?></p>
             <p>Number of Colleges : <?php echo $collegeCount;?></p>
             <p>Number of Premier Institutes : <?php echo $premCount;?></p>
-            <p>Number of Top 100 colleges : <?php echo $topCount;?></p>
+            <p>Reg.: <?php echo $premregCount;?> Ideas: <?php echo $premideaCount;?></p>
             <br/>
-            <p>Total ideas submitted : <?php echo $ideaCount;?></p>
+            <p>Number of Top 100 colleges : <?php echo $topCount;?></p>
+            <p>Reg.: <?php echo $topregCount;?> Ideas: <?php echo $topideaCount;?></p>
         </div>
     </div>
 </div>

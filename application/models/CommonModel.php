@@ -703,4 +703,32 @@ class CommonModel extends CI_Model {
         return $result;
     }
 
+    public function getNumberofPremReg() {
+        $sql = "select count(DISTINCT(ur.email)) as count FROM " . $this->db->dbprefix . "userregistration ur LEFT JOIN " . $this->db->dbprefix . "master_college mcol ON (mcol.college_id = ur.college_id) WHERE ur.userType = 'User' and (ur.userID < 198 or ur.userID > 5553) and mcol.is_premier = 1";
+        $query = $this->db->query($sql);
+        $result = $query->result();
+        return $result;
+    }
+    
+    public function getNumberofPremIdeas() {
+        $sql = "select count(DISTINCT(mp.projectID)) as count FROM ab_project_master mp LEFT JOIN ab_userregistration ur ON (ur.userID = mp.userID) LEFT JOIN ab_master_college mcol ON (mcol.college_id = ur.college_id) WHERE mcol.is_premier = 1 and mp.phaseOneDataSubmited = 1";
+        $query = $this->db->query($sql);
+        $result = $query->result();
+        return $result;
+    }
+    
+    public function getNumberofTopReg() {
+        $sql = "select count(DISTINCT(ur.email)) as count FROM " . $this->db->dbprefix . "userregistration ur LEFT JOIN " . $this->db->dbprefix . "master_college mcol ON (mcol.college_id = ur.college_id) WHERE ur.userType = 'User' and (ur.userID < 198 or ur.userID > 5553) and mcol.is_top_100 = 1";
+        $query = $this->db->query($sql);
+        $result = $query->result();
+        return $result;
+    }
+    
+    public function getNumberofTopIdeas() {
+        $sql = "select count(DISTINCT(mp.projectID)) as count FROM ab_project_master mp LEFT JOIN ab_userregistration ur ON (ur.userID = mp.userID) LEFT JOIN ab_master_college mcol ON (mcol.college_id = ur.college_id) WHERE mcol.is_top_100 = 1 and mp.phaseOneDataSubmited = 1";
+        $query = $this->db->query($sql);
+        $result = $query->result();
+        return $result;
+    }
+
 }

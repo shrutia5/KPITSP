@@ -383,6 +383,18 @@ class Reports extends CI_Controller {
 
                     $numberOftopColleges = $this->CommonModel->getNumberofTopColleges();
                     $topCount = $numberOftopColleges[0]->count;
+                    
+                    $numberOfPremReg = $this->CommonModel->getNumberofPremReg();
+                    $premregCount = $numberOfPremReg[0]->count;
+                    
+                    $numberOfPremIdeas = $this->CommonModel->getNumberofPremIdeas();
+                    $premideaCount = $numberOfPremIdeas[0]->count;
+                    
+                    $numberOftopReg = $this->CommonModel->getNumberofTopReg();
+                    $topregCount = $numberOftopReg[0]->count;
+                    
+                    $numberOftopIdeas = $this->CommonModel->getNumberofTopIdeas();
+                    $topideaCount = $numberOftopIdeas[0]->count;
 
                     $UserRecord = $this->CommonModel->getUserstatRecord($ddate, $today);
                     $projectRecords = $this->CommonModel->getProjectstatRecord($ddate, $today);
@@ -414,6 +426,10 @@ class Reports extends CI_Controller {
                     $data['collegeCount'] = $collegeCount;
                     $data['premCount'] = $premCount;
                     $data['topCount'] = $topCount;
+                    $data['premregCount'] = $premregCount;
+                    $data['topregCount'] = $topregCount;
+                    $data['premideaCount'] = $premideaCount;
+                    $data['topideaCount'] = $topideaCount;
 
                     break;
                 }
