@@ -63,7 +63,7 @@ class Dashboard extends CI_Controller {
         
 
          //$where=array("projectID"= 2);
-         $select="t.*,c.category_name,sc.sub_cat_name,clg.is_top_100";
+         $select="t.*,c.category_name,sc.sub_cat_name,clg.is_top_100,clg.is_premier";
          $where=array("t.status ="=>"'active'", "phaseOneDataSubmited = "=>1,"t.currentPhase="=>"1","t.patentStatus="=>"' '","t.projectStatus="=>"' '");
          //print_r($where);exit;
         // $adminData = $this->CommonModel->GetMasterListDetails($select,'project_master',$where,'10','',$join,'');
