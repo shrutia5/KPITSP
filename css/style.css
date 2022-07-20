@@ -626,7 +626,12 @@ section {
   padding-bottom: 20px;
   position: relative;
 }
-
+.page-item.active .page-link {
+  z-index: 3;
+  color: #282828;
+  background-color: #8fdb00;
+  border-color: #8fdb00;
+}
 .section-title h2::after {
   content: "";
   position: absolute;

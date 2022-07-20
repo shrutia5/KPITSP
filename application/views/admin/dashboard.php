@@ -3,7 +3,7 @@
     <div class="container-fluid p-0">
         <div class="row m-0 admin-height">
             <div class="col-md-9 mobile-changes1">
-                <div class="helpful-section noFooter ad-select">
+                <div class="helpful-section noFooter">
                     <div class="pha-select" style="display:inline-block;z-index: 10;">            
                     <!--<div class="pha-select position-absolute" style="z-index: 10;">-->
                                 <!-- <label for="">All</label> -->

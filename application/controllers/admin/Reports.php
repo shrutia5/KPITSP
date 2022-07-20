@@ -197,27 +197,18 @@ class Reports extends CI_Controller {
                             }
                         case 'city_wise': {
 
-                                $selectC = "t.city_name,t.city_id";
-                                $wherec = array("status" => " ='active'", "state_id" => " <'42'");
-                                if (isset($city_id) && !empty($city_id)) {
-                                    $wherec["city_id ="] = $city_id;
-                                } else {
-                                    $other['whereIn'] = "state_id";
-                                    $other['whereData'] = implode(",", array_column($stateList, "state_id"));
-                                }
-                                //print_r($other);exit;
-                                $cityList = $this->CommonModel->GetMasterListDetails($selectC, 'master_cities', $wherec, '', '', $join, $other);
-                                //print_r($cityList); exit();
-                                $cityList = $this->getListDetails($cityList, "city_id", true);
-                                foreach ($cityList as $key => $value) {
-                                    $removeRow = true;
-                                }
-
-
+                                
+                                $cityList = $this->CommonModel->GetCityWiseReport();
                                 $data['otherPage']['list'] = $cityList;
                                 $data['otherPage']['allrep'] = $allrep;
                                 break;
                             }
+                        case 'college_wise': {
+                            $cityList = $this->CommonModel->GetCollegeWiseReport();
+                            $data['otherPage']['list'] = $cityList;
+                            $data['otherPage']['allrep'] = $allrep;
+                            break;
+                        }
                         case 'premier_wise': {
                                 $selectC = "college_id,college_name";
                                 $wherec = array();
@@ -691,6 +682,23 @@ class Reports extends CI_Controller {
 
                                 break;
                             }
+                            case 'college_wise': {
+
+                                foreach ($printDetails1['otherPage']['list'] as $key => $value) {
+                                    $printDetails[$i]['college_name'] = $value->college_name;
+                                    $printDetails[$i]['numberOfreg'] = $value->numberOfreg;
+                                    $printDetails[$i]['numberOfidea'] = $value->numberOfidea;
+                                    $printDetails[$i]['numberOfidea2'] = $value->numberOfidea2;
+                                    $printDetails[$i]['numberOfidea100'] = $value->numberOfidea100;
+                                    $printDetails[$i]['numberOfideafinal'] = $value->numberOfideafinal;
+                                    $i++;
+                                }
+
+                                $rowArray = array("College Name", "Number of Registration", "Number of Idea Submission", "Number of Idea in Phase 2", "Number Of Idea in Top 100", "Number Of Idea in Finale");
+
+                                break;
+                            }
+                            
                         case 'premier_wise': {
                                 foreach ($printDetails1['otherPage']['list'] as $key => $value) {
                                     $printDetails[$i]['college_name'] = $value->college_name;

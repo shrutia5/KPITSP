@@ -9,6 +9,8 @@
                     <tr>
                     <?php if($allrep == "state_wise") { ?>
                             <th>State Name</th>
+                        <?php }elseif($allrep == "college_wise"){ ?>
+                            <th>College Name</th>
                         <?php }elseif($allrep == "city_wise"){ ?>
                             <th>City Name</th>
                        <?php }elseif($allrep == "premier_wise"){ ?>
@@ -42,6 +44,8 @@
                             <td><?php echo $pdetails->state_name;?></td>
                         <?php }elseif($allrep == "city_wise"){ ?>
                             <td><?php echo $pdetails->city_name;?></td>
+                        <?php }elseif($allrep == "college_wise"){ ?>   
+                            <td><?php echo $pdetails->college_name;?></td>  
                        <?php }elseif($allrep == "premier_wise"){ ?>
                             <td><?php echo $pdetails->college_name;?></td>
                         <?php }elseif($allrep == "branch_wise"){ ?>
