@@ -46,8 +46,8 @@ $(document).ready(function () {
       });
     }
   });
-  $(".messageOpen").click(function () {
-    // $(".messageout").find(".body").toggleClass("active");
+  $("body").on("click",".messageOpen",function () {
+    $(".messageout").find(".body").toggleClass("active");
     $(".messageout")
       .find(".body")
       .animate(
@@ -61,7 +61,7 @@ $(document).ready(function () {
       url: base_url + "readmessages/" + sendid + "/" + recid,
       datatype: "JSON",
       beforeSend: function (request) {
-        $("#saveuser").html("<span>Sending..</span>");
+        //$("#saveuser").html("<span>Sending..</span>");
       },
       success: function (res) {
         res = JSON.parse(res);

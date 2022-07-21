@@ -177,7 +177,7 @@
                                     <tbody>
                                         <?php
                                         if(!empty($approvestatus)){
-                                        foreach ($approvestatus as $key => $approve) {
+                                        foreach ($approvestatus as $key => $pdetails) {
                                             $projectID =$pdetails->projectID;
                                             $userID= $pdetails->userID;
                                             ?>

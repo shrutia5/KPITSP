@@ -88,8 +88,11 @@ $userId = $this->session->userdata('userId');
             </div>
         </ul>
         <div class="footer">
-            <input type="hidden" name="senderId" id="senderId" value="" />
+            
+            <input type="hidden" name="msgProjectID" id="msgProjectID" value="<?php echo $projectd->projectID;?>" />
+            <input type="hidden" name="senderId" id="senderId" value="<?php echo $userId;?>" />
             <input type="hidden" name="recId" id="recId" value="" />
+
             <i class='bx bx-smile'></i>
             <input id="messagetxt" type="text" placeholder="Write here..." name="messagetxt" value="" />
             <button type="submit" name="sendMsg" id="sendMsg" class="sendMsg">Send</button>
