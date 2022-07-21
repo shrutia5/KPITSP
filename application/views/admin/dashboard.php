@@ -105,6 +105,7 @@
                                     <!--Table head-->
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -123,7 +124,8 @@
                                             $userID= $pdetails->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td ><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $pdetails->projectID ?>" target="_blank"><?php echo $pdetails->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $pdetails->projectName ?></td>
                                             <td width="200px"><?php echo $pdetails->category_name ?></td>
@@ -161,6 +163,7 @@
                                     <!--Table head-->
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -175,19 +178,20 @@
                                         <?php
                                         if(!empty($approvestatus)){
                                         foreach ($approvestatus as $key => $approve) {
-                                            $projectID =$approve->projectID;
-                                            $userID= $approve->userID;
+                                            $projectID =$pdetails->projectID;
+                                            $userID= $pdetails->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
-                                            <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $approve->projectID ?>" target="_blank"><?php echo $approve->sparkleID ?></a></td>
-                                            <td width="200px"><?php echo $approve->projectName ?></td>
-                                            <td width="200px"><?php echo $approve->category_name ?></td>
-                                            <td width="200px"><?php echo $approve->sub_cat_name ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $pdetails->projectID ?>" target="_blank"><?php echo $pdetails->sparkleID ?></a></td>
+                                            <td width="200px"><?php echo $pdetails->projectName ?></td>
+                                            <td width="200px"><?php echo $pdetails->category_name ?></td>
+                                            <td width="200px"><?php echo $pdetails->sub_cat_name ?></td>
                                             <td width="100px">
                                                 
-                                                <a href="" data-projectID="<?php echo $approve->projectID;?>" class="rejectProject"><i class='bx bx-x'></i></a>
-                                                <a href="" data-projectID="<?php echo $approve->projectID;?>" class="holdProject"><i class='bx bx-pause'></i></a>
+                                                <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="rejectProject"><i class='bx bx-x'></i></a>
+                                                <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="holdProject"><i class='bx bx-pause'></i></a>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -216,6 +220,7 @@
                                     <!--Table head-->
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -234,7 +239,8 @@
                                             $userID= $reject->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $reject->projectID ?>" target="_blank"><?php echo $reject->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $reject->projectName ?></td>
                                             <td width="200px"><?php echo $reject->category_name ?></td>
@@ -270,6 +276,7 @@
                                     <!--Table head-->
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -288,7 +295,8 @@
                                             $userID= $hold->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $hold->projectID ?>" target="_blank"><?php echo $hold->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $hold->projectName ?></td>
                                             <td width="200px"><?php echo $hold->category_name ?></td>
@@ -326,6 +334,7 @@
                                   
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top 1</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -343,7 +352,8 @@
                                             $userID= $phasetwoall->userID;
                                             ?>
                                         <tr>
-                                        <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $phasetwoall->projectID ?>" target="_blank"><?php echo $phasetwoall->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $phasetwoall->projectName ?></td>
                                             <td width="200px"><?php echo $phasetwoall->category_name ?></td>
@@ -379,6 +389,7 @@
                                   
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -396,7 +407,8 @@
                                             $userID= $phasetwoapprove->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $phasetwoapprove->projectID ?>" target="_blank"><?php echo $phasetwoapprove->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $phasetwoapprove->projectName ?></td>
                                             <td width="200px"><?php echo $phasetwoapprove->category_name ?></td>
@@ -434,6 +446,7 @@
                                    
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -451,7 +464,8 @@
                                             $userID= $phase2reject->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $phase2reject->projectID ?>" target="_blank"><?php echo $phase2reject->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $phase2reject->projectName ?></td>
                                             <td width="200px"><?php echo $phase2reject->category_name ?></td>
@@ -486,6 +500,7 @@
                                    
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -503,7 +518,8 @@
                                             $userID= $phase2hold->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $phase2hold->projectID ?>" target="_blank"><?php echo $phase2hold->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $phase2hold->projectName ?></td>
                                             <td width="200px"><?php echo $phase2hold->category_name ?></td>
@@ -555,7 +571,8 @@
                                             $userID= $phase3all->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>/admin/project-detail/<?php echo  $phase3all->projectID ?>"><?php echo $phase3all->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $phase3all->projectName ?></td>
                                             <td width="200px"><?php echo $phase3all->category_name ?></td>
@@ -577,6 +594,7 @@
                                     
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -599,7 +617,8 @@
                                             $userID= $phasethreeal->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $phasethreeal->projectID ?>" target="_blank"><?php echo $phasethreeal->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $phasethreeal->projectName ?></td>
                                             <td><?php echo $phasethreeal->marketPotential; ?></td>
@@ -660,7 +679,8 @@
                                             $userID= $topfifty->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>/admin/project-detail/<?php echo  $topfifty->projectID ?>"><?php echo $topfifty->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $topfifty->projectName ?></td>
                                             <td width="200px"><?php echo $topfifty->category_name ?></td>
@@ -680,6 +700,7 @@
                                 <table id="fiftytable" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -702,7 +723,8 @@
                                             $userID= $topfifty->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $topfifty->projectID ?>" target="_blank"><?php echo $topfifty->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $topfifty->projectName ?></td>
                                             <td><?php echo "1"; ?></td>
@@ -759,7 +781,8 @@
                                             $userID= $betweenhuntwo->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>/admin/project-detail/<?php echo  $betweenhuntwo->projectID ?>"><?php echo $betweenhuntwo->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $betweenhuntwo->projectName ?></td>
                                             <td width="200px"><?php echo $betweenhuntwo->category_name ?></td>
@@ -779,6 +802,7 @@
                                 <table id="betweenhun" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -800,7 +824,8 @@
                                             $userID= $betweenhuntwo->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $betweenhuntwo->projectID ?>" target="_blank"><?php echo $betweenhuntwo->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $betweenhuntwo->projectName ?></td>
                                             <td><?php echo "1"; ?></td>
@@ -860,7 +885,8 @@
                                             $userID= $bottom->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>/admin/project-detail/<?php echo  $bottom->projectID ?>"><?php echo $bottom->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $bottom->projectName ?></td>
                                             <td width="200px"><?php echo $bottom->category_name ?></td>
@@ -880,6 +906,7 @@
                                 <table id="bottom50" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
+                                            <th>Premier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
@@ -903,7 +930,8 @@
                                             $userID= $bottom->userID;
                                             ?>
                                         <tr>
-                                            <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                            <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                             <td><a href="<?php echo base_url()?>admin/project-detail/<?php echo  $bottom->projectID ?>" target="_blank"><?php echo $bottom->sparkleID ?></a></td>
                                             <td width="200px"><?php echo $bottom->projectName; ?></td>
                                             <td><?php echo "1"; ?></td>
@@ -948,6 +976,7 @@
                                 <!--Table head-->
                                 <thead>
                                     <tr>
+                                        <th>Premier</th>
                                         <th>Top</th>
                                         <th>Sparkle ID</th>
                                         <th>Project Name</th>
@@ -967,7 +996,8 @@
                                         $userID= $bottom->userID;
                                         ?>
                                     <tr>
-                                        <td><?php if(isset($approve->is_top_100) && $approve->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                        <td><?php if(isset($pdetails->is_premier) && $pdetails->is_premier ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
+                                        <td><?php if(isset($pdetails->is_top_100) && $pdetails->is_top_100 ==1){ echo "<i class='ic-apl bx bxs-bank'></i>";}; ?></td>
                                         <td><a href="<?php echo base_url()?>/admin/project-detail/<?php echo  $bottom->projectID ?>" target="_blank"><?php echo $bottom->sparkleID ?></a></td>
                                         <td width="200px"><?php echo $bottom->projectName ?></td>
                                         <td></td>
