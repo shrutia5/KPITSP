@@ -711,7 +711,7 @@ class CommonModel extends CI_Model {
     }
     
     public function getNumberofPremIdeas() {
-        $sql = "select count(DISTINCT(mp.projectID)) as count FROM ab_project_master mp LEFT JOIN ab_userregistration ur ON (ur.userID = mp.userID) LEFT JOIN ab_master_college mcol ON (mcol.college_id = ur.college_id) WHERE mcol.is_premier = 1 and mp.phaseOneDataSubmited = 1";
+        $sql = "select count(DISTINCT(mp.projectID)) as count FROM " . $this->db->dbprefix . "project_master mp LEFT JOIN " . $this->db->dbprefix . "userregistration ur ON (ur.userID = mp.userID) LEFT JOIN " . $this->db->dbprefix . "master_college mcol ON (mcol.college_id = ur.college_id) WHERE mcol.is_premier = 1 and mp.phaseOneDataSubmited = 1";
         $query = $this->db->query($sql);
         $result = $query->result();
         return $result;
@@ -725,10 +725,24 @@ class CommonModel extends CI_Model {
     }
     
     public function getNumberofTopIdeas() {
-        $sql = "select count(DISTINCT(mp.projectID)) as count FROM ab_project_master mp LEFT JOIN ab_userregistration ur ON (ur.userID = mp.userID) LEFT JOIN ab_master_college mcol ON (mcol.college_id = ur.college_id) WHERE mcol.is_top_100 = 1 and mp.phaseOneDataSubmited = 1";
+        $sql = "select count(DISTINCT(mp.projectID)) as count FROM " . $this->db->dbprefix . "project_master mp LEFT JOIN " . $this->db->dbprefix . "userregistration ur ON (ur.userID = mp.userID) LEFT JOIN " . $this->db->dbprefix . "master_college mcol ON (mcol.college_id = ur.college_id) WHERE mcol.is_top_100 = 1 and mp.phaseOneDataSubmited = 1";
         $query = $this->db->query($sql);
         $result = $query->result();
         return $result;
     }
+    public function GetCityWiseReport(){
 
+        $sql = "SELECT c.* ,(SELECT count(userID) from " . $this->db->dbprefix . "userregistration as u WHERE u.city_id = c.city_id and c.status ='active')  as numberOfreg,(SELECT count(u1.userID) from " . $this->db->dbprefix . "userregistration as u1 LEFT JOIN " . $this->db->dbprefix . "project_master as p ON u1.userID = p.userID WHERE u1.city_id = c.city_id and c.status ='active' AND p.phaseOneDataSubmited ='1')  as numberOfidea,(SELECT count(u1.userID) from " . $this->db->dbprefix . "userregistration as u1 LEFT JOIN " . $this->db->dbprefix . "project_master as p ON u1.userID = p.userID WHERE u1.city_id = c.city_id and c.status ='active' AND p.phaseTwoDataSubmited ='1')  as numberOfidea2,(SELECT count(u1.userID) from " . $this->db->dbprefix . "userregistration as u1 LEFT JOIN " . $this->db->dbprefix . "project_master as p ON u1.userID = p.userID WHERE u1.city_id = c.city_id and c.status ='active' AND p.phaseTwoStatus ='Approved' AND p.currentPhase='3')  as numberOfidea100,(SELECT count(u1.userID) from " . $this->db->dbprefix . "userregistration as u1 LEFT JOIN " . $this->db->dbprefix . "project_master as p ON u1.userID = p.userID WHERE u1.city_id = c.city_id and c.status ='active' AND p.phaseThreeStatus='50')  as numberOfideafinal FROM " . $this->db->dbprefix . "master_cities as c WHERE c.`status` = 'active' HAVING ( numberOfreg > 0 || numberOfidea > 0 || numberOfidea2 > 0 || numberOfidea100 > 0 || numberOfideafinal > 0)";
+        $query = $this->db->query($sql);
+        $result = $query->result();
+        return $result;
+    }
+    public function GetCollegeWiseReport(){
+
+        $sql = "SELECT c.* ,(SELECT count(userID) from " . $this->db->dbprefix . "userregistration as u WHERE u.college_id = c.college_id and c.status ='active')  as numberOfreg,(SELECT count(u1.userID) from " . $this->db->dbprefix . "userregistration as u1 LEFT JOIN " . $this->db->dbprefix . "project_master as p ON u1.userID = p.userID WHERE u1.college_id = c.college_id and c.status ='active' AND p.phaseOneDataSubmited ='1')  as numberOfidea,(SELECT count(u1.userID) from " . $this->db->dbprefix . "userregistration as u1 LEFT JOIN " . $this->db->dbprefix . "project_master as p ON u1.userID = p.userID WHERE u1.college_id = c.college_id and c.status ='active' AND p.phaseTwoDataSubmited ='1')  as numberOfidea2,(SELECT count(u1.userID) from " . $this->db->dbprefix . "userregistration as u1 LEFT JOIN " . $this->db->dbprefix . "project_master as p ON u1.userID = p.userID WHERE u1.college_id = c.college_id and c.status ='active' AND p.phaseTwoStatus ='Approved' AND p.currentPhase='3')  as numberOfidea100,(SELECT count(u1.userID) from " . $this->db->dbprefix . "userregistration as u1 LEFT JOIN " . $this->db->dbprefix . "project_master as p ON u1.userID = p.userID WHERE u1.college_id = c.college_id and c.status ='active' AND p.phaseThreeStatus='50')  as numberOfideafinal FROM " . $this->db->dbprefix . "master_college as c WHERE c.`status` = 'active' HAVING ( numberOfreg > 0 || numberOfidea > 0 || numberOfidea2 > 0 || numberOfidea100 > 0 || numberOfideafinal > 0)";
+        $query = $this->db->query($sql);
+        $result = $query->result();
+        return $result;
+    }
+    
 }

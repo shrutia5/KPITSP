@@ -109,7 +109,7 @@ class Messages extends CI_Controller {
             $data = array();
             $data['sender_read']= "y";
             $data['receiver_read']= "y";
-            if($user[0]->isAdmin == "yes"){
+            if($user[0]->userType == "Admin"){
                 
                 $where = array();
                 $where['receiver_id = '] = "0";

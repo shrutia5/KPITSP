@@ -3,7 +3,7 @@
     <div class="container-fluid p-0">
         <div class="row m-0 admin-height">
             <div class="col-md-9 mobile-changes1">
-                <div class="helpful-section noFooter ad-select">
+                <div class="helpful-section noFooter">
                     <form id="reportFilter" action="<?php echo base_url('admin/reports');?>" method="get">
                     <input type="hidden" id="report_type" name="report_type" value=""/>
                         <div class="row">
@@ -72,6 +72,9 @@
                                     }?>
                                 </select> -->
                             </div>
+                            <div class="col-md-3">
+                                <input type="radio" <?php if(isset($allrep) && $allrep == "college_wise"){echo "checked";} ?> class="dropChange" id="college_wise" name="allrep" value="college_wise"><label for="college_wise">&nbsp;College wise</label>
+                            </div>
                             
                         </div>
                         <div class="row">
@@ -116,6 +119,9 @@
                             $this->load->view('admin/all_report',$otherPage);
                         break;
                         case 'city_wise':
+                            $this->load->view('admin/all_report',$otherPage);
+                        break;
+                        case 'college_wise':
                             $this->load->view('admin/all_report',$otherPage);
                         break;
                         case 'list_of_reg':
