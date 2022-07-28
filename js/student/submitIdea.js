@@ -225,7 +225,7 @@ $(document).ready(function () {
       },
       keywords: {
         required: true,
-        minlength: 250,
+        minlength: 50,
         maxlength: 1000,
       },
       patentFiled: {
@@ -245,8 +245,8 @@ $(document).ready(function () {
         maxlength: "Maximum 1000 characters Required",
       },
       keywords: {
-        required: "Enter Keyword Description",
-        minlength: "Minimum 250 characters Required",
+        required: "Enter Keywords relevant to your idea",
+        minlength: "Minimum 50 characters Required",
         maxlength: "Maximum 1000 characters Required",
       },
       patentFiled: "Please Select Patent Filed",

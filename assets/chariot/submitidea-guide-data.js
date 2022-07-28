@@ -118,7 +118,7 @@ $(document).ready(function () {
         tooltip: {
           className: "helpful-resources-guide",
           position: "bottom",
-          title: "Easy to configure",
+          title: "Helpful Resources",
           text: "Please find all the helpful resources here. Make sure to go through sample idea sumission forms so that you get a clear picture.",
         },
       },
