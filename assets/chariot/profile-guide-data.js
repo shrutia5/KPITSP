@@ -118,7 +118,7 @@ $(document).ready(function () {
         tooltip: {
           className: "reference-details-guide",
           position: "bottom",
-          title: "Highlights & Tooltips",
+          title: "College References",
           text:
             "Please add details of 2 references from your college for communication purpose. So that we can ensure you have help from your institute.",
         },
