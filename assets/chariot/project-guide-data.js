@@ -118,7 +118,7 @@ $(document).ready(function () {
         tooltip: {
           className: "add-members-guide",
           position: "bottom",
-          title: "Highlights & Tooltips",
+          title: "Team formation",
           text:
             "You can add maximum 4 team members to your team. Refer to expertise guide during idea submission to choose your team carefully.",
         },
@@ -129,7 +129,7 @@ $(document).ready(function () {
         tooltip: {
           className: "chat-box-guide",
           position: "bottom",
-          title: "Highlights & Tooltips",
+          title: "Internal chat",
           text:
             "Use this chatbox to connect with the evaluation team from KPIT and they will help and guide you in the entire process.",
         },
