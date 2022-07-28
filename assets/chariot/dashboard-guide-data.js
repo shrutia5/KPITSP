@@ -118,7 +118,7 @@ $(document).ready(function () {
         tooltip: {
           className: "profile-dropdown-guide",
           position: "bottom",
-          title: "Highlights & Tooltips",
+          title: "Profile page",
           text:
             "Please add/change your profile details here. You can now add your profile picture too. Also please add your social media handles so that we can tag you in our posts.",
         },
@@ -128,7 +128,7 @@ $(document).ready(function () {
         selectors: "#save-idea",
         tooltip: {
           position: "top",
-          title: "Highlights & Tooltips",
+          title: "Idea submission",
           text:
             "You can submit your innovative idea here. Please go through all the available helpful resources before submitting your idea.",
         },
