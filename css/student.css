@@ -45,6 +45,8 @@ body {
   padding-left: 27px;
   margin-bottom: 15px;
 }
+.answer_guide{padding-left: 30px;}
+.answer_guide:not(.active){display: none;}
 
 .portal-left,
 .portal-right {
@@ -921,6 +923,7 @@ label {
   margin-top: 3px;
   margin-bottom: 10px;
 }
+.unreadCount{position: absolute;left: 130px;top: 8px;z-index: 1;color: #8fdb00;padding: 0px 7px;border-radius: 5px;font-size: 10px;background: #383838;}
 .footer {
   position: absolute;
   bottom: 0px;

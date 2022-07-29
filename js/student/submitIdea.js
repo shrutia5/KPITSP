@@ -3,6 +3,12 @@ var formDataString = "";
 var currentStep = 1;
 var currentPhase = 1;
 var currentProjectID = "";
+function onCheck(questionId, optionId){
+  console.log(questionId+'_'+optionId)
+  $(".answer_guide_"+questionId).removeClass('active');
+  $("#answer_guide_"+questionId+'_'+optionId).addClass('active');
+}
+
 $(document).ready(function () {
   // Auto save project data
   setInterval(function () {

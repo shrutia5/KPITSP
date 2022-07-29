@@ -254,10 +254,11 @@
                                                             <div class="options">
                                                             <label class="ws-radio">
                                                             <input type="radio" required="" <?php if ($result->qanswer == $opt->optionName) { echo 'checked';}?>
-                                                            name="trlQuestion_<?php echo $qList->trlQuestionID; ?>" id="<?php echo $opt->optGuide; ?>" name="fav_language" value="<?php echo $opt->optionName; ?>" onClick="onCheck(<?php echo $opt->optGuide; ?>)">
+                                                            name="trlQuestion_<?php echo $qList->trlQuestionID; ?>" id="<?php echo $opt->optGuide; ?>" name="fav_language" value="<?php echo $opt->optionName; ?>" onClick="onCheck(<?php echo $qList->trlQuestionID; ?>,<?php echo $key; ?>)">
                                                             <span><?php echo $opt->optionName ?></span>
                                                             <span class="checkmark"></span>
                                                         </label>
+                                                            <div class="answer_guide answer_guide_<?php echo $qList->trlQuestionID; ?>" id="answer_guide_<?php echo $qList->trlQuestionID.'_'.$key; ?>"><?php echo $opt->optGuide; ?></div>
                                                             </div>
                                                             
                                                         <?php 

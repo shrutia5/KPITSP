@@ -351,7 +351,8 @@ $(document).ready(function () {
     incubateVal = $(this).attr("data-value");
     //alert(incubateId);
   });
-  $(".juryaction").on("click", function () {
+  $('.juryaction').on('click', function (e) {
+    e.preventDefault();
     //alert("hiiiii");
     juryID = $(this).attr("data-id");
     juryVideo = $(this).attr("data-value");
@@ -1864,22 +1865,21 @@ $(document).ready(function () {
     //  }
   });
 
-  $(".jury-btn").click(function () {
+  $('.jury-btn').click(function(){
     //alert("hiiiii");
     value = $('input[name="juryYestop50"]:checked').val();
-    console.log(value);
-    if (value == "Yes") {
-      //alert("hiiii");
-      $("#jurytop10").modal("show");
-      $(".jurymodal-description").html(
-        "Are you sure you want to add " + projectISparD + " to top 10 projects?"
-      );
-    } else {
-      $("#jurytop10").modal("show");
-      $(".jurymodal-description").html(
-        " " + projectISparD + " to top 10 projects?"
-      );
-    }
+   console.log(value);
+   if(value == "Yes"){
+     //alert("hiiii");
+     $('#jurytop10').modal('show');
+     $('.jurymodal-description').html("Are you sure you want to add "+projectISparD+" to top 10 projects?");
+   }else{
+     if(value=="No"){
+       $('#jurytop10').modal('show');
+       $('.jurymodal-description').html(" "+projectISparD+" to top 10 projects?");
+     }
+     
+   }
   });
   let proId = "";
   $(".juryremove").click(function () {
