@@ -7,7 +7,7 @@
                     <h4>Innovate Finalist</h4>
                     <form action="" id="juryFilter">
                     <select name="filterOption" id="filterOption">
-                        <option <?php if(isset($_GET['filterOption']) && !empty($_GET['filterOption']) && $_GET['filterOption']== "All"){ echo "selected";}?> value="All">All</option>
+                        <option <?php if(isset($_GET['filterOption']) && !empty($_GET['filterOption']) && $_GET['filterOption']== "All"){ echo "selected";}?> value="All">Finalist</option>
                         <option <?php if(isset($_GET['filterOption']) && !empty($_GET['filterOption']) && $_GET['filterOption']== "top10"){ echo "selected";}?> value="top10">Top 10</option>
                     </select>
                             </form>
@@ -28,8 +28,10 @@
                         </li>
                     </ul>
                     <div id="finalistsData_filter" class="dataTables_filter">
-                        <input type="search" class="form-control form-control-sm" placeholder="search here"
-                                    aria-controls="finalistsData"><i class='bx bx-search bx-md'></i>
+                        <form action="dashboard">
+                        <input type="search" class="form-control form-control-sm" placeholder="search here" aria-controls="finalistsData" value="<?php if(isset($_GET['q'])){ echo $_GET['q'];}?>" name="q"><i class='bx bx-search bx-md'></i>
+                        <input type="hidden" value="<?php if(isset($_GET['filterOption'])){ echo $_GET['filterOption'];}?>" name="filterOption"><i class='bx bx-search bx-md'></i>
+                        </form>
                     </div>
                 </div>
                 
@@ -44,6 +46,7 @@
                 <div class="item col-xs-3 col-lg-3 col-md-3">
                     <div class="owl-item" style="width: auto;">
                             <div class="video-res">
+                            <a href="#prototypeVideojury" class="juryaction play-grid-link" data-id="<?= $juryList->sparkleID ?>" data-url="<?= base_url()?>images/studentFiles/<?= $juryList->sparkleID?>/<?= $juryList->prototypeProgressVideo?>" data-value="<?= $juryList->prototypeProgressVideo ?>" data-toggle="modal">
                                 <div class="img-top-text">
                                     #<?php 
                                     if($i < 10) {
@@ -53,21 +56,12 @@
                                     }
                                      ?>
                                 </div>
-                                <!-- <div class="video-body">
-                                    <div class="play"><i class="icofont-play-alt-2"></i></div>
-                                </div> -->
-
                                 <div class="video-body">
-                                    <div class="play"><i class="">
-                                    <?php if($juryList->juryAction == "Top 10" && $_GET['filterOption']== "top10"){ ?>
-                                            <a href="#removeTop10" class="juryremove" data-proId="<?= $juryList->projectID ?>" data-id="<?= $juryList->sparkleID ?>"  data-toggle="modal">Remove from top 10</i></a>
-                                    <?php } else{?>
-                                        <a href="#prototypeVideojury" class="juryaction juryaction-grid-view-icon" data-id="<?= $juryList->sparkleID ?>" data-url="<?= base_url()?>images/studentFiles/<?= $juryList->sparkleID?>/<?= $juryList->prototypeProgressVideo?>" data-value="<?= $juryList->prototypeProgressVideo ?>" data-toggle="modal"><i class="icofont-play-alt-2"></i></a>
-                                    <?php } ?>
-                                    </i></div>
+                                    <div class="play"><i class="icofont-play-alt-2"></i></div>
                                 </div>
                             
                                 <img src="<?php echo base_url();?>images/clients/car.jpg">
+                                </a>
                             </div>
                             <div class="content">
                                 <p class="p1"><?php echo $juryList->sparkleID; ?></p>
