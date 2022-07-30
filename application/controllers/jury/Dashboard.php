@@ -270,6 +270,7 @@ class Dashboard extends CI_Controller {
                 $status['msg'] = "Project in Top 10";
             }elseif($jurysatus == "No"){
                 $status['msg'] = "Project remove from Top 10";
+                $status['redirect'] = base_url() . "jury/dashboard";
             }
             echo json_encode($status); exit;
         }else{

@@ -204,6 +204,11 @@
                                         <p><a href="<?php echo base_url() ?>admin/dashboard" class="d-block dashboard0 make-active">My Dashboard</a></p>
                                         <p><a href="<?php echo base_url() ?>logout" class="d-block logout0 make-active">Logout</a></p>
                                     </div>
+                                <?php } elseif ($usertype == "Prose") { ?>
+                                    <div class="sub-myaccount" style="display: none;">
+                                        <p><a href="<?php echo base_url() ?>prose/reports" class="d-block dashboard0 make-active">Dashboard</a></p>
+                                        <p><a href="<?php echo base_url() ?>logout" class="d-block logout0 make-active">Logout</a></p>
+                                    </div>
                                 <?php } ?>
                             </span>
                         </div>

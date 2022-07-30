@@ -180,6 +180,9 @@ class Register extends CI_Controller {
                             $status['redirect'] = base_url() . "mentor/dashboard";
                         }
                         break;
+                    case "Prose":
+                        $status['redirect'] = base_url() . "prose/reports";
+                        break;
                 }
                 echo json_encode($status);
                 exit;

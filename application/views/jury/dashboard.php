@@ -66,15 +66,17 @@
                             <div class="content">
                                 <p class="p1"><?php echo $juryList->sparkleID; ?></p>
                                 <p class="p2"><?php echo $juryList->projectName; ?></p>
-                                <p class="p1"><?php echo "Team" ?></p>
-                                <p class="p4"><?php echo "vertax"; ?></p>
+                                <!-- <p class="p1"><?php echo "Team" ?></p>
+                                <p class="p4"><?php echo "vertax"; ?></p> -->
                                 <div class="mt-4 view3">
                                     <a href="<?php echo base_url();?>jury/projectDetail/<?php echo $juryList->projectID ?>">VIEW PROJECT</a>
                                 </div>
                             </div>
                     </div>
                 </div> 
-            <?php $i++; } } ?>  
+            <?php $i++; } } else {
+                echo "<span class='ml-3' style='text-align: center; width: 100%; margin-top: 20px;'>No record found!</span>";
+            } ?>  
         </div>
     </div>
         <!-- list view -->
@@ -94,9 +96,9 @@
                                 <th class="sorting" tabindex="0" aria-controls="approvetable" rowspan="1" colspan="1"
                                     aria-label="Project Name: activate to sort column ascending"
                                     style="width: 53.75px;border-top: none;">Project Name</th>
-                                <th class="sorting" tabindex="0" aria-controls="approvetable" rowspan="1" colspan="1"
+                                <!-- <th class="sorting" tabindex="0" aria-controls="approvetable" rowspan="1" colspan="1"
                                     aria-label="Category: activate to sort column ascending" style="width: 58.75px;border-top: none;">
-                                    Team</th>
+                                    Team</th> -->
                                 <th class="sorting" tabindex="0" aria-controls="approvetable" rowspan="1" colspan="1"
                                     aria-label="Sub-Category: activate to sort column ascending"
                                     style="width: 67.75px;border-top: none;">Members</th>
@@ -108,36 +110,36 @@
 
                         <tbody>
                             <?php $i=1;
-                            if(isset($juryFinalists) && !empty($juryFinalists)){
-                                foreach ($juryFinalists as $key => $juryList) { ?>
+                                if(isset($juryFinalists) && !empty($juryFinalists)){
+                                    foreach ($juryFinalists as $key => $juryList) { ?>
                                     <tr class="odd">
-                                    <td><?php 
-                                    if($i <10){
-                                        echo '0'.$i;
-                                    }else{
-                                    echo $i; }?></td>
-                                     <td><a href="<?php echo base_url()?>jury/projectDetail/<?php echo $juryList->projectID ?>" target="_blank"><?php echo $juryList->sparkleID?></a></td>
-                                     <td width="500px"><?php echo $juryList->projectName?></td>
-                                     <td width="100px"><?php echo $juryList->categoryID?></td>
-                                     <td width="200px">
-                                         <?php
-                                            if(isset($juryList->jurymem)&&!empty($juryList->jurymem)){
-                                                foreach ($juryList->jurymem as $key => $juryMember) {
-                                                   echo ucfirst($juryMember->firstname).",";
+                                        <td><?php 
+                                        if($i <10){
+                                            echo '0'.$i;
+                                        }else{
+                                        echo $i; }?></td>
+                                        <td><a href="<?php echo base_url()?>jury/projectDetail/<?php echo $juryList->projectID ?>" target="_blank"><?php echo $juryList->sparkleID?></a></td>
+                                        <td width="500px"><?php echo $juryList->projectName?></td>
+                                        <!-- <td width="100px"><?php echo $juryList->categoryID?></td> -->
+                                        <td width="200px">
+                                            <?php
+                                                if(isset($juryList->jurymem)&&!empty($juryList->jurymem)){
+                                                    foreach ($juryList->jurymem as $key => $juryMember) {
+                                                    echo ucfirst($juryMember->firstname).",";
+                                                    }
                                                 }
-                                            }
-                                         ?>
-                                     </td>
-                                     <td width="150px">
-                                         <?php if($juryList->juryAction == "Top 10" && $_GET['filterOption']== "top10"){ ?>
-                                             <a href="#removeTop10" class="juryremove" data-proId="<?= $juryList->projectID ?>" data-id="<?= $juryList->sparkleID ?>"  data-toggle="modal">Remove from top 10</i></a>
-                                        <?php } else{?>
-                                         <a href="#prototypeVideojury" class="juryaction" data-id="<?= $juryList->sparkleID ?>" data-url="<?= base_url()?>images/studentFiles/<?= $juryList->sparkleID?>/<?= $juryList->prototypeProgressVideo?>" data-value="<?= $juryList->prototypeProgressVideo ?>" data-toggle="modal"><i class="bx bx-play-circle"></i></a>
-                                        <?php } ?>
+                                            ?>
                                         </td>
-                                 </tr>
-                             <?php   $i++; }
-                            
+                                        <td width="150px">
+                                            <?php if($juryList->juryAction == "Top 10" && $_GET['filterOption']== "top10"){ ?>
+                                                <a href="#removeTop10" class="juryremove" data-proId="<?= $juryList->projectID ?>" data-id="<?= $juryList->sparkleID ?>"  data-toggle="modal">Remove from top 10</i></a>
+                                            <?php } else{?>
+                                            <a href="#prototypeVideojury" class="juryaction" data-id="<?= $juryList->sparkleID ?>" data-url="<?= base_url()?>images/studentFiles/<?= $juryList->sparkleID?>/<?= $juryList->prototypeProgressVideo?>" data-value="<?= $juryList->prototypeProgressVideo ?>" data-toggle="modal"><i class="bx bx-play-circle"></i></a>
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                            <?php $i++; } } else {
+                                echo "<td colspan='5' style='text-align: center; width: 100%; margin-top: 20px;'>No record found!</td>";
                             } ?>       
                         </tbody>
                         <!--Table body-->

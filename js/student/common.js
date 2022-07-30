@@ -351,7 +351,7 @@ $(document).ready(function () {
     incubateVal = $(this).attr("data-value");
     //alert(incubateId);
   });
-  $('.juryaction').on('click', function (e) {
+  $(".juryaction").on("click", function (e) {
     e.preventDefault();
     //alert("hiiiii");
     juryID = $(this).attr("data-id");
@@ -1865,21 +1865,26 @@ $(document).ready(function () {
     //  }
   });
 
-  $('.jury-btn').click(function(){
+  $(".jury-btn-submit").click(function () {
     //alert("hiiiii");
     value = $('input[name="juryYestop50"]:checked').val();
-   console.log(value);
-   if(value == "Yes"){
-     //alert("hiiii");
-     $('#jurytop10').modal('show');
-     $('.jurymodal-description').html("Are you sure you want to add "+projectISparD+" to top 10 projects?");
-   }else{
-     if(value=="No"){
-       $('#jurytop10').modal('show');
-       $('.jurymodal-description').html(" "+projectISparD+" to top 10 projects?");
-     }
-     
-   }
+    console.log(value);
+    if (value == "Yes") {
+      //alert("hiiii");
+      $("#jurytop10").modal("show");
+      $(".jurymodal-description").html(
+        "Are you sure you want to add " + projectISparD + " to top 10 projects?"
+      );
+    } else {
+      if (value == "No") {
+        $("#jurytop10").modal("show");
+        $(".jurymodal-description").html(
+          "Are you sure you don't want to add " +
+            projectISparD +
+            " to top 10 projects?"
+        );
+      }
+    }
   });
   let proId = "";
   $(".juryremove").click(function () {
@@ -1944,7 +1949,9 @@ $(document).ready(function () {
           var msg = alertify.success("Default message");
           msg.delay(3).setContent(res.msg);
           //alert("hiiii");
-          //window.location.replace(res.redirect);
+          msg.ondismiss = function () {
+            window.location.replace(res.redirect);
+          };
         }
       },
     });
@@ -1952,9 +1959,9 @@ $(document).ready(function () {
 });
 
 //function onCheck(opt) {
-  // alert("hello world");
-  //var radio = document.getElementsByName("fav_language");
-  //var displayText = document.getElementById("display");
-  //displayText.innerHTML = "Answer guide : " + opt.id;
-  // alert(opt)
+// alert("hello world");
+//var radio = document.getElementsByName("fav_language");
+//var displayText = document.getElementById("display");
+//displayText.innerHTML = "Answer guide : " + opt.id;
+// alert(opt)
 //}
