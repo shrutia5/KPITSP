@@ -250,15 +250,17 @@
                                                             return $a->sequence - $b->sequence;
                                                         });
                                                         $count2=1;
-                                                        foreach ($options as $key => $opt) {?>
+                                                        foreach ($options as $key => $opt) {
+                                                            $isOptionSelected = '';
+                                                            ?>
                                                             <div class="options">
                                                             <label class="ws-radio">
-                                                            <input type="radio" required="" <?php if ($result->qanswer == $opt->optionName) { echo 'checked';}?>
+                                                            <input type="radio" required="" <?php if ($result->qanswer == $opt->optionName) { echo 'checked'; $isOptionSelected = 'active';}?>
                                                             name="trlQuestion_<?php echo $qList->trlQuestionID; ?>" id="<?php echo $opt->optGuide; ?>" name="fav_language" value="<?php echo $opt->optionName; ?>" onClick="onCheck(<?php echo $qList->trlQuestionID; ?>,<?php echo $key; ?>)">
                                                             <span><?php echo $opt->optionName ?></span>
                                                             <span class="checkmark"></span>
                                                         </label>
-                                                            <div class="answer_guide answer_guide_<?php echo $qList->trlQuestionID; ?>" id="answer_guide_<?php echo $qList->trlQuestionID.'_'.$key; ?>"><?php echo $opt->optGuide; ?></div>
+                                                            <div class="answer_guide answer_guide_<?php echo $qList->trlQuestionID; ?> <?php echo $isOptionSelected;?>" id="answer_guide_<?php echo $qList->trlQuestionID.'_'.$key; ?>"><?php echo $opt->optGuide; ?></div>
                                                             </div>
                                                             
                                                         <?php 
