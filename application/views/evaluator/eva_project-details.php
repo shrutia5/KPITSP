@@ -7,6 +7,11 @@
     <div id="portal-space"></div>
     <div class="container-fluid p-0">
         <div class="row m-0">
+            <!-- <div class="header-register">
+                <div class="back">
+                    <a href="<?php echo base_url(); ?>jury/dashboard" class="process-section home" data-act="url" data-url="<?php echo base_url(); ?>jury/dashboard"><i class="icofont-simple-left"></i> <span class="home-link">Back</span></a>
+                </div>
+            </div> -->
             <div class="col-md-12 project">
                 
                 <div class="full-left noFooter">
@@ -213,7 +218,7 @@
                                         </div>
                                     </div>
                                     <div class="jury-btn">
-                                            <input type="submit"  class="jury-btn" value="SUBMIT" id="btn-submit-jury">
+                                        <input type="submit" class="jury-btn-submit" value="SUBMIT" id="btn-submit-jury">
                                     </div>
                                 </div>
                             </div>

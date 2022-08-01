@@ -45,6 +45,12 @@ body {
   padding-left: 27px;
   margin-bottom: 15px;
 }
+.answer_guide {
+  padding-left: 30px;
+}
+.answer_guide:not(.active) {
+  display: none;
+}
 
 .portal-left,
 .portal-right {
@@ -263,10 +269,13 @@ button {
 }
 .pro-status ul li {
   margin: 38px 0px;
-  color: #757af7a3;
+  /* color: #757af7a3; */
+  color: #fff;
+  background-color: #8fdb00;
 }
 .pro-status ul li.pending {
   color: #c8c8c8;
+  background-color: transparent;
 }
 .trlStatusList {
   padding-left: 48px;
@@ -920,6 +929,17 @@ label {
   margin-left: 50px;
   margin-top: 3px;
   margin-bottom: 10px;
+}
+.unreadCount {
+  position: absolute;
+  left: 130px;
+  top: 8px;
+  z-index: 1;
+  color: #8fdb00;
+  padding: 0px 7px;
+  border-radius: 5px;
+  font-size: 10px;
+  background: #383838;
 }
 .footer {
   position: absolute;

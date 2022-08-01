@@ -46,32 +46,29 @@ $(document).ready(function () {
       });
     }
   });
-  $("body").on("click",".messageOpen",function () {
-    $(".messageout").find(".body").toggleClass("active");
-    $(".messageout")
-      .find(".body")
-      .animate(
-        { scrollTop: $(".messageout").find(".body").prop("scrollHeight") },
-        1000
-      );
-    var sendid = $("#senderId").val();
-    var recid = $("#recId").val();
-    $.ajax({
-      type: "POST",
-      url: base_url + "readmessages/" + sendid + "/" + recid,
-      datatype: "JSON",
-      beforeSend: function (request) {
-        //$("#saveuser").html("<span>Sending..</span>");
-      },
-      success: function (res) {
-        res = JSON.parse(res);
-        if (res.flag == "F") alert(res.msg);
+  $('.messageOpen').click(function(){
 
-        if (res.flag == "S") {
-          $(".unreadCount").remove();
+    $(".messageout").find(".body").toggleClass("active");
+    $(".messageout").find(".body").animate({ scrollTop: $(".messageout").find(".body").prop("scrollHeight")}, 1000);
+    var sendid = $('#senderId').val();
+    var recid = $('#recId').val();
+        $.ajax({
+            type: "POST",
+            url: base_url+"readmessages/"+sendid+"/"+recid,
+            datatype:'JSON',
+            data:{"lastReadMsgId":$("#lastReadMsgId").val(),"msgProjectID":$("#msgProjectID").val()},
+            beforeSend: function(request) {
+        },
+        success:function(res){
+            res = JSON.parse(res);
+            if(res.flag == "F")
+            alert(res.msg);
+            
+            if(res.flag == "S"){
+                $(".unreadCount").remove();
+            }
         }
-      },
-    });
+        });
   });
 
   if ($(window).width() < 768) {

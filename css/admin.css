@@ -66,6 +66,17 @@ input[type="search"] {
   background: #212121;
   z-index: 1;
 }
+.nt-list{position: relative;}
+.nt-list i.bxs-message{font-size: 2rem;}
+.nt-count {
+  position: absolute;
+  left: 20px;
+  background-color: #8fdb00;
+  top: -5px;
+  padding: 3px 9px;
+  border-radius: 50%;
+  font-size: 10px;
+}
 .admin-height .helpful-section.noFooter {
   max-height: calc(100vh - 100px);
   position: relative;

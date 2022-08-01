@@ -1,16 +1,28 @@
 <?php
 $senderInitials = substr($this->session->userdata('name'),0,1).substr($this->session->userdata('lname'),0,1);
 $userId = $this->session->userdata('userId');
+$lastReadMsgId = $unreadMessages = 0;
+$lastReadQ = $this->CommonModel->getMasterDetails('project_messages_read_stats','',array("userID="=>$userId,"projectID="=>$projectd->projectID));
+if(!empty($lastReadQ)){
+    $lastReadMsgId = $lastReadQ[0]->lastReadMsgId;
+}
+$orderQ=array("orderBy"=>"msg_id","order"=>"DESC");
+$unreadMsgQ = $this->CommonModel->GetMasterListDetails("msg_id",'project_messages',array("msg_id>"=>$lastReadMsgId,"project_id="=>$projectd->projectID),'','','',$orderQ);
+if(!empty($unreadMsgQ)){
+    $unreadMessages = count($unreadMsgQ);
+    $lastReadMsgId = $unreadMsgQ[0]->msg_id;
+}
 ?>
 <!-- <div class="container"> -->
 <input type="hidden" id="sender_initials" value="<?php echo strtoupper($senderInitials);?>">
 <div class="messageout">
-    <span class="unreadCount"></span>
+    <span class="unreadCount"><?php if(!empty($unreadMessages)){ echo $unreadMessages; }?></span>
     <div class="row">
         <div class="col-md-12 col-12 top-txt">
-            <a href="<?php echo base_url();?>student/project"><i class="bx bxs-chevron-left bx-sm mentor-msg" style="color:#C8C8C8;"></i></a>
+            <a href="<?php echo base_url();?>student/project"><i class="bx bxs-chevron-left bx-sm mentor-msg"
+                    style="color:#C8C8C8;"></i></a>
             <div class="header messageOpen">
-                Message to <span><i class='bx bxs-chevron-down chat-box-head' id="message-arrow-down-icon"></i></span>
+                Message to <span><i class='bx bxs-chevron-down'></i></span>
             </div>
         </div>
 
@@ -88,11 +100,10 @@ $userId = $this->session->userdata('userId');
             </div>
         </ul>
         <div class="footer">
-            
+            <input type="hidden" name="lastReadMsgId" id="lastReadMsgId" value="<?php echo $lastReadMsgId;?>" />
             <input type="hidden" name="msgProjectID" id="msgProjectID" value="<?php echo $projectd->projectID;?>" />
             <input type="hidden" name="senderId" id="senderId" value="<?php echo $userId;?>" />
             <input type="hidden" name="recId" id="recId" value="" />
-
             <i class='bx bx-smile'></i>
             <input id="messagetxt" type="text" placeholder="Write here..." name="messagetxt" value="" />
             <button type="submit" name="sendMsg" id="sendMsg" class="sendMsg">Send</button>

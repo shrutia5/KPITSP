@@ -140,6 +140,8 @@ $route['admin/dashboard'] = 'admin/Dashboard/index';
 $route['admin/project-detail/(:any)'] = 'admin/Project/projectDetails/$1';
 //$route['admin/project-detail'] = 'admin/Project/index';
 
+$route['prose/dashboard'] = 'prose/Dashboard/index';
+
 //Evaluator 
 $route['evaluator/dashboard'] = 'evaluator/Dashboard/index';
 $route['evaluator/help'] = 'evaluator/Dashboard/help';

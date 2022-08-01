@@ -20,20 +20,22 @@ class Dashboard extends CI_Controller {
         }
        
         $this->CommonModel->validateUserType("Jury");
+        
+        $juryWhere = array("t.status ="=>"'active'","t.phaseThreeStatus in ('50'"=>",'Between_100-200')");
+
         if(isset($_GET['filterOption']) && !empty($_GET['filterOption'])){
-            $filterData = $_GET['filterOption'];  
-            //print  $filterData; exit;   
-            if($filterData == "All"){
-                $jurywherefinalists=array("t.status ="=>"'active'","t.phaseThreeStatus in ('50'"=>",'Between_100-200')");
-                $juryFinalists = $this->CommonModel->GetMasterListDetails('','project_master',$jurywherefinalists,'','','',''); 
-            }else{
-                $jurywherefinaliststop10=array("t.status ="=>"'active'","juryAction="=>"'Top 10'");
-                $juryFinalists = $this->CommonModel->GetMasterListDetails('','project_master',$jurywherefinaliststop10,'','','','');
+            $filterData = $_GET['filterOption'];
+            if($filterData != "All"){
+                $juryWhere=array("t.status ="=>"'active'","juryAction="=>"'Top 10'");
             }
-        }else{
-            $jurywherefinalists=array("t.status ="=>"'active'","t.phaseThreeStatus in ('50'"=>",'Between_100-200')");
-            $juryFinalists = $this->CommonModel->GetMasterListDetails('','project_master',$jurywherefinalists,'','','','');
         }
+        
+        if(isset($_GET['q']) && !empty($_GET['q'])){
+            $juryWhere["(t.sparkleID like "] = "'%".$_GET['q']."%' or projectName like '%".$_GET['q']."%' )";
+        }
+
+        $juryFinalists = $this->CommonModel->GetMasterListDetails('','project_master',$juryWhere,'','','','');
+
         if(isset($juryFinalists) && !empty($juryFinalists)){
              $data['juryFinalists'] = $juryFinalists;
             foreach ($juryFinalists as $key => $juryvalue) {
@@ -90,19 +92,34 @@ class Dashboard extends CI_Controller {
             $arr['cpassword']=$cuserPass;
             $arr['NDAaccepted']='1';
              $wherejuryresetpass = array("userID="=>$userID);
-             $juryresetpass = $this->CommonModel->updateMasterDetails('userregistration',$arr,$wherejuryresetpass);
-             if(!empty($juryresetpass)){
+             $userDetails = $this->CommonModel->GetMasterListDetails('firstname,password,email','userregistration',$wherejuryresetpass,'','','','');
+             if(!empty($userDetails)){
+                if($userPass != $userDetails[0]->password){
+                    $juryresetpass = $this->CommonModel->updateMasterDetails('userregistration',$arr,$wherejuryresetpass);
+                    if(!empty($juryresetpass)){
+                        $status['statusCode'] = 996;
+                        $status['flag'] = 'S';
+                        $status['msg'] = 'Password Has Been Updated';
+                        $status['redirect'] = base_url()."login";
+                        echo json_encode($status); exit;
+                    }else{
+                        $status['statusCode'] = 996;
+                        $status['msg'] = "Password Not Updated";
+                        $status['flag'] = 'F';
+                        echo json_encode($status); exit;
+                    }
+                }else{
+                    $status['statusCode'] = 996;
+                    $status['flag'] = 'F';
+                    $status['msg']= "Use different password";
+                    echo json_encode($status); exit;
+                }
+            }else{
                 $status['statusCode'] = 996;
-                $status['flag'] = 'S';
-                $status['msg'] = 'Password Has Been Updated';
-                $status['redirect'] = base_url()."login";
-                echo json_encode($status); exit;
-             }else{
-                $status['statusCode'] = 996;
-                $status['msg'] = "Password Not Updated";
                 $status['flag'] = 'F';
+                $status['msg']= "Password Not Updated";
                 echo json_encode($status); exit;
-             }
+            }
         }
     }
 
@@ -253,6 +270,7 @@ class Dashboard extends CI_Controller {
                 $status['msg'] = "Project in Top 10";
             }elseif($jurysatus == "No"){
                 $status['msg'] = "Project remove from Top 10";
+                $status['redirect'] = base_url() . "jury/dashboard";
             }
             echo json_encode($status); exit;
         }else{

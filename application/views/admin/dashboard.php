@@ -105,13 +105,14 @@
                                     <!--Table head-->
                                     <thead>
                                         <tr>
-                                            <th>Premier</th>
+                                            <th>    mier</th>
                                             <th>Top</th>
                                             <th>Sparkle ID</th>
                                             <th>Project Name</th>
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <!--Table head-->
@@ -134,6 +135,12 @@
                                                 <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="approveProject"><i class='bx bx-check'></i></a>
                                                 <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="rejectProject"><i class='bx bx-x'></i></a>
                                                 <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="holdProject"><i class='bx bx-pause'></i></a>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -170,6 +177,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <!--Table head-->
@@ -192,6 +200,12 @@
                                                 
                                                 <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="rejectProject"><i class='bx bx-x'></i></a>
                                                 <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="holdProject"><i class='bx bx-pause'></i></a>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -227,6 +241,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <!--Table head-->
@@ -248,6 +263,12 @@
                                             <td width="100px">
                                                 <a href="" data-projectID="<?php echo $reject->projectID;?>" class="approveProject"><i class='bx bx-check'></i></a>
                                                 <a href="" data-projectID="<?php echo $reject->projectID;?>" class="holdProject"><i class='bx bx-pause'></i></a>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -283,6 +304,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <!--Table head-->
@@ -304,6 +326,12 @@
                                             <td width="100px">
                                                 <a href="" data-projectID="<?php echo $hold->projectID;?>" class="approveProject"><i class='bx bx-check'></i></a>
                                                 <a href="" data-projectID="<?php echo $hold->projectID;?>" class="rejectProject"><i class='bx bx-x'></i></a>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -341,6 +369,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                   
@@ -362,6 +391,12 @@
                                                 <a href="" data-projectID="<?php echo $phasetwoall->projectID;?>" class="phase2approveProject"><i class='bx bx-check'></i></a>
                                                 <a href="" data-projectID="<?php echo $phasetwoall->projectID;?>" class="phase2rejectProject"><i class='bx bx-x'></i></a>
                                                 <a href="" data-projectID="<?php echo $phasetwoall->projectID;?>" class="phase2holdProject"><i class='bx bx-pause'></i></a>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -396,6 +431,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                 
@@ -417,6 +453,12 @@
                                                 
                                                 <a href="" data-projectID="<?php echo $phasetwoapprove->projectID;?>" class="phase2rejectProject"><i class='bx bx-x'></i></a>
                                                 <a href="" data-projectID="<?php echo $phasetwoapprove->projectID;?>" class="phase2holdProject"><i class='bx bx-pause'></i></a>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -453,6 +495,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                    
@@ -473,6 +516,12 @@
                                             <td width="100px">
                                                 <a href="" data-projectID="<?php echo $phase2reject->projectID;?>" class="phase2approveProject"><i class='bx bx-check'></i></a>
                                                 <a href="" data-projectID="<?php echo $phase2reject->projectID;?>" class="phase2holdProject"><i class='bx bx-pause'></i></a>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -507,6 +556,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     
@@ -527,6 +577,12 @@
                                             <td width="100px">
                                                 <a href="" data-projectID="<?php echo $phase2hold->projectID;?>" class="phase2approveProject"><i class='bx bx-check'></i></a>
                                                 <a href="" data-projectID="<?php echo $phase2hold->projectID;?>" class="phase2rejectProject"><i class='bx bx-x'></i></a>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -560,6 +616,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     
@@ -586,6 +643,12 @@
                                                 <input type="radio" id="bottom" name="phasetwo" data-projectID="<?php echo $phase3all->projectID;?>" class="twohunProject" value="200">
                                                 <label for="">200</label>
                                             </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
+                                            </td>
                                         </tr>
                                         <?php } } ?>
                                     </tbody>
@@ -606,6 +669,7 @@
                                             <th>Evals</th>
                                             <th>Status</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     
@@ -636,6 +700,12 @@
                                                 <label for="">Bottom 50</label>
                                                 <input type="radio" id="bottom" name="phasetwo" data-projectID="<?php echo $phasethreeal->projectID;?>" class="twohunProject" value="200">
                                                 <label for="">200</label>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -668,6 +738,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -693,6 +764,12 @@
                                                 <input type="radio" id="hun-two" name="phasetwo" data-projectID="<?php echo $topfifty->projectID;?>" class="twohunProject" value="200">
                                                 <label for="">200</label>
                                             </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
+                                            </td>
                                         </tr>
                                         <?php } } ?>
                                     </tbody>
@@ -712,6 +789,7 @@
                                             <th>Evals</th>
                                             <th>Status</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -742,6 +820,12 @@
                                                 <input type="radio" id="hun-two" name="phasetwo" data-projectID="<?php echo $topfifty->projectID;?>" class="twohunProject" value="200">
                                                 <label for="">200</label>
                                             </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
+                                            </td>
                                         </tr>
                                         <?php } } ?>
                                     </tbody>
@@ -771,6 +855,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -795,6 +880,12 @@
                                                 <input type="radio" id="hun-two" name="phasetwo" data-projectID="<?php echo $betweenhuntwo->projectID;?>" class="twohunProject" value="200">
                                                 <label for="">200</label>
                                             </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
+                                            </td>
                                         </tr>
                                         <?php } } ?>
                                     </tbody>
@@ -814,6 +905,7 @@
                                             <th>Evals</th>
                                             <th>Status</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -842,6 +934,12 @@
                                                 <label for="">Bottom 50</label> -->
                                                 <input type="radio" id="hun-two" name="phasetwo" data-projectID="<?php echo $betweenhuntwo->projectID;?>" class="twohunProject" value="200">
                                                 <label for="">200</label>
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -875,6 +973,7 @@
                                             <th>Category</th>
                                             <th>Sub-Category</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -899,6 +998,12 @@
                                                 <input type="radio" id="hun-two" name="phasetwo" data-projectID="<?php echo $bottom->projectID;?>" class="twohunProject" value="200">
                                                 <label for="">200</label>
                                             </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
+                                            </td>
                                         </tr>
                                         <?php } } ?>
                                     </tbody>
@@ -918,6 +1023,7 @@
                                             <th>Evals</th>
                                             <th>Status</th>
                                             <th>Action</th>
+                                            <th>Notifications</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -948,6 +1054,12 @@
                                                 <label for="">Bottom 50</label>
                                                 <!-- <input type="radio" id="hun-two" name="phasetwo" data-projectID="<?php echo $bottom->projectID;?>" class="twohunProject" value="200">
                                                 <label for="">200</label> -->
+                                            </td>
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -984,6 +1096,7 @@
                                         <!-- <th>Category</th>
                                         <th>Sub-Category</th> -->
                                         <!-- <th>Action</th> -->
+                                        <th>Notifications</th>
                                     </tr>
                                 </thead>
                                 <!--Table head-->
@@ -1011,6 +1124,12 @@
                                             <input type="radio" id="hun-two" name="phasetwo" data-projectID="<?php echo $bottom->projectID;?>" class="twohunProject" value="200">
                                             <label for="">200</label>
                                         </td> -->
+                                            <td width="100px">
+                                                <?php
+                                                if($pdetails->msg_count > 0){
+                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
+                                                }?>
+                                            </td>
                                     </tr>
                                     <?php } } ?>
                                 </tbody>

@@ -35,6 +35,7 @@ class Dashboard extends CI_Controller {
         // }
         // exit;
         // echo $ansUseId;
+        $userId = $this->session->userdata('userId');
         $join = array();
 		$join[0]['type'] ="LEFT JOIN";
 		$join[0]['table']="master_category";
@@ -63,7 +64,8 @@ class Dashboard extends CI_Controller {
         
 
          //$where=array("projectID"= 2);
-         $select="t.*,c.category_name,sc.sub_cat_name,clg.is_top_100,clg.is_premier";
+         $select="t.*,c.category_name,sc.sub_cat_name,clg.is_top_100,clg.is_premier,(select count(msg_id) from ab_project_messages where ab_project_messages.project_id = t.projectID and msg_id > ( SELECT IFNULL((select lastReadMsgId from ab_project_messages_read_stats where ab_project_messages_read_stats.userID = ".$userId." and ab_project_messages_read_stats.projectID = t.projectID),0))) as msg_count";
+         //$select="t.*,c.category_name,sc.sub_cat_name,clg.is_top_100,clg.is_premier,(select count(msg_id) from ab_project_messages where ab_project_messages.project_id = t.projectID and msg_id > (SELECT IFNULL( (SELECT lastReadMsgId FROM ab_project_messages_read_stats where ab_project_messages_read_stats.userID = ".$userId." and ab_project_messages_read_stats.projectID = ab_project_messages_read_stats.projectID = t.projectID), 0))) as msg_count";
          $where=array("t.status ="=>"'active'", "phaseOneDataSubmited = "=>1,"t.currentPhase="=>"1","t.patentStatus="=>"' '","t.projectStatus="=>"' '");
          //print_r($where);exit;
         // $adminData = $this->CommonModel->GetMasterListDetails($select,'project_master',$where,'10','',$join,'');

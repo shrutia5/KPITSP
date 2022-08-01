@@ -4,43 +4,41 @@
         <div class="row m-0">
             <div class="col-md-4 p-0">
             <!-- <section class="portal-left register-banner d-md-flex align-items-center"> -->
-                <?php if (isset($adminData1) && !empty($adminData1) && $adminData1->phaseTwoStatus == "Approved") {
+            <?php if (isset($adminData1) && !empty($adminData1)) {
                     ?>
                     <section class="portal-left register-banner">
-                        <div class="logo-r" style="padding-top: 100px;">    
-                            <img src="<?php echo base_url(); ?>images/kpitlogo.png" alt="Mobility & Energy for the Future"/>
-                            <h1 class="title mt-4" data-aos="zoom-out" data-aos-delay="100">
+                    <div class="logo-r" style="padding-top: 100px;">    
+                            <img src="<?php echo base_url(); ?>images/kpitlogo.png" alt="Mobility & Energy for the Future" style="width: 100px"/>
+                            <h1 class="title mt-1 mb-0" data-aos="zoom-out" data-aos-delay="100" style="font-size: 20px">
                                 KPIT Sparkle
                             </h1>
-                            <h1 data-aos="zoom-out" data-aos-delay="100">
+                            <h1 data-aos="zoom-out" data-aos-delay="100" style="font-size: 16px">
                                 2022-23
 
                             </h1>
                         </div>
-                        <div class="incutop100" id="incubator-selection" style="padding-left: 20px;">
-                            <?php if ($adminData1->phaseTwoStatus) { ?>
-                                <div class="card" style="width: 25rem;">
+                        <div class="incutop100 mb-2" id="incubator-selection" style="padding-left: 20px;">
+                            <?php if ($adminData1->projectID) { ?>
+                                <div class="card" style="width: 95%;">
                                     <div class="card-body">
-                                        <div class="card-title">
-                                            <p class="incusparid"><?php echo $adminData1->sparkleID; ?></p>
-                                            <p class="incusparproname"><?php echo $adminData1->projectName; ?></p>
+                                        <div class="card-title mb-0">
+                                            <p class="incusparid mb-0 pb-0"><?php echo $adminData1->sparkleID; ?></p>
+                                            <p class="incusparproname mb-0 pt-0"><?php echo $adminData1->projectName; ?></p>
                                         </div>
-                                        <div class="card-text">
-                                            <p>status : Idea in Top 100</p>
-                                            <p class="impincu" style="color: #E53935;">IMPORTANT</p>
+                                        <div class="card-text pt-1 pb-1">
                                             <?php if ($adminData1->shareWithIncubator == '') { ?>
                                                 <div class="incu-yestop100">
-                                                    <span>Do you wish to share your data with incubation centers</span>
-                                                    <div class="form-check">
+                                                    <span><strong>Congratulations! You are now eligible for “NextGen Activate Program” by Wadhwani Foundation. Do you wish to enroll for the same?</strong></span><br/>
+                                                    <div class="form-check mt-2" style="display: inline-block">
                                                         <input class="form-check-input" type="radio" name="yestop50" value="Yes" id="flexRadioDefault1">
                                                         <label class="form-check-label" for="flexRadioDefault1">
-                                                            Yes
+                                                            <strong>Yes</strong>
                                                         </label>
                                                     </div>
-                                                    <div class="form-check">
+                                                    <div class="form-check" style="display: inline-block">
                                                         <input class="form-check-input" type="radio" name="yestop50" value="No" id="flexRadioDefault2">
                                                         <label class="form-check-label" for="flexRadioDefault2">
-                                                            No
+                                                            <strong>No</strong>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -57,10 +55,52 @@
                                         </div>
                                     </div>
                                 </div>
-    <?php } ?>
+                            <?php } ?>
+                        </div>
+                        <div class="incutop100" id="incubator-selection" style="padding-left: 20px;">
+                            <?php if ($adminData1->phaseTwoStatus == "Approved") { ?>
+                                <div class="card" style="width: 95%;">
+                                    <div class="card-body">
+                                        <div class="card-title mb-0">
+                                            <p class="incusparid mb-0 pb-0"><?php echo $adminData1->sparkleID; ?></p>
+                                            <p class="incusparproname mb-0 pt-0"><?php echo $adminData1->projectName; ?></p>
+                                        </div>
+                                        <div class="card-text pt-1 pb-1">
+                                            <p class="mb-0">status : Idea in Top 100</p>
+                                            <p class="impincu mb-0" style="color: #E53935;">IMPORTANT</p>
+                                            <?php if ($adminData1->shareWithIncubator == '') { ?>
+                                                <div class="incu-yestop100">
+                                                    <span><strong>Do you wish to share your data with incubation centers?</strong></span><br/>
+                                                    <div class="form-check mt-2" style="display: inline-block">
+                                                        <input class="form-check-input" type="radio" name="yestop50" value="Yes" id="flexRadioDefault1">
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            <strong>Yes</strong>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check" style="display: inline-block">
+                                                        <input class="form-check-input" type="radio" name="yestop50" value="No" id="flexRadioDefault2">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            <strong>No</strong>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                            <span class="ayesTop100 hide<?php
+                                            if ($adminData1->shareWithIncubator != '') {
+                                                echo '-false';
+                                            }
+                                            ?>">You have opted <span class="incubation-status"><?php
+                                          if ($adminData1->shareWithIncubator == 'No') {
+                                              echo 'not ';
+                                          }
+                                          ?></span> to share your project data with our incubation partners.We consider this as the collective preference of your entire team.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
                     </section><!-- End Hero -->
-<?php } else { ?>
+                    <?php } else { ?>
                     <section class="portal-left register-banner d-md-flex align-items-center">
                         <div class="logo-r" style="padding-top: 100px;">    
                             <img src="<?php echo base_url(); ?>images/kpitlogo.png" alt="Mobility & Energy for the Future"/>

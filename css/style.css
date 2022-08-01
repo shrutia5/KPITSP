@@ -2837,6 +2837,7 @@ section {
   font-weight: 300;
   text-transform: unset;
 }
+.play-grid-link{display: inline-block;}
 .year-history img {
   max-width: 100%;
 }
