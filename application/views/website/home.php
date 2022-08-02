@@ -128,7 +128,7 @@
                             <?php } ?>
                             <div class="item">
                                 <?php if ($value->link != null || !empty($value->link)) { ?>
-                                    <a href="<?php echo $value->link; ?>">
+                                    <a href="<?php echo $value->link; ?>" target="_blank">
                                     <?php } ?>
                                     <img data-id="<?php echo $value->categoryID; ?>" src="<?php echo base_url(); ?>/images/clients/<?php echo $value->clientImage; ?>" alt="">
                                     <?php if ($value->link != null || !empty($value->link)) { ?></a><?php } ?>

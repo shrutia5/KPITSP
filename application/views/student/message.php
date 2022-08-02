@@ -16,7 +16,9 @@ if(!empty($unreadMsgQ)){
 <!-- <div class="container"> -->
 <input type="hidden" id="sender_initials" value="<?php echo strtoupper($senderInitials);?>">
 <div class="messageout">
-    <span class="unreadCount"><?php if(!empty($unreadMessages)){ echo $unreadMessages; }?></span>
+    <?php if(!empty($unreadMessages)){ ?>
+        <span class="unreadCount"><?php echo $unreadMessages; ?></span>
+    <?php } ?>
     <div class="row">
         <div class="col-md-12 col-12 top-txt">
             <a href="<?php echo base_url();?>student/project"><i class="bx bxs-chevron-left bx-sm mentor-msg"
