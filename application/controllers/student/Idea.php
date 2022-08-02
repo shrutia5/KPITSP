@@ -1081,6 +1081,26 @@ class Idea extends CI_Controller {
         exit;
     }
 
+    public function nextgenProgram() {
+        $userid = $this->session->userdata('userId');
+        $enrollNextGenProgram = $this->input->post('enrollNextGenProgram');
+        $where = array("userID=" => $userid);
+        $projectd = $this->CommonModel->GetMasterListDetails('*', 'project_master', $where, '', '', '', '');
+        //print_r($projectd);exit;
+        if (isset($projectd) && !empty($projectd)) {
+            $projectData = array("enrollNextGenProgram" => $enrollNextGenProgram);
+            $iscreated = $this->CommonModel->updateMasterDetails('project_master', $projectData, $where);
+            $status['data'] = $mstercat;
+            $status['flag'] = 'S';
+            echo json_encode($status);
+            exit;
+        }
+        $status['data'] = "";
+        $status['flag'] = 'F';
+        echo json_encode($status);
+        exit;
+    }
+
     public function getSubcategoryList() {
         $categoryId = $this->input->post('categoryID');
         // echo $categoryId;exit;

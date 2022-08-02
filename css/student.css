@@ -273,6 +273,7 @@ button {
   color: #fff;
   background-color: #8fdb00;
 }
+.pro-status ul li.active{background-color: transparent;}
 .pro-status ul li.pending {
   color: #c8c8c8;
   background-color: transparent;
@@ -1213,21 +1214,25 @@ form .show-pass input[type="password"] {
   padding: 0px;
 }
 
+#nextGenModal .modal-body,
 #incubateModal .modal-body,
 .messageModal .modal-body {
   background: #2a2a2b;
 }
+#nextGenModal .modal-body p,
 #incubateModal .modal-body p,
 .messageModal p {
   color: #c8c8c8;
   font-size: 16px;
   line-height: 19px;
 }
+#nextGenModal .modal-btn input[type="submit"],
 #incubateModal .modal-btn input[type="submit"],
 .messageModal .primary {
   padding: 5px 10px;
   font-size: 15px;
 }
+#nextGenModal .modal-btn,
 #incubateModal .modal-btn,
 .messageModal .modal-btn {
   float: right;

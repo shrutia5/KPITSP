@@ -26,32 +26,31 @@
                                             <p class="incusparproname mb-0 pt-0"><?php echo $adminData1->projectName; ?></p>
                                         </div>
                                         <div class="card-text pt-1 pb-1">
-                                            <?php if ($adminData1->shareWithIncubator == '') { ?>
-                                                <div class="incu-yestop100">
+                                            <?php if (empty($adminData1->enrollNextGenProgram)) { ?>
+                                                <div class="nextgen-program">
                                                     <span><strong>Congratulations! You are now eligible for “NextGen Activate Program” by Wadhwani Foundation. Do you wish to enroll for the same?</strong></span><br/>
                                                     <div class="form-check mt-2" style="display: inline-block">
-                                                        <input class="form-check-input" type="radio" name="yestop50" value="Yes" id="flexRadioDefault1">
-                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                        <input class="form-check-input" type="radio" name="enrollNextGenProgram" value="Yes" id="radioEGPYes">
+                                                        <label class="form-check-label" for="radioEGPYes">
                                                             <strong>Yes</strong>
                                                         </label>
                                                     </div>
                                                     <div class="form-check" style="display: inline-block">
-                                                        <input class="form-check-input" type="radio" name="yestop50" value="No" id="flexRadioDefault2">
-                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                        <input class="form-check-input" type="radio" name="enrollNextGenProgram" value="No" id="radioEGPNo">
+                                                        <label class="form-check-label" for="radioEGPNo">
                                                             <strong>No</strong>
                                                         </label>
                                                     </div>
                                                 </div>
-                                            <?php } ?>
-                                            <span class="ayesTop100 hide<?php
-                                            if ($adminData1->shareWithIncubator != '') {
-                                                echo '-false';
-                                            }
-                                            ?>">You have opted <span class="incubation-status"><?php
-                                          if ($adminData1->shareWithIncubator == 'No') {
-                                              echo 'not ';
-                                          }
-                                          ?></span> to share your project data with our incubation partners.We consider this as the collective preference of your entire team.</span>
+                                            <?php }else{
+                                                if ($adminData1->enrollNextGenProgram == 'Yes') {
+                                                    echo 'Great! We will send you an email with the access credentials soon for Wadhwani foundation Activate program.';
+                                                }else{
+                                                    echo 'Thank you for your response for the Wadhwani foundation Activate program';
+                                                }
+
+                                            } ?>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -369,3 +368,16 @@
         </div>
     </div>
 </main>
+<div class="modal fade" id="nextGenModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Are You Sure <span class="enroll-status"></span> Want To Enroll For NextGen Activate Program.?</p>
+        <div class="modal-btn">
+          <a href="" data-dismiss="modal">No</a>
+          <input type="submit" data-dismiss="modal" class="yesNextGen" value="Yes">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

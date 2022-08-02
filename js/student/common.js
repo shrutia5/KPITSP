@@ -1724,6 +1724,45 @@ $(document).ready(function () {
     });
   });
 
+  $('input[name="enrollNextGenProgram"]').change(function () {
+    var share_val = $('input[name="enrollNextGenProgram"]:checked').val();
+    if (share_val == "Yes") {
+      $(".enroll-status").html("Do You");
+    } else {
+      $(".incubation-status").html("You Don't");
+    }
+    $("#nextGenModal").modal("show");
+  });
+  
+  $(".yesNextGen").click(function () {
+    var yesno = $('input[name="enrollNextGenProgram"]:checked').val();
+    $(".nextgen-program").addClass("hide");
+    $.ajax({
+      type: "POST",
+      url: base_url + "student/nextgenProgram",
+      data: { enrollNextGenProgram: yesno }, // serializes the form's elements.
+      datatype: "JSON",
+
+      success: function (res) {
+        res = JSON.parse(res);
+        if (res.flag == "F") {
+          $(".nextgen-program").removeClass("hide");
+        } else {
+          $(".ayesTop100").removeClass("hide");
+          location.reload();
+        }
+      },
+      error: function (res) {
+        $(".nextgen-program").removeClass("hide");
+      },
+    });
+  });
+  
+  $("#nextGenModal").on("hidden.bs.modal", function () {
+    $("#radioEGPYes").prop("checked", false);
+    $("#radioEGPNo").prop("checked", false);
+  });
+
   $('input[name="yestop50"]').change(function () {
     var share_val = $('input[name="yestop50"]:checked').val();
     if (share_val == "Yes") {

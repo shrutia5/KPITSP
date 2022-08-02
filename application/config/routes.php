@@ -109,6 +109,7 @@ $route['student/savePrototypeDetails'] = 'student/Idea/savePrototypeDetails';
 $route['student/removeAttFiles'] = 'student/Idea/removeIdeaAttFiles';
 $route['student/getideafile'] = 'student/Idea/getIdeaFile';
 $route['student/shareWithIncubation'] = 'student/Idea/shareWithIncubation';
+$route['student/nextgenProgram'] = 'student/Idea/nextgenProgram';
 
 $route['student/mentor-details'] = 'student/Finalist/mentorDetails';
 $route['student/personal-details'] = 'student/Finalist/personalDetails';
