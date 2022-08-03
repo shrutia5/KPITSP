@@ -40,8 +40,9 @@ class Myaccount extends CI_Controller {
         // exit;
         // $where=array("status ="=>"'active'"); 
         // $userState = $this->CommonModel->GetMasterListDetails('','master_states',$where,'','','','');
-        $wherestate = array("status=" =>'active',"country_id="=>'101');
-        $userState = $this->CommonModel->getMasterDetails('master_states','*',$wherestate);
+        $wherestate = array("status=" =>'"active"',"country_id="=>'101');
+        $otherState=array("orderBy"=>"state_name","order"=>"ASC");
+        $userState = $this->CommonModel->GetMasterListDetails('*','master_states',$wherestate,'','',array(),$otherState);
         $userCollege = $this->CommonModel->getMasterDetails('master_college','','');
         $where=array("status ="=>"'active'");
         $userCity = $this->CommonModel->GetMasterListDetails('','master_cities',$where,'30','','','');

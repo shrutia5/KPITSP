@@ -22,9 +22,13 @@ class Register extends CI_Controller {
         $data = array();
         $wherestate = array("is_active=" => '1', "tel_code=" => '91');
         $userCountry = $this->CommonModel->getMasterDetails('master_country','country_id',$wherestate);
+        $otherCountry = array("orderBy"=>"country_name","order"=>"ASC");
+        $userCountry = $this->CommonModel->GetMasterListDetails('*','master_country',$wherestate,'','',array(),$otherCountry);
 
-        $wherestate = array("status=" => 'active', "country_id=" => $userCountry[0]->country_id);
-        $userState = $this->CommonModel->getMasterDetails('master_states', '*', $wherestate);
+        $wherestate = array("status=" => '"active"', "country_id=" => $userCountry[0]->country_id);
+        $otherState=array("orderBy"=>"state_name","order"=>"ASC");
+        $userState = $this->CommonModel->GetMasterListDetails('*','master_states',$wherestate,'','',array(),$otherState);
+
         $wherebranch = array("status=" => 'active');
         $userBranch = $this->CommonModel->getMasterDetails('master_branch', '*', $wherebranch);
         $wheredegree = array("status=" => 'active');
@@ -799,7 +803,8 @@ class Register extends CI_Controller {
         //echo $stateID."<br>";
         if (isset($stateID)) {
             $whereCollege = array("status =" => "'active'", "state_id=" => $stateID);
-            $mstercat = $this->CommonModel->GetMasterListDetails('*', "master_college", $whereCollege, '', '', $join = array(), $other = array());
+            $otherCollege = array("orderBy"=>"college_name","order"=>"ASC");
+            $mstercat = $this->CommonModel->GetMasterListDetails('*', "master_college", $whereCollege, '', '', $join = array(), $otherCollege);
             //print_r($mstercat);
             if (!empty($mstercat)) {
                 $status['data'] = $mstercat;
