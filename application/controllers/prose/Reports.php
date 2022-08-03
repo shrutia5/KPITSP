@@ -503,9 +503,9 @@ class Reports extends CI_Controller {
                 $data['allrep'] = "";
             }
             $data['menuName'] = "reports";
-            $data['pageTitle'] = "KPIT sparkle | Admin Reports";
-            $data['metaDescription'] = "Admin Reports";
-            $data['metakeywords'] = "KPIT sparkle Admin Reports";
+            $data['pageTitle'] = "KPIT sparkle | User Reports";
+            $data['metaDescription'] = "User Reports";
+            $data['metakeywords'] = "KPIT sparkle User Reports";
             $this->load->view('prose/header', $data);
             $this->load->view('prose/reports', $data);
             $this->load->view('prose/footer');

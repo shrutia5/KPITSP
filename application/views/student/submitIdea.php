@@ -260,7 +260,7 @@
                                                             <span><?php echo $opt->optionName ?></span>
                                                             <span class="checkmark"></span>
                                                         </label>
-                                                            <div class="answer_guide answer_guide_<?php echo $qList->trlQuestionID; ?> <?php echo $isOptionSelected;?>" id="answer_guide_<?php echo $qList->trlQuestionID.'_'.$key; ?>"><?php echo $opt->optGuide; ?></div>
+                                                            <div class="answer_guide answer_guide_<?php echo $qList->trlQuestionID; ?> <?php echo $isOptionSelected;?>" id="answer_guide_<?php echo $qList->trlQuestionID.'_'.$key; ?>"> Answer Guide:  <?php echo $opt->optGuide; ?></div>
                                                             </div>
                                                             
                                                         <?php 
@@ -488,7 +488,9 @@
                            <li>
                                <h5 class="h5-helpful">Idea submission</h5>
                                 <p class="para-helpful">This video explains the new process of idea submission for KPIT Sparkle</p>
-                                <a class="link-helpful" href="https://www.youtube.com/watch?v=SQyeLY6Wldc">Watch Video</a>
+                                <!-- Button HTML (to Trigger Modal) -->
+                                    <a class="link-helpful" href="#submitIdeaModal" data-toggle="modal">Watch Video</a>
+                                <!-- Modal HTML -->
                             </li>
                             <li>
                                <h5 class="h5-helpful">Sample idea form</h5>
