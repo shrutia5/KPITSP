@@ -2510,6 +2510,7 @@ section {
 .home-silder img {
   max-width: 197px;
   margin-bottom: 55px;
+  /* height: 100%; */
 }
 .home-silder a,
 .knowMore,
@@ -2837,7 +2838,9 @@ section {
   font-weight: 300;
   text-transform: unset;
 }
-.play-grid-link{display: inline-block;}
+.play-grid-link {
+  display: inline-block;
+}
 .year-history img {
   max-width: 100%;
 }

@@ -270,10 +270,12 @@ button {
 .pro-status ul li {
   margin: 38px 0px;
   /* color: #757af7a3; */
-  color: #fff;
+  color: #000;
   background-color: #8fdb00;
 }
-.pro-status ul li.active{background-color: transparent;}
+.pro-status ul li.active {
+  background-color: transparent;
+}
 .pro-status ul li.pending {
   color: #c8c8c8;
   background-color: transparent;

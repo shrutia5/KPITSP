@@ -6,7 +6,7 @@
         $currentPhase = $projectdetails->currentPhase;
         $projectIDHtml ='<input type="hidden" name="projectID" value="'.$projectdetails->projectID.'">';
     } ?>
-<main id="portal">
+<main id="portal" oncontextmenu="return false;">
     <div id="portal-space"></div>
     <div class="container-fluid p-0">
         <div class="row submit-hide m-0">
@@ -80,7 +80,7 @@
                             <div class="row p-4 field">
                                 <div class="col-md-4 col-12 form-group name1">
                                     <label>Project Name*</label>
-                                    <input type="text" class="form-control"  maxlength="255" name="projectName" id="projectName" value="<?php if(isset($projectdetails->projectName)){echo $projectdetails->projectName;} ?>" placeholder="Enter Project Name">
+                                    <input type="text" class="form-control" onpaste="return false;" maxlength="255" name="projectName" id="projectName" value="<?php if(isset($projectdetails->projectName)){echo $projectdetails->projectName;} ?>" placeholder="Enter Project Name">
                                 </div>
                                 <div class="col-md-4 col-12 form-group name2">
                                     <label>Category*</label>
@@ -179,7 +179,7 @@
                             <div class="row p-4 field" id="field2" style="border-top: 1px solid #c8c8c8;">
                                 <div class="col-md-12 col-12 form-group">
                                     <label>Project Description*</label>
-                                    <textarea class="form-control" rows="9" name="projectDiscription" id="projectDiscription" placeholder="Explain the problem statement you are trying to solve. Minimum 250 Characters and Maximum 1000 characters"><?php if(isset($projectdetails->projectDiscription)){ echo $projectdetails->projectDiscription; }?></textarea>
+                                    <textarea class="form-control" onpaste="return false;" rows="9" name="projectDiscription" id="projectDiscription" placeholder="Explain the problem statement you are trying to solve. Minimum 250 Characters and Maximum 1000 characters"><?php if(isset($projectdetails->projectDiscription)){ echo $projectdetails->projectDiscription; }?></textarea>
                                 </div>
                             </div>
                             <!-- <div class="row p-4 ">
@@ -280,7 +280,7 @@
                                                                  Guide: <?php  echo $qList->qGuide; ?>
                                                             <?php } ?>
                                                         </p>
-                                                        <textarea placeholder="Start writing here..." <?php if($qList->isRequired=="Yes"){echo "required";} ?> class="form-control" name="trlQuestion_<?php echo $qList->trlQuestionID; ?>" id="" placeholder="Enter Project Name"><?php echo $result->qanswer;?></textarea>
+                                                        <textarea placeholder="Start writing here..." <?php if($qList->isRequired=="Yes"){echo "required";} ?> class="form-control" onpaste="return false;" name="trlQuestion_<?php echo $qList->trlQuestionID; ?>" id="" placeholder="Enter Project Name"><?php echo $result->qanswer;?></textarea>
                                                     </li>            
                                                 <?php 
                                                 }
@@ -348,11 +348,11 @@
                                 </div>
                                 <div class="col-md-12 col-12 form-group" id="attq_1">
                                     <h6>Technical Description*</h6>
-                                    <textarea placeholder="Start writing here..." required="" class="form-control" name="technicalDescription" id="technicalDescription" autocomplete="off"><?php echo $projectdetails->technicalDescription;?></textarea>
+                                    <textarea placeholder="Start writing here..." required="" class="form-control" onpaste="return false;" name="technicalDescription" id="technicalDescription" autocomplete="off"><?php echo $projectdetails->technicalDescription;?></textarea>
                                 </div>
                                 <div class="col-md-12 col-12 form-group" id="attq_2">
                                     <h6>Keywords*</h6>
-                                    <textarea placeholder="Start writing here..." required="" class="form-control" name="keywords" id="keywords" autocomplete="off"><?php echo $projectdetails->keywords;?></textarea>
+                                    <textarea placeholder="Start writing here..." required="" class="form-control" onpaste="return false;" name="keywords" id="keywords" autocomplete="off"><?php echo $projectdetails->keywords;?></textarea>
                                 </div>
                             </div>
                             <div class="row p-4 field">
@@ -380,7 +380,7 @@
                                 </div>
                                 <div class="col-md-4 col-12 form-group <?php if($projectdetails->patentFiled==0) echo 'hide';?> patent-dependent">
                                     <label>Patent Application Number*</label>
-                                    <input type="text" class="form-control" name="patentApplicationNumber" id="patentApplicationNumber" value="<?php echo $projectdetails->patentApplicationNumber;?>" placeholder="Enter Patent Application Number" required="">
+                                    <input type="text" class="form-control" onpaste="return false;" name="patentApplicationNumber" id="patentApplicationNumber" value="<?php echo $projectdetails->patentApplicationNumber;?>" placeholder="Enter Patent Application Number" required="">
                                 </div>
                             </div>
                             <?php

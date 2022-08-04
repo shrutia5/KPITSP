@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section class="section-bg" style="padding: 5px 0px">
+<!-- <section class="section-bg" style="padding: 5px 0px">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Hero -->
 <section id="hero" class="d-flex align-items-center">
     <div class="container-fluid">
@@ -138,11 +138,11 @@
                     }
                     ?>
 
-<!--<img src="<?php echo base_url(); ?>/images/ourpartners/AICTE.png" alt="">
-<img src="<?php echo base_url(); ?>/images/ourpartners/ARAI.png" alt="">
-<img src="<?php echo base_url(); ?>/images/ourpartners/DST.png" alt="">
-<img src="<?php echo base_url(); ?>/images/ourpartners/Mathworks.png" alt="">
-<img src="<?php echo base_url(); ?>/images/ourpartners/TRIZ.png" alt="">-->
+                        <!--<img src="<?php echo base_url(); ?>/images/ourpartners/AICTE.png" alt="">
+                        <img src="<?php echo base_url(); ?>/images/ourpartners/ARAI.png" alt="">
+                        <img src="<?php echo base_url(); ?>/images/ourpartners/DST.png" alt="">
+                        <img src="<?php echo base_url(); ?>/images/ourpartners/Mathworks.png" alt="">
+                        <img src="<?php echo base_url(); ?>/images/ourpartners/TRIZ.png" alt="">-->
 
                 </div>
             </div>
