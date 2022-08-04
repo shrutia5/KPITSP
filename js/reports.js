@@ -20,6 +20,7 @@ $(document).ready(function(){
   
   $("body").on("change",".dropChange",function(e){
     $("#report_type").val("");
+    $("#reportFilter").attr("target","_self");
     $("#reportFilter").submit();
   });
 

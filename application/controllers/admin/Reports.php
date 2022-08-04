@@ -74,7 +74,7 @@ class Reports extends CI_Controller {
                     $join[4]['alias'] = "ci";
                     $join[4]['key1'] = "city_id";
                     $join[4]['key2'] = "city_id";
-
+                    $wherec["t.userType"] = ' = "User"';
                     $isAll = $this->input->post('getAll');
                     $selectC = "t.*,cou.country_name,s.state_name,c.college_name,ci.city_name,c.is_top_100,c.is_premier,p.projectStatus,p.phaseTwoStatus,p.phaseThreeStatus,p.phaseOneDataSubmited,p.phaseTwoDataSubmited,p.currentPhase,p.phaseThreeStatus";
                     $registerUsers = $this->CommonModel->GetMasterListDetails($selectC, 'userregistration', $wherec, '', '', $join, $other);
@@ -128,6 +128,7 @@ class Reports extends CI_Controller {
                                     $wherec = array();
                                     $removeRow = true;
                                     $wherec = array("state_id = " => $value->state_id);
+                                    $wherec["userType"] = ' = "User"';
                                     $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'userregistration', $wherec, '', '', $join, $other);
                                     $stateList[$key]->numberOfreg = $numberOfreg[0]->tot;
                                     if ($numberOfreg[0]->tot > 0) {
@@ -140,6 +141,7 @@ class Reports extends CI_Controller {
                                     $join[0]['alias'] = "p";
                                     $join[0]['key1'] = "userID";
                                     $join[0]['key2'] = "userID";
+                                    $wherec["userType"] = ' = "User"';
                                     $numberOfidea = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot", 'userregistration', $wherec, '', '', $join, $other);
                                     $stateList[$key]->numberOfidea = $numberOfidea[0]->tot;
                                     //$tot += $numberOfidea[0]->tot;
@@ -154,6 +156,7 @@ class Reports extends CI_Controller {
                                     $join[0]['alias'] = "p";
                                     $join[0]['key1'] = "userID";
                                     $join[0]['key2'] = "userID";
+                                    $wherec["userType"] = ' = "User"';
                                     $numberOfidea2 = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot", 'userregistration', $wherec, '', '', $join, $other);
                                     $stateList[$key]->numberOfidea2 = $numberOfidea2[0]->tot;
                                     if ($numberOfidea2[0]->tot > 0) {
@@ -169,6 +172,7 @@ class Reports extends CI_Controller {
                                     $join[0]['alias'] = "p";
                                     $join[0]['key1'] = "userID";
                                     $join[0]['key2'] = "userID";
+                                    $wherec["userType"] = ' = "User"';
                                     $numberOfidea100 = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot", 'userregistration', $wherec, '', '', $join, $other);
                                     $stateList[$key]->numberOfidea100 = $numberOfidea100[0]->tot;
                                     if ($numberOfidea100[0]->tot > 0) {
@@ -182,6 +186,7 @@ class Reports extends CI_Controller {
                                     $join[0]['alias'] = "p";
                                     $join[0]['key1'] = "userID";
                                     $join[0]['key2'] = "userID";
+                                    $wherec["userType"] = ' = "User"';
                                     $numberOfideafinal = $this->CommonModel->GetMasterListDetails("count(t.userID) as tot", 'userregistration', $wherec, '', '', $join, $other);
                                     $stateList[$key]->numberOfideafinal = $numberOfideafinal[0]->tot;
                                     if ($numberOfideafinal[0]->tot > 0) {
@@ -298,12 +303,12 @@ class Reports extends CI_Controller {
                     $other = array();
                     $wherec = array();
                     $stateList = array();
-
-                    $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'userregistration', array(), '', '', array(), array());
+                    $wherec["userType"] = ' = "User"';
+                    $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'userregistration', $wherec, '', '', array(), array());
                     $stateList['numberOfreg'] = $numberOfreg[0]->tot;
 
 
-                    $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'project_master', array(), '', '', array(), array());
+                    $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'project_master',array(), '', '', array(), array());
                     $stateList['ideaSubmission'] = $numberOfreg[0]->tot;
 
                     $wherec["phaseTwoDataSubmited"] = " = '1'";
@@ -317,6 +322,7 @@ class Reports extends CI_Controller {
 
                     $join = array();
                     $wherec = array();
+                    $wherec["userType"] = ' = "User"';
                     $wherec["phaseTwoStatus"] = " = 'Approved'";
                     $wherec["currentPhase"] = " = '3'";
 
@@ -330,6 +336,7 @@ class Reports extends CI_Controller {
 
                     $wherec = array();
                     $join = array();
+                    $wherec["userType"] = ' = "User"';
                     $wherec["phaseThreeStatus"] = " = '50'";
                     $join[0]['type'] = "LEFT JOIN";
                     $join[0]['table'] = "project_master";
@@ -440,14 +447,14 @@ class Reports extends CI_Controller {
                     $other = array();
                     $wherec = array();
                     $stateList = array();
-
-                    $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'userregistration', array(), '', '', array(), array());
+                    $wherec["userType"] = ' = "User"';
+                    $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'userregistration', $wherec, '', '', array(), array());
                     $stateList['numberOfreg'] = $numberOfreg[0]->tot;
 
 
                     $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'project_master', array(), '', '', array(), array());
                     $stateList['ideaSubmission'] = $numberOfreg[0]->tot;
-
+                    $wherec["userType"] = ' = "User"';
                     $wherec["phaseTwoDataSubmited"] = " = '1'";
                     $join[0]['type'] = "LEFT JOIN";
                     $join[0]['table'] = "project_master";
@@ -461,7 +468,7 @@ class Reports extends CI_Controller {
                     $wherec = array();
                     $wherec["phaseTwoStatus"] = " = 'Approved'";
                     $wherec["currentPhase"] = " = '3'";
-
+                    $wherec["userType"] = ' = "User"';
                     $join[0]['type'] = "LEFT JOIN";
                     $join[0]['table'] = "project_master";
                     $join[0]['alias'] = "p";
@@ -473,6 +480,7 @@ class Reports extends CI_Controller {
                     $wherec = array();
                     $join = array();
                     $wherec["phaseThreeStatus"] = " = '50'";
+                    $wherec["userType"] = ' = "User"';
                     $join[0]['type'] = "LEFT JOIN";
                     $join[0]['table'] = "project_master";
                     $join[0]['alias'] = "p";
@@ -520,6 +528,7 @@ class Reports extends CI_Controller {
             $vv = $where . "=";
             $removeRow = true;
             $wherec = array($vv => "'" . $value->$where . "'");
+            //$wherec["userType"] = ' = "User"';
             $numberOfreg = $this->CommonModel->GetMasterListDetails("count(userID) as tot", 'userregistration', $wherec, '', '', $join, $other);
             $list[$key]->numberOfreg = $numberOfreg[0]->tot;
             if ($numberOfreg[0]->tot > 0) {
@@ -527,6 +536,7 @@ class Reports extends CI_Controller {
             }
 
             $wherec["phaseOneDataSubmited"] = " = '1'";
+            $wherec["userType"] = ' = "User"';
             $join[0]['type'] = "LEFT JOIN";
             $join[0]['table'] = "project_master";
             $join[0]['alias'] = "p";
@@ -540,6 +550,7 @@ class Reports extends CI_Controller {
             $wherec = array($vv => "'" . $value->$where . "'");
             $join = array();
             $wherec["phaseTwoDataSubmited"] = " = '1'";
+            $wherec["userType"] = ' = "User"';
             $join[0]['type'] = "LEFT JOIN";
             $join[0]['table'] = "project_master";
             $join[0]['alias'] = "p";
@@ -556,7 +567,7 @@ class Reports extends CI_Controller {
             $join = array();
             $wherec["phaseTwoStatus"] = " = 'Approved'";
             $wherec["currentPhase"] = " = '3'";
-
+            $wherec["userType"] = ' = "User"';
             $join[0]['type'] = "LEFT JOIN";
             $join[0]['table'] = "project_master";
             $join[0]['alias'] = "p";
@@ -571,6 +582,7 @@ class Reports extends CI_Controller {
             $wherec = array($vv => "'" . $value->$where . "'");
             $join = array();
             $wherec["phaseThreeStatus"] = " = '50'";
+            $wherec["userType"] = ' = "User"';
             $join[0]['type'] = "LEFT JOIN";
             $join[0]['table'] = "project_master";
             $join[0]['alias'] = "p";
