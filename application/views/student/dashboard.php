@@ -18,7 +18,7 @@
                             </h1>
                         </div>
                         <div class="incutop100 mb-2" id="incubator-selection" style="padding-left: 20px;">
-                            <?php if ($adminData1->projectID) { ?>
+                            <?php if ($adminData1->projectID && $adminData1->currentPhase <= 2) { ?>
                                 <div class="card" style="width: 95%;">
                                     <div class="card-body">
                                         <div class="card-title mb-0">
