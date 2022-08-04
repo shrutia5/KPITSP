@@ -137,10 +137,7 @@
                                                 <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="holdProject"><i class='bx bx-pause'></i></a>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -202,10 +199,7 @@
                                                 <a href="" data-projectID="<?php echo $pdetails->projectID;?>" class="holdProject"><i class='bx bx-pause'></i></a>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -265,10 +259,7 @@
                                                 <a href="" data-projectID="<?php echo $reject->projectID;?>" class="holdProject"><i class='bx bx-pause'></i></a>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -328,10 +319,7 @@
                                                 <a href="" data-projectID="<?php echo $hold->projectID;?>" class="rejectProject"><i class='bx bx-x'></i></a>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -393,10 +381,7 @@
                                                 <a href="" data-projectID="<?php echo $phasetwoall->projectID;?>" class="phase2holdProject"><i class='bx bx-pause'></i></a>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -455,10 +440,7 @@
                                                 <a href="" data-projectID="<?php echo $phasetwoapprove->projectID;?>" class="phase2holdProject"><i class='bx bx-pause'></i></a>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -518,10 +500,7 @@
                                                 <a href="" data-projectID="<?php echo $phase2reject->projectID;?>" class="phase2holdProject"><i class='bx bx-pause'></i></a>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -579,10 +558,7 @@
                                                 <a href="" data-projectID="<?php echo $phase2hold->projectID;?>" class="phase2rejectProject"><i class='bx bx-x'></i></a>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -644,10 +620,7 @@
                                                 <label for="">200</label>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -702,10 +675,7 @@
                                                 <label for="">200</label>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -765,10 +735,7 @@
                                                 <label for="">200</label>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -821,10 +788,7 @@
                                                 <label for="">200</label>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -881,10 +845,7 @@
                                                 <label for="">200</label>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -936,10 +897,7 @@
                                                 <label for="">200</label>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -999,10 +957,7 @@
                                                 <label for="">200</label>
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -1056,10 +1011,7 @@
                                                 <label for="">200</label> -->
                                             </td>
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                         </tr>
                                         <?php } } ?>
@@ -1125,10 +1077,7 @@
                                             <label for="">200</label>
                                         </td> -->
                                             <td width="100px">
-                                                <?php
-                                                if($pdetails->msg_count > 0){
-                                                    echo '<div class="nt-list"><i class="bx bxs-message"></i><span class="nt-count">'.$pdetails->msg_count.'</span></div>';
-                                                }?>
+                                                <div class="nt-list"><i class="bx bxs-message"></i><?php if($pdetails->msg_count > 0){ echo '<span class="nt-count">'.$pdetails->msg_count.'</span>'; } ?></div>
                                             </td>
                                     </tr>
                                     <?php } } ?>
