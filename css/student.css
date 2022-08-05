@@ -153,7 +153,7 @@ button {
   margin: 0 auto;
 }
 .register-banner h1.title {
-  font-size: 38;
+  font-size: 38px;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -271,7 +271,11 @@ button {
   margin: 38px 0px;
   /* color: #757af7a3; */
   color: #000;
+  /*background-color: #8fdb00;*/
+}
+.pro-status ul.submissionStatus li:not(.pending, .active) span {
   background-color: #8fdb00;
+  font-weight: 500;
 }
 .pro-status ul li.active {
   background-color: transparent;
@@ -286,6 +290,10 @@ button {
   display: block;
   margin-top: -27px;
 }
+.submissionStatus .trlStatusList {
+  padding-left: 8px !important;
+  margin-left: 29px !important;
+}
 .pro-status ul li::before {
   content: "";
   width: 14px;
@@ -297,6 +305,11 @@ button {
   z-index: 1;
   position: relative;
 }
+
+.pro-status ul.submissionStatus li:not(.pending, .active)::before {
+  background-color: #8fdb00;
+}
+
 .pro-status ul li.pending::before {
   background: #31334e;
   border: 1px solid #757af7;

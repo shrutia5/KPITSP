@@ -2711,7 +2711,11 @@ section {
 }
 
 .btn-prev-blog {
-  left: -100px;
+  left: -90px;
+}
+
+.owl-carousel .owl-stage-outer {
+  margin-left: 20px;
 }
 
 .btn-next-champion,
@@ -3093,8 +3097,9 @@ input[type="button"]:disabled {
   }
   .login-btn {
     color: #212121;
-    padding: 14px 26px;
-    font-size: 14px;
+    /* padding: 14px 26px; */
+    padding: 13px;
+    font-size: 16px;
     text-transform: uppercase;
     border-left: 1px solid #c8c8c8;
     font-weight: 300;
@@ -3117,12 +3122,13 @@ input[type="button"]:disabled {
     float: left;
     text-align: center;
   }
-  #header.header-scrolled .login-btn {
+  #header.header-scrolled .login-btn,
+  #header.header-scrolled .register-btn {
     padding: 10px 26px;
   }
-  #header.header-scrolled .register-btn {
+  /* #header.header-scrolled .register-btn {
     padding: 9px;
-  }
+  } */
   #header.header-scrolled .logo {
     padding: 15px;
     transition: all 0.5s;
@@ -3410,10 +3416,12 @@ input[type="button"]:disabled {
 
 input:-webkit-autofill {
   -webkit-text-fill-color: #fff;
+  box-shadow: 0 0 0px 1000px #212121 inset;
   -webkit-box-shadow: 0 0 0px 1000px #212121 inset;
 }
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: #fff;
+  box-shadow: 0 0 0px 1000px #212121 inset;
   -webkit-box-shadow: 0 0 0px 1000px #212121 inset;
 }
 .alertify .ajs-dialog,
@@ -3646,5 +3654,37 @@ input:-webkit-autofill:focus {
   .chat-box-head {
     color: #8fdb00;
   }
+  .btn-next-blog {
+    right: -20px;
+  }
+  .btn-prev-blog {
+    left: -20px;
+  }
+  #EducationalDetails .RTU-uploadContainer {
+    width: 100% !important;
+  }
+  #EducationalDetails .RTU-uploadLabel {
+    width: 92% !important;
+  }
+  #EducationalDetails .RTU-uploadLabelText {
+    width: 100% !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #EducationalDetails .RTU-uploadLabelImage {
+    display: none;
+  }
 }
 /* ##### Chariot Tooltip Ends ##### */
+@media (min-width: 768px) and (max-width: 1080px) {
+  .btn-next-blog {
+    right: -40px;
+  }
+  .btn-prev-blog {
+    left: -40px;
+  }
+  #profilePic {
+    height: auto;
+    width: auto;
+  }
+}

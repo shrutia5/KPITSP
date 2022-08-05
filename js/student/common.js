@@ -1733,7 +1733,7 @@ $(document).ready(function () {
     }
     $("#nextGenModal").modal("show");
   });
-  
+
   $(".yesNextGen").click(function () {
     var yesno = $('input[name="enrollNextGenProgram"]:checked').val();
     $(".nextgen-program").addClass("hide");
@@ -1757,7 +1757,7 @@ $(document).ready(function () {
       },
     });
   });
-  
+
   $("#nextGenModal").on("hidden.bs.modal", function () {
     $("#radioEGPYes").prop("checked", false);
     $("#radioEGPNo").prop("checked", false);

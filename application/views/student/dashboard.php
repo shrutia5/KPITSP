@@ -1,18 +1,18 @@
 <main id="portal">
-    <div class="container-fluid p-0">
+    <div class="container-fluid">
         <div id="portal-space "></div>
         <div class="row m-0">
-            <div class="col-md-4 p-0">
+            <div class="col-md-4">
             <!-- <section class="portal-left register-banner d-md-flex align-items-center"> -->
             <?php if (isset($adminData1) && !empty($adminData1)) {
                     ?>
                     <section class="portal-left register-banner">
-                    <div class="logo-r" style="padding-top: 100px;">    
-                            <img src="<?php echo base_url(); ?>images/kpitlogo.png" alt="Mobility & Energy for the Future" style="width: 100px"/>
-                            <h1 class="title mt-1 mb-0" data-aos="zoom-out" data-aos-delay="100" style="font-size: 20px">
+                    <div class="logo-r" style="padding-top: 170px;">    
+                            <img src="<?php echo base_url(); ?>images/kpitlogo.png" alt="Mobility & Energy for the Future"/>
+                            <h1 class="title mt-1 mb-0" data-aos="zoom-out" data-aos-delay="100">
                                 KPIT Sparkle
                             </h1>
-                            <h1 data-aos="zoom-out" data-aos-delay="100" style="font-size: 16px">
+                            <h1 data-aos="zoom-out" data-aos-delay="100">
                                 2022-23
 
                             </h1>
@@ -21,21 +21,21 @@
                             <?php if ($adminData1->projectID && $adminData1->currentPhase <= 2) { ?>
                                 <div class="card" style="width: 95%;">
                                     <div class="card-body">
-                                        <div class="card-title mb-0">
+                                        <div class="card-title">
                                             <p class="incusparid mb-0 pb-0"><?php echo $adminData1->sparkleID; ?></p>
-                                            <p class="incusparproname mb-0 pt-0"><?php echo $adminData1->projectName; ?></p>
+                                            <p class="incusparproname pt-0"><?php echo $adminData1->projectName; ?></p>
                                         </div>
-                                        <div class="card-text pt-1 pb-1">
+                                        <div class="card-text">
                                             <?php if (empty($adminData1->enrollNextGenProgram)) { ?>
                                                 <div class="nextgen-program">
                                                     <span><strong>Congratulations! You are now eligible for “NextGen Activate Program” by Wadhwani Foundation. Do you wish to enroll for the same?</strong></span><br/>
-                                                    <div class="form-check mt-2" style="display: inline-block">
+                                                    <div class="form-check mt-2">
                                                         <input class="form-check-input" type="radio" name="enrollNextGenProgram" value="Yes" id="radioEGPYes">
                                                         <label class="form-check-label" for="radioEGPYes">
                                                             <strong>Yes</strong>
                                                         </label>
                                                     </div>
-                                                    <div class="form-check" style="display: inline-block">
+                                                    <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="enrollNextGenProgram" value="No" id="radioEGPNo">
                                                         <label class="form-check-label" for="radioEGPNo">
                                                             <strong>No</strong>
@@ -60,23 +60,23 @@
                             <?php if ($adminData1->phaseTwoStatus == "Approved") { ?>
                                 <div class="card" style="width: 95%;">
                                     <div class="card-body">
-                                        <div class="card-title mb-0">
-                                            <p class="incusparid mb-0 pb-0"><?php echo $adminData1->sparkleID; ?></p>
-                                            <p class="incusparproname mb-0 pt-0"><?php echo $adminData1->projectName; ?></p>
+                                        <div class="card-title">
+                                            <p class="incusparid pb-0"><?php echo $adminData1->sparkleID; ?></p>
+                                            <p class="incusparproname pt-0"><?php echo $adminData1->projectName; ?></p>
                                         </div>
-                                        <div class="card-text pt-1 pb-1">
+                                        <div class="card-text">
                                             <p class="mb-0">status : Idea in Top 100</p>
                                             <p class="impincu mb-0" style="color: #E53935;">IMPORTANT</p>
                                             <?php if ($adminData1->shareWithIncubator == '') { ?>
                                                 <div class="incu-yestop100">
                                                     <span><strong>Do you wish to share your data with incubation centers?</strong></span><br/>
-                                                    <div class="form-check mt-2" style="display: inline-block">
+                                                    <div class="form-check mt-2">
                                                         <input class="form-check-input" type="radio" name="yestop50" value="Yes" id="flexRadioDefault1">
                                                         <label class="form-check-label" for="flexRadioDefault1">
                                                             <strong>Yes</strong>
                                                         </label>
                                                     </div>
-                                                    <div class="form-check" style="display: inline-block">
+                                                    <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="yestop50" value="No" id="flexRadioDefault2">
                                                         <label class="form-check-label" for="flexRadioDefault2">
                                                             <strong>No</strong>
@@ -178,11 +178,10 @@
                                 <div class="col-md-6 pro-tit2">
                                     <div class="pro-status mt-4 mobile-background">
                                         <span class="small normal">Submission Status</span>
-                                        <ul>
-    <?php
-    echo $this->CommonModel->getProjectSubmissionStatus($adminData1);
-    ?>
-
+                                        <ul class="submissionStatus">
+                                            <?php
+                                            echo $this->CommonModel->getProjectSubmissionStatus($adminData1);
+                                            ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -235,8 +234,8 @@
                                 </div>
                                 <div class="pro-status mt-4">
                                     <span class="small normal">Submission Status</span>
-                                    <ul>
-    <?php echo $this->CommonModel->getProjectSubmissionStatus($teamProjects[0]); ?>
+                                    <ul class="submissionStatus">
+                                        <?php echo $this->CommonModel->getProjectSubmissionStatus($teamProjects[0]); ?>
                                     </ul>
                                 </div>
                                 <div class="mt-4 mobile-dashboard">
@@ -276,10 +275,10 @@
                                     </div>-->
                                 <div class="pro-status no-bg mt-4">
                                     <span class="small normal">Submission Status</span>
-                                    <ul>
-    <?php
-    echo $this->CommonModel->getProjectSubmissionStatus($adminData1);
-    ?>
+                                    <ul class="submissionStatus">
+                                        <?php
+                                        echo $this->CommonModel->getProjectSubmissionStatus($adminData1);
+                                        ?>
                                     </ul>
                                 </div>
                                 <div class="mt-4 mobile-dashboard">
@@ -311,8 +310,8 @@
                                 </div>
                                 <div class="pro-status mt-4">
                                     <span class="small normal">Submission Status</span>
-                                    <ul>
-    <?php echo $this->CommonModel->getProjectSubmissionStatus($teamProjects[0]); ?>
+                                    <ul class="submissionStatus">
+                                        <?php echo $this->CommonModel->getProjectSubmissionStatus($teamProjects[0]); ?>
                                     </ul>
                                 </div>
                                 <div class="mt-4 mobile-dashboard">
@@ -350,8 +349,8 @@
                                     </div>
                                     <div class="pro-status no-bg mt-4">
                                         <span class="small normal">Submission Status</span>
-                                        <ul>
-        <?php echo $this->CommonModel->getProjectSubmissionStatus($teamProject); ?>
+                                        <ul class="submissionStatus">
+                                            <?php echo $this->CommonModel->getProjectSubmissionStatus($teamProject); ?>
                                         </ul>
                                     </div>
                                     <div class="mt-4 mobile-dashboard">
@@ -359,10 +358,9 @@
                                     </div>
                                 </div>
                             </div>
-
-    <?php }
-}
-?>
+                            <?php }
+                            }
+                        ?>
                 </div>
             </div>
         </div>
