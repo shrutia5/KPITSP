@@ -44,6 +44,9 @@
   <?php $this->load->view("commonScripts");?>
   <script src="<?php echo base_url();?>js/main.js"></script>
   <script src="<?php echo base_url();?>js/register.js"></script>
+  <script src="<?php echo base_url();?>js/wowslider/jquery.js"></script>
+  <script src="<?php echo base_url();?>js/wowslider/wowslider.js"></script>
+	<script src="<?php echo base_url();?>js/wowslider/script.js"></script>
 
 </body>
 

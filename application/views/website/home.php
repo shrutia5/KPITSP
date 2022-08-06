@@ -16,6 +16,25 @@
         </div>
     </div>
 </section> -->
+<section>
+    <div id="wowslider-container1">
+        <div class="ws_images">
+            <ul>
+                <li><img src="<?php echo base_url(); ?>images/banner1.jpg" alt="Banner 1" title="Banner 1" id="wows1_0"/></li>
+                <li><img src="<?php echo base_url(); ?>images/banner2.jpg" alt="Banner 2" title="Banner 2" id="wows1_1"/></li>
+            </ul>
+        </div>
+        <div class="ws_bullets">
+            <div>
+                <a href="#" title="Banner 1"><span><img src="<?php echo base_url(); ?>images/tooltips/banner1.jpg" alt="Banner 1"/>1</span></a>
+                <a href="#" title="Banner 2"><span><img src="<?php echo base_url(); ?>images/tooltips/banner2.jpg" alt="Banner 2"/>2</span></a>
+            </div>
+        </div>
+        <!-- <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">bootstrap slideshow</a> by WOWSlider.com v9.0</div> -->
+        <div class="ws_shadow"></div>
+    </div>
+</section>
+
 <!-- End Hero -->
 <section id="hero" class="d-flex align-items-center">
     <div class="container-fluid">

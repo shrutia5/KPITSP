@@ -40,9 +40,9 @@
         <link href="<?php echo base_url(); ?>assets/aos/aos.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/alertifyjs/css/alertify.min.css" rel="stylesheet">
 
-
         <!-- Template Main CSS File -->
         <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>css/wowslider.css" rel="stylesheet">
         <!-- Meta Pixel Code -->
         <script>
             !function (f, b, e, v, n, t, s)
