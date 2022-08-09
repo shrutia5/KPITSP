@@ -12,6 +12,7 @@
                                     <option <?php if($filter['reportType'] == "statistics2"){echo "selected='selected'";}?> value="statistics2">Week wise statistics</option>    
                                     <!--<option <?php if($filter['reportType'] == "statistics"){echo "selected='selected'";}?> value="statistics">Statistics</option>-->
                                     <option <?php if($filter['reportType'] == "list_of_reg"){echo "selected='selected'";}?> value="list_of_reg">List of registrations</option>
+                                    <option <?php if($filter['reportType'] == "idea_submission"){echo "selected='selected'";}?> value="idea_submission">Idea Submission</option>
                                     <option <?php if($filter['reportType'] == "all_report"){echo "selected='selected'";}?> value="all_report">All reports</option>
                                     <!-- <option <?php if($filter['reportType'] == "evaluators"){echo "selected='selected'";}?> value="evaluators">Evaluators</option>
                                     <option <?php if($filter['reportType'] == "voting_graph"){echo "selected='selected'";}?> value="voting_graph">Voting Detail Graph</option> -->
@@ -126,6 +127,9 @@
                         break;
                         case 'list_of_reg':
                             $this->load->view('admin/register_report',$otherPage);
+                            break;
+                        case 'idea_submission':
+                            $this->load->view('admin/idea_submission_report',$otherPage);
                             break;
                         case 'all_report':
                             $this->load->view('admin/all_report',$otherPage);

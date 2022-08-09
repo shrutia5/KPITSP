@@ -2,9 +2,10 @@
 <div class="phaseonedisplay">
                         <div class="phase-info all" id="p1-all">
                         <?php if(!empty($list)){ ?> 
-                            <div class="table-responsive">
+                            <!-- <div class="table-responsive"> -->
+                            <div class="">
                                 <!--Table-->
-                                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                <table id="example" class="table table-striped table-bordered table-responsive" style="width:100%">
                                     <!--Table head-->
                                     <thead>
                                         <tr>
@@ -52,8 +53,6 @@
                                             <td><?php if($pdetails->phaseTwoDataSubmited == "1"){ echo "Yes";}else{ echo "-";}?></td>
                                             <td><?php if($pdetails->phaseTwoStatus == "Approved" && $pdetails->currentPhase =="3"){ echo "Yes";}else{ echo "-";}?></td>
                                             <td><?php if($pdetails->phaseThreeStatus == "50"){ echo "Yes";}else{ echo "-";}?></td>
-                                            
-                                            
                                         </tr>
                                         <?php } } ?>
                                     </tbody>
